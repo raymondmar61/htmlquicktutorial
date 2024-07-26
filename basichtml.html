@@ -6,14 +6,17 @@
 <head>
 <meta charset="utf-8"> <!-- metadata information about the document or file.  charset specifies the character encoding. utf-8 is default.  -->
 <title>Webpage title Basic HTML</title>
-<body>
+<body style="background-color:gray">
+<header>The header section.  Introductory material appearing at the beginning of the web page or the top section</header>
 
+<!-- <main> element identifies the primary content.  Headers and sidebars are excluded in <main> section. -->
+<main>
 <h1>Heading one.  Don't use headings to make text big or bold.</h1>
 <h2>Heading two smaller</h2>
 <h3>Heading three smaller smaller</h3>
 <h4>Heading four</h4>
 <h5>Heading five</h5>
-<h6>Heading six</h6>
+<h6>Heading six.  Lowest heading number.</h6>
 
 <p>Paragraph.  The &#60;body&#62; tag is the visible page content.  Headings and paragraphs display as block elements by default.  Block elements are stacked rectangular boxes.  Each block element begins on a new line.  Most browsers add an empty line before and after paragraphs.  Browsers remove extra spaces and extra lines.</p>
 
@@ -23,6 +26,9 @@
 
 <p><img src="Dungeon Roll Level Tracker.png" width="330" height="255">
 <br>Dungeon Roll Level Tracker.png reduced by 1000 pixels width and 1000 pixels height.</p>
+
+<p>The figure element identifies content that illustrates or supports some point in the text.  A figure may contain an image, a video, a code snippet, text, or a table.  Although you can simply add an image to a page, wrapping it in figure tags makes its purpose explicitly clear semantically.  It also works as a hook for applying special styles to figures but not to other images on the page.</p>
+<figure><figcaption>figcaption to describe the figure before the pic . . .<img src="Dungeon Roll Level Tracker.png" width="330" height="255"></figcaption></figure><
 
 <hr>
 
@@ -39,7 +45,7 @@
 <p><sup>Superscript</sup> text above the text line like the exponent</p>
 
 <pre>
-Preformatted text preserves both spaces and line breaks.  The text font is monospace font.
+Preformatted text preserves both spaces and line breaks.  The text font is monospace font.  Whitespace.
 
 for iforloop = 1 to 10
     print i
@@ -49,14 +55,32 @@ next i
 Does preformatted text &#60;pre&#62; still work?        End preformatted here.
 </pre>
 
+<p>Escape characters</p>
+<ul>
+<li>Less than symbol ampersandlt &lt; or ampersand#60 &#60;
+<li>Greater than symbol ampersandrt &rt; or ampersand#62 &#62;
+<li>Double quotes quotation symbol ampersandquot &quot; or ampersand#034 &#034;
+<li>Single quote apostrophe symbol ampersandapos &apos; or ampersand#039 &#039;
+<li>Ampersand symbol ampersandamp &amp; or ampersand#038 &#038;
+<li>Non-breaking space or blank space ampersandnbsp &nbsp; or ampersand#160 &#160;
+<li>Horizontal ellipsis hellip; copyright copy; trademark trade;
+</ul>
+
 <p>Computer output tags display computer code or programming code on the page.
 <br><code>Computer code &#60;code&#62; These four looks the same.</code>
 <br><kbd>Keyboard input &#60;kbd&#62; These four looks the same.</kbd>
 <br><tt>Teletype text &#60;tt&#62; These four looks the same.</tt>
 <br><samp>Sample text &#60;samp&#62; These four looks the same.</samp>
-<br><var>Computer variable&#60;var&#62; italic text</var></p>
+<br><var>Computer variable&#60;var&#62; italic text</var>
+<br><abbr>Abbreviation &#60;abbr&#62; abbreviate what?</abbr>
+<br><cite>Citation &#60;cite&#62; reference the source title italic text</cite>
+<br><em>Emphsized &#60;em&#62; italic text</em>
+<br><q>Quotation &#60;q&#62; short and inline text in formal curve quotation marks quotes</q>
+<br><dfn>Defining term &#60;dfn&#62; italic text</dfn>
+<br><mark>Highlighted text &#60;mark&#62; default is in yellow highlight</mark>
+</p>
 
-<p>Write an address in HTML.  Text in italics.
+<p>Write an address in HTML.  &#60;address&#62;Text in italics.
 <address>
 <br>Donald duck
 <br>Box 555
@@ -64,10 +88,12 @@ Does preformatted text &#60;pre&#62; still work?        End preformatted here.
 <br>USA
 </address></p>
 
+<p>Depreciated tags and attributes.  Don't use the following tags:  center, font, basefont, strike for strikeout text; for example, use tyle="text-align:center" instead of &#60;center&#62;.  Don't use the following attributes:  align, bgcolor, and color; for example, use style="background-color:gray" instead of bgcolor="gray".</p>
+
 <p><abbr title="United Nations">Abbreviation for UN.  Hover the mouse to view the spelled out version or full version as a tooltip.  There is a dotted line below the text.</abbr>
 <br><acronym title="World Wide Web">Acronym for WWW.  Hover the mouse to view the spelled out version or full version as a tooltip.  There is a dotted line below the text.</acronym></p>
 
-<p>Your browser may suppport bidirectional override from the right to the left &#60;bdo dir="rtl"&#62; >Here is backward text.:  <bdo dir="rtl">Here is backward text.</bdo>
+<p>Your browser may suppport bidirectional override from the right to the left &#60;bdo dir="rtl"&#62; >Here is backward text.:  <bdo dir="rtl">Here is backward text.</bdo></p>
 
 <p>Blockquote quotation &#60;blockquote&#62;
 <blockquote>He has a right to criticize, who has a heart to help. --Abraham Lincoln</blockquote>
@@ -84,6 +110,68 @@ Does preformatted text &#60;pre&#62; still work?        End preformatted here.
 <br>Formatting with tags is not recommended.  Use CSS.
 </p>
 
+<p style="font-family:verdana; color:red">Change paragraph font.  Font is verdana.  Color is red spelled out.</p>
 
+<p style="font-family:times; color:#008000">Change paragraph font.  Font is times.  Color is green hexadecimal.</p>
+
+<p style="font-size:30px">Font size is 30 pixels.</p>
+
+<p style="text-align:center">Use style="text-align:center" instead of &#60;center&#62; to center text or align="center".</p>
+
+<ul>
+    <li>ul is unordered list</li>
+    <li>All list elements are displayed as block elements by default</li>
+    <li>List elements start on a new line with space above and below</li>
+</ul>
+
+<ol>
+    <li>ol is ordered list</li>
+    <li>Items occur in a particular order such as step-by-step instructions</li>
+    <li>Browser automatically inserts numbers</li>
+    <li>Start at a number other than the default 1, use the start attribute such as &#60;ol start="17"&#62;</li>
+</ol>
+
+<dl>
+    <dt>&#60;dl&#62; is a description list.  The &#60;dt&#62; is the name or title of the description list which is here.</dt>
+    <dd>&#60;dd&#62; is the value which is the actual description or definition which is here.</dd>
+</dl>
+
+<dl>
+    <dt>first name.  Favorite anime</dt>
+    <dd>Full Metal Alchemist, Space Brothers, Cowboy Bebop, Sailor Moon, K-On!, Azumanga Daioh</dd>
+    <dt>second name.  Favorite movies</dt>
+    <dd>The Shawshank Redemption, Saving Private Ryan, Fast Times At Ridgemont High, Hot Fuzz, 12 Angry Men</dd>
+    <dt>third name.  Other favorites</dt>
+    <dd>
+        <p>White color, police cars, Harry Potter, The Beatles, The Nutcracker</p>
+        <p>Apples, rice, Milky Way, orange, 7-UP</p>
+    </dd>
+    <dt>third name no p tags.  Other favorites</dt>
+    <dd>White color, police cars, Harry Potter, The Beatles, The Nutcracker</dd>
+    <dd>Apples, rice, Milky Way, orange, 7-UP</dd>
+</dl>
+
+<hr>
+
+<div class="divclassdefinition">
+<p>div is a generic block level element.  A division of content.  Use style sheets to format.  div element creates a logical grouping of contents or grouping of elements.</p>
+<p>I can include multiple paragraphs, headings, and objects such as images in a div.</p>
+</div>
+<div id="dividdefinition">
+<h1>Headings valid in a div.</h1>
+<p>div using an id attribute instead of class attribute.  The id attribute is an unique identifier used once in a page; for example, ISBN numbers to write HTML code for books.  The class attribute may be shared by multiple elements; for example write HTML code for books formatting:  &#60;div id="ISBN0321127307" class="listing"&#62; and &#60;div id="ISBN0881792063" class="listing"&#62;.  id and class must contains one character and no spaces.</p>
+<p>id and class attributes can be used for every HTML element.  id and class are also global attributes.  For example, &#60;ol id="orderedlistdirections"&#62;</p>
+</div>
+
+<ul>
+<li>span is a generic inline element.  A word or phase for which no text-level element exists.  No line breaks.  Text and inline elements only.  No headings, lists, and content grouping elements.  Use style sheets to format.
+<li>John <span class="anumber">100</span>
+<li>Paul <span class="anumber">200</span>
+<li>George <span class="anumber">300</span>
+<li>Ringo <span class="anumber">400</span>
+</ul>
+
+</main>
+<footer>The footer section.  Material at the end of a page such as author, copyright information, or navigation.</footer>
 </body>
 </html>
