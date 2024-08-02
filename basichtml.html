@@ -7,28 +7,53 @@
 <meta charset="utf-8"> <!-- metadata information about the document or file.  charset specifies the character encoding. utf-8 is default.  -->
 <title>Webpage title Basic HTML</title>
 <body style="background-color:gray">
-<header>The header section.  Introductory material appearing at the beginning of the web page or the top section</header>
+<header>The header section.  Introductory material appearing at the beginning of the web page or the top section.
+</header>
 
 <!-- <main> element identifies the primary content.  Headers and sidebars are excluded in <main> section. -->
 <main>
+<a name="samepagelink">Destination for a href="#samepagelink"</a>
 <h1>Heading one.  Don't use headings to make text big or bold.</h1>
 <h2>Heading two smaller</h2>
 <h3>Heading three smaller smaller</h3>
 <h4>Heading four</h4>
-<h5>Heading five</h5>
+<h5 id="useidtolink">Heading five.  Destination for id="useidtolink".</h5>
 <h6>Heading six.  Lowest heading number.</h6>
 
 <p>Paragraph.  The &#60;body&#62; tag is the visible page content.  Headings and paragraphs display as block elements by default.  Block elements are stacked rectangular boxes.  Each block element begins on a new line.  Most browsers add an empty line before and after paragraphs.  Browsers remove extra spaces and extra lines.</p>
-
-<a href="https://www.youtube.com">Link to YouTube</a>
-
 <br>br tag is line break  It starts a new line without starting a new paragraph.
 
-<p><img src="Dungeon Roll Level Tracker.png" width="330" height="255">
-<br>Dungeon Roll Level Tracker.png reduced by 1000 pixels width and 1000 pixels height.</p>
+<p><a href="https://www.youtube.com">Link to YouTube external resource on the web called a hyperlink</a>
+<br><a href="anotherwebpage.html">Link to another page in the same directory called an anchor.  Relative URL another file in same directory.</a>
+<br><a href="anotherwebpage.html" target="_blank">target="_blank" opens link in new browser.  My desktop using Chrome opens new tab.</a>
+<br>target="_self" opens in the same frame or same browser window which is default.  target="_parent" opens in the parent frameset.  "target=_top" opens in the full body of the window.  target="display" opens a new window with the name called display; however, if you target the display window from every link on the page, each linked document will open in the same second window. Unfortunately, if that second window stays hidden behind the user's current window, it may look as though the link simply didn't work.
+<br><a name="alabel">The name anchor is used inside an HTML document.  Here is a named anchor syntax</a>
+<br><a name="#alabel">The link syntax to the named anchor.  The # defines a link to the named anchor.</a>
+<br><a name="tipslabel">A named anchor inside an HTML document.</a>
+<br><a href="#tipslabel">The link to the named anchor inside HTML document tipslabel which is A named anchor inside an HTML document.  Click links takes you to name="tipslabel".</a>
+<br><a href="file:///D:/htmlcsswebdesign/basichtml.html#tipslabel">External link to the named anchor inside HTML document tipslabel which is A named anchor inside an HTML document.  Click links takes you to name="tipslabel".  Substitute local file path with external file path http://.</a>
+<br><a href="#samepagelink">Link somewhere else on page.  Go to a name="samepagelink"</a>
+<br><a href="#useidtolink">Use id= to identify destination link specific part of page.  # is for the href.  no # for the id destination.</a>
+<br><a href="mailto:prefixemail@emailserver.com?subject=Default%20Subject%20Title">Link email addresses to generate an email message using the default email application.  Use %20 to ensure spaces between words.</a>
+<br><a href="mailto:prefixemail@emailserver.com?cc=ccemail@emailserver.com&bcc=bccemail@emailserver.com&subject=Default%20Subject%20Title&body=You%20are%20invited">Link email addresses with cc and bcc and subject or email title and body to generate an email message using the default email application.  Use %20 to ensure spaces between words.  Notice use a ? for the first addon and &amp; thereafter.</a>
+<br><a href="https://externalwebpage.html"><img border="5" src="roselink.jpg" align="middle" alt="red rose" width="150" height="200"></a>border=5 text align center.  align="middle" or "top" or "bottom" which is default
+<br><a href="https://externalwebpage.html"><img src="roselink.jpg" alt="red rose define alternate text for the image" width="150" height="200"></a>default border=0
+<br>Relative URL points to another file within the same directory. When linking to a file in the same directory, you need to provide only the name of the file (its filename).  If the files aren’t in the same directory, then give the browser directions by including the pathname in the URL; for example, &#60;a href="recipes/salmon.html"&#62;Garlic Salmon&#60;/a&#62; and &#60;a href="recipes/pasta/couscous.html"&#62;Couscous&#60;/a&#62;.  Link to a higher directory use the Unix pathname convention ../ which is telling the browser to back up one directory level up.  &#60;a href="../index.html"&#62;[Back to home page]&#60;/a&#62;.  Use ../../ to go up two directories.
+<br>Tip:  Add a trailing forward slash to subfolder references. href="http://www.w3schools.com/html" generates two HTTP requests to the server because the server adds a foward slash to the address and creates a new request like this href="http://www.w3schools.com/html/".
+
+<p><img src="Dungeon Roll Level Tracker.png" align="right" width="130" height="100">Dungeon Roll Level Tracker.png reduced by 1000 pixels width and 1000 pixels height for good approximation right align image.  width and height should never be used to resize an image.  A paragraph with an image. The align attribute of the image is set to "right". The image floats to the right of this text.  align="right" or align="left".  Float image.  The width and height attributes allow the page to render properly and more efficiently before the image is downloaded. Without them, the page  renders and re-renders when each image is loaded.  The bottom edge of an image aligns with the baseline of text by default</p>
+
+<h2>Image map</h2>
+<img src="dungeonrollimagemap.jpg" width="1000" height="773" alt="Dungeon Roll Image Map Practice coordinates start at upper left or upper left is 0,0 x=0 and y=0" usemap="#dungeonrollimagemap">
+<map name="dungeonrollimagemap">
+<area shape="rect" coords="42,288,400,480" alt="Rectangle x1,y1,x2,y2 upper left and lower right corners" href="dicegraveyardfakeurl.html">
+<area shape="circle" coords="175,145,130" alt="Circle x,y,r x and y center of circle r radius" href="dungeonrolllogofakeurl.html">
+<area shape="poly" coords="453,178,544,128,745,300,527,417,442,367" alt="Polygon irregular shape x1,y1,x2,y2,x3,y3,. . ., xn,yn upper left and lower right corners" href="levels156fakeurl.html">
+</map>
 
 <p>The figure element identifies content that illustrates or supports some point in the text.  A figure may contain an image, a video, a code snippet, text, or a table.  Although you can simply add an image to a page, wrapping it in figure tags makes its purpose explicitly clear semantically.  It also works as a hook for applying special styles to figures but not to other images on the page.</p>
-<figure><figcaption>figcaption to describe the figure before the pic . . .<img src="Dungeon Roll Level Tracker.png" width="330" height="255"></figcaption></figure><
+
+<figure><figcaption>figcaption to describe the figure before the pic . . .<img src="Dungeon Roll Level Tracker.png" width="330" height="255"></figcaption></figure>
 
 <hr>
 
