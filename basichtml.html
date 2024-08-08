@@ -43,6 +43,8 @@
 
 <p><img src="Dungeon Roll Level Tracker.png" align="right" width="130" height="100">Dungeon Roll Level Tracker.png reduced by 1000 pixels width and 1000 pixels height for good approximation right align image.  width and height should never be used to resize an image.  A paragraph with an image. The align attribute of the image is set to "right". The image floats to the right of this text.  align="right" or align="left".  Float image.  The width and height attributes allow the page to render properly and more efficiently before the image is downloaded. Without them, the page  renders and re-renders when each image is loaded.  The bottom edge of an image aligns with the baseline of text by default</p>
 
+<!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90 45"><rect width="45" height="25" fill="purple" rx="20" ry="20"/><text x="10" y="20" fill="yellow" font-family="'Verdana-Bold'" font-size="8">Scalable Vector Graphics SVG.  Rectangle rect with rounded corners rx and ry.  Text is here between  &#60;text&#62; tags and its attributes.</text></svg> -->
+
 <h2>Image map</h2>
 <img src="dungeonrollimagemap.jpg" width="1000" height="773" alt="Dungeon Roll Image Map Practice coordinates start at upper left or upper left is 0,0 x=0 and y=0" usemap="#dungeonrollimagemap">
 <map name="dungeonrollimagemap">
@@ -178,6 +180,120 @@ Does preformatted text &#60;pre&#62; still work?        End preformatted here.
 
 <hr>
 
+<table border="1">
+<tr>
+    <th scope="column" id="header1">Heading data cell 1</th>
+    <th scope="column" id="header2">Header column 2</th>
+    <th scope="column">Header column 3</th>
+    <th scope="column">Header column 4</th>
+</tr>
+<tr>
+    <td headers="header1">Row 1 data cell 1.</td>
+    <td headers="header2">Row 1 data cell 2.  Headers default centered and bold.</td>
+    <td>Add a nonbreaking space to empty data cells td.</td>
+    <td rowspan="2">data cell span two rows.  Support of the id/headers feature is unreliable. The recommended best practice is to create tables in a way that a simple scope attribute will do the job.</td>
+</tr>
+<tr>
+    <td headers="header1">Row 2 column 1.</td>
+    <td headers="header2">Row 2 column 2.</td>
+    <td>&nbsp;</td>
+</tr>
+</table>
+
+<table border="1">
+<caption>Caption tag table centered on top most of table above border</caption>
+<tr>
+<th scope="row">Row heading 1</th>
+    <td align="right">Row 1 data cell 1.  Aligned right.</td>
+    <td>Row 1 data cell 2.</td>
+</tr>
+<tr>
+<th scope="row">Row header 2</th>
+    <td align="left">Row 2 column 1.  Aligned left.</td>
+    <td>Row 2 column 2.  Headers centered if extra spacing.</td>
+</tr>
+<tr>
+<th scope="row">Row header 3</th>
+    <td colspan="2">row span two columns.  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Praesentium ullam aperiam, quo amet dolor dolores ducimus libero, labore, nobis ex, maxime repellendus ea id eius. Quisquam iure eum magnam nesciunt.</td>
+</tr>
+</table>
+
+<table border="1">
+<tr>
+    <td>
+    <p>Paragraph 1</p>
+    <p>Paragraph 2</p>
+    </td>
+    <td>A subtable
+        <table border="1">
+        <tr>
+            <td>Row1Col1</td>
+            <td>Row1Col2</td>
+        </tr>
+        <tr>
+            <td>Row2Col1</td>
+            <td>Row2Col2</td>
+        </tr>
+        </table>
+</tr>
+<tr>
+    <td>A list
+    <ul>
+        <li>Row 2</li>
+        <li>Column 1</li>
+        <li>Table 3 so far between the &#60;hr&#62; tags</li>
+    </ul>
+    </td>
+    <td>One sentence</td>
+</table>
+
+<table border="1" cellpadding="10" bgcolor="green">
+    <tr>
+        <td>Added cellpadding create more white space between the cell content and its borders.  Green background color table.  Can use an image as background background="imagename.jpg".</td>
+        <td>Lorem ipsum dolor sit, amet, consectetur adipisicing elit. Fugiat corrupti saepe provident non expedita nobis unde in a est excepturi. Molestiae corrupti obcaecati mollitia exercitationem sed vero sunt quisquam nisi?</td>
+        <td>Two words</td>
+    </tr>
+</table>
+<br>
+<table border="1" cellspacing="10">
+    <tr>
+        <td bgcolor="red">Added cellspacing increase the distance between the cells.  Red background color data cell.  Can use an image as background background="imagename.jpg".</td>
+        <td>Lorem ipsum dolor sit, amet, consectetur adipisicing elit. Fugiat corrupti saepe provident non expedita nobis unde in a est excepturi. Molestiae corrupti obcaecati mollitia exercitationem sed vero sunt quisquam nisi?</td>
+        <td>Two words</td>
+    </tr>
+</table>
+
+<table frame="box">
+<tr>
+    <td>Frame</td>
+    <td>Attributes</td>    
+</tr>
+<tr>
+    <td>frame="box"</td>
+    <td>border, box, or void</td>
+</tr>
+<tr>
+    <td>If you see no frames,</td>
+    <td>then the browser is too old or doesn't support frame attribute.  Frame and border can be used together.</td>
+</tr>
+</table>
+
+<table frame="hsides" border="1">
+<tr>
+    <td>Frame</td>
+    <td>Attributes</td>    
+</tr>
+<tr>
+    <td>frame="hsides"</td>
+    <td>above, below, hsides, vsides, lhs, rhs.  h is top and bottom, v is left and right, l is left only, r is right only.</td>
+</tr>
+<tr>
+    <td>If you see no frames,</td>
+    <td>then the browser is too old or doesn't support frame attribute.  Frame and border can be used together.</td>
+</tr>
+</table>
+
+<hr>
 <div class="divclassdefinition">
 <p>div is a generic block level element.  A division of content.  Use style sheets to format.  div element creates a logical grouping of contents or grouping of elements.</p>
 <p>I can include multiple paragraphs, headings, and objects such as images in a div.</p>
