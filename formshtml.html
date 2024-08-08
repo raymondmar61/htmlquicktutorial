@@ -1,0 +1,31 @@
+<!-- Learning Web Design by Jennifer Robbins -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Webpage title Forms HTML</title>
+</head>
+<body style="background-color:gray">
+<header></header>
+<main>
+<!-- The action attribute provides the location (URL) of the application or script that will be used to process the form. The action attribute in this example sends the data to a script called mailinglist.php.  The method attribute specifies how the information should be sent to the server. For example, Inputbox1 = Sally Strongarm Inputbox2 = strongarm@example.com.  When the browser encodes that information for its trip to the server, it looks like Inputbox1=Sally+Strongarm&Inputbox2=strongarm%40example.com.  -->
+<!-- There are only two methods for sending this encoded data to the server: POST or GET, indicated by the method attribute in the form element. The method is optional and will default to GET if omitted. The GET method, the encoded form data gets tacked right onto the URL sent to the server. A question mark character separates the URL from the following data:  get http://www.bandname.com/mailinglist.php?inputbox1name=Sally+Strongarm&inputbox2name=strongarm%40example.com.  POST the browser sends a separate server request containing some special headers followed by the data.  Make sure HTTPS is enabled on your server so the user's data is encrypted and inaccessible in transit. -->
+<!-- The name attribute provides the variable name for the control.  For example inputbox1name and inputbox2name are the variables for the name attribute. The information is passed as inputbox1name=*user input from inputbox1name*.  -->
+<form action="/mailinglist.php", method="POST">
+    <fieldset>
+        <legend>Join our email list</legend>
+        <p>Text below Join our email list title everything within the box with white border</p>
+        <ol>
+            <li><label for="firstinputbox">Inputbox1:</label><input type="text" name="inputbox1name" id="inputbox1id"></li>
+            <li><label for="secondinputbox">Inputbox2:</label><input type="text" name="inputbox2name" id="inputbox2id"></li>
+        </ol>
+        <input type="submit" value="Submit button label value">
+    </fieldset>
+
+
+
+</main>
+    
+</body>
+</html>
