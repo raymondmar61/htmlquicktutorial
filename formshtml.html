@@ -17,11 +17,122 @@
         <legend>Join our email list</legend>
         <p>Text below Join our email list title everything within the box with white border</p>
         <ol>
-            <li><label for="firstinputbox">Inputbox1:</label><input type="text" name="inputbox1name" id="inputbox1id"></li>
-            <li><label for="secondinputbox">Inputbox2:</label><input type="text" name="inputbox2name" id="inputbox2id"></li>
+            <li><label for="firstinputbox">Inputbox1:</label> <input type="text" name="inputbox1name" id="inputbox1id"></li>
+            <li><label for="secondinputbox">Inputbox2:</label> <input type="text" name="inputbox2name" id="inputbox2id"></li>
         </ol>
         <input type="submit" value="Submit button label value">
     </fieldset>
+
+<ul>
+<li><label>Favorite color text box single line:  <input type="text" name="favoritecolorsingleline" value="Default value.  Color is red" maxlength="50"></label></li>
+<li><em>Multiline text box with default</em><textarea name="favoritecolormultiplelinedefault" rows="5" cols="50">Favorite color text box multiple line printed inside multiple line text box</textarea></li>
+<li><em>Multiline text box with hint</em><textarea name="favoritecolormultiplelinehint" placeholder="Hint value Favorite color text box multiple line printed inside multiple line text box" rows="5" cols="50"></textarea></li>
+<li><label for="formpassword">Password 12 characters:</label> <input type="password" name="passwordform" maxlength="12" id="formpassword"></li>
+<li>Search field:  <input type="search" name="searchfield" value="Default search value" maxlength="50"></li>
+<li>Email field:  <input type="email" name="emailfield" value="Default email value" maxlength="50"></li>
+<li>Telephone field:  <input type="telephone" name="telephonefield" value="Default telephone value" maxlength="50"></li>
+<li>Web address field:  <input type="url" name="urlfield" placeholder="Placeholder url value" maxlength="50"></li>
+<li>Drop down box:  <input type="text" list="dropdownbox" name="education">
+    <datalist id="dropdownbox">
+        <option value="As of writing, browser support is spotty.">
+        <option value="High school degree">
+        <option value="Bachelors">
+        <option value="Masters">
+        <option value="PhD">
+    </datalist>
+</ul>
+
+<p>Explicit label element.  The label element associates descriptive text with its respective form field. This provides important context for users with speech-based browsers. Another advantage to using labels is that users can click or tap anywhere on them to select or focus the form control. <label for ="submitbutton">Submit button</label> <input type="submit" id="submitbutton">.  <label for="resetbutton">Reset button</label> <input type="reset" value="Start over text displayed on button" id="resetbutton"></p>
+
+<p>Radio button with implicit label element.  The label element associates descriptive text with its respective form field. This provides important context for users with speech-based browsers. Another advantage to using labels is that users can click or tap anywhere on them to select or focus the form control.
+<ul>
+<li><label><input type="radio" name="variableradiosamename" value="valuelabelradio1" checked>default selected</label></li>
+<li><label><input type="radio" name="variableradiosamename" value="valuelabelradio2">Radio button 2</label></li>
+<li><label><input type="radio" name="variableradiosamename" value="valuelabelradio3">Radio button 3</label></li>
+</ul>
+</p>
+
+<p>Checkbox
+<ul>
+<li><input type="checkbox" name="checkboxsamename" value="valuelabelcheckbox1">Checkbox 1</li>
+<li><input type="checkbox" name="checkboxsamename" value="valuelabelcheckbox2" checked>default checked</li>
+<li><input type="checkbox" name="checkboxsamename" value="valuelabelcheckbox3">Checkbox 3</li>
+<li><input type="checkbox" name="differentcheckbox" value="valuelabelcheckbox4"><i>Different checkbox name to opt-in</i></li>
+</ul>
+</p>
+
+<p>Drop down menu
+<select name="dropdownmenuname" size="6" multiple>
+    <option>multiple allows multiple selections</option>
+    <option>Nirvanna</option>
+    <option selected>The Beatles default value selected</option>
+    <option value="formsubmitsthisdifferentvalue">B.I.G.</option>
+    <option>Michael Jackson</option>
+    <option>Taylor Swift</option>
+    <option>Whitney Houston</option>
+    <option>Steve Miller Band</option>
+    <option selected>Led Zepplin another default value selected</option>
+</select>
+</p>
+
+<p>Drop down menu grouped
+<select name="dropdownmenunamegrouped" size="5" multiple>
+    <optgroup label="earlyanime">
+    <option>multiple allows multiple selections</option>
+    <option>Ranma 1/2</option>
+    <option selected>Sailor Moon</option>
+    <option>Robotech</option>
+    </optgroup>
+    <optgroup label="midanime">
+    <option>Full Metal Alchemist</option>
+    <option value="FY">Fushigi Yuugi</option>
+    <option>Love Hina</option>
+    <option>Fooley Cooley</option>
+    <option>Neon Genesis Evangelion</option>
+    <option>Sugar A Little Snow Fairy</option>
+    <option selected>Card Captor Sakura</option>
+    </optgroup>
+</select>
+</p>
+
+<p>
+<form action="/client.php" method="POST" enctype="multipart/form-data"><label>File selection control press button opens window upload file <input type="file" name="uploadfile"></label>The accept attribute gives the browser a heads-up on what file types may be accepted (audio, video, image, or some other format identified by its media type). Adding the multiple attributes allows multiple files to be selected for upload. The required attribute requires a file to be selected.</form>`
+</p>
+
+<p>
+<input type="hidden" name="success-link" value="http://www.example.com/thankyou.html">
+<br>Use a hidden form control that sends data when the form is submitted, but is not visible when the form is displayed in a browser.  It is possible for users to access and manipulate hidden form controls. If you should become a professional web developer, you will learn to program defensively for this sort of thing.
+</p>
+
+<p>Date and time.  As of this writing, the date and time pickers are implemented on only a few browsers (Chrome, Microsoft Edge, Opera, Vivaldi, and Android), but on non-supporting browsers, the date and time input types display as a perfectly usable text-entry field instead.
+<input type="date" name="dateinput" value="2024-08-20"> default 08/20/2024
+<input type="time" name="timeinput">05:34 PM hh:mm PM
+<input type="datetime-local" name="dateandtimeinput"> mm/dd/yyyy hh:mm PM
+<input type="month" name="monthinput">Month MMMM, year yyyy
+<input type="week" name="weekinput" value="2024-W14"> default Week 14, 2024.  Week *number*, year yyyy
+</p>
+
+<p>Numerical inputs
+<label>Click arrows for number minimum 1 maximum 6 <input type="number" name="numbername" min="1" max="6"></label>
+<label>Slide to number between 0 and 11 <input type="range" name="rangename" min="0" max="11" step="1"></label>
+</p>
+
+<fieldset>
+    <legend>Group of form controls contained inside borders</legend>
+    <ul>
+        <li><label>Radio button add to email list <input type="radio" name="listemail" value="yes email" checked></label></li>
+        <li><label>Radio button don't add to email list <input type="radio" name="listemail" value="no email"></label></li>
+    </ul>
+</fieldset>
+
+<fieldset>
+    <legend>Fieldsets and legends tend to throw some curveballs when it comes to styling.  Legends are unique in that their text doesn’t wrap. The solution is to put a span or b element in them and control presentation of the contained element without sacrificing accessibility.</legend>
+    <ul>
+        <li><label>Text field name <input type="text" name="fieldsetname"></label></li>
+        <li><label>Text field email <input type="text" name="fieldsetemail"></label></li>
+        <li><label>Text field state <input type="text" name="fieldsetstate"></label></li>
+    </ul>
+</fieldset>
 
 
 
