@@ -145,22 +145,31 @@ Does preformatted text &#60;pre&#62; still work?        End preformatted here.
 
 <p style="text-align:center">Use style="text-align:center" instead of &#60;center&#62; to center text or align="center".</p>
 
-<ul>
+<ul type="disc">
     <li>ul is unordered list</li>
     <li>All list elements are displayed as block elements by default</li>
     <li>List elements start on a new line with space above and below</li>
+    <li>Paragraphs, line breaks, images, links, and other lists are valid in a list item</li>
+    <li>An unordered list can display different bullets using type="*bullet type*".  *bullet type* disc which is default bullet point, circle which is like a hollow default bullet point, square is solid square.</li>
+    <ul type="square">
+        <li>A nested list.  First list in sublist. Default is disc.  Change to square.</li>
+        <li>A nested list.  Second list in sublist.</li>
+    </ul>
 </ul>
 
-<ol>
+<ol type="i">
     <li>ol is ordered list</li>
     <li>Items occur in a particular order such as step-by-step instructions</li>
     <li>Browser automatically inserts numbers</li>
     <li>Start at a number other than the default 1, use the start attribute such as &#60;ol start="17"&#62;</li>
+    <li>An ordered list can display different bullets using type="*bullet type*".  *bullet type* A is capital letters, a is lower case letters, I for roman numbers capital letters, i for roman numbers lower case letters.</li>
+
 </ol>
 
 <dl>
-    <dt>&#60;dl&#62; is a description list.  The &#60;dt&#62; is the name or title of the description list which is here.</dt>
-    <dd>&#60;dd&#62; is the value which is the actual description or definition which is here.</dd>
+    <dt>&#60;dl&#62; is a description list.  The &#60;dt&#62; is the name or title of the description list which is here.  The definition term.</dt>
+    <dd>&#60;dd&#62; is the value which is the actual description or definition which is here.  The definition description.</dd>
+    <dd>Second value.  Second definition description.  Can put paragraphs, line breaks, images, links, and other lists.</dd>
 </dl>
 
 <dl>
@@ -311,6 +320,8 @@ Does preformatted text &#60;pre&#62; still work?        End preformatted here.
 <li>George <span class="anumber">300</span>
 <li>Ringo <span class="anumber">400</span>
 </ul>
+
+<iframe src="anotherwebpage.html" width="400" height="200">Display webpage anotherwebpage.html file in the same directory.  iframe creates a windown in a window.  There are security concerns using iframes.  Hackers can sneak in an open window.  Book doesn't explain iframe security.</iframe>
 
 </main>
 <footer>The footer section.  Material at the end of a page such as author, copyright information, or navigation.</footer>
