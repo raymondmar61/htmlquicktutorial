@@ -1,4 +1,5 @@
 <!-- Learning Web Design by Jennifer Robbins -->
+<!-- Learn HTML And CSS With W3schools -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -9,6 +10,54 @@
 <body style="background-color:gray">
 <header></header>
 <main>
+<fieldset>
+<h2>Forms</h2>
+<p><b>The &#60;fieldset&#62; groups data fields with a caption around the data or border around data or surround with border.  I use to group all the forms.</b></p>
+<form action="">
+Text field first name.  Most browsers width of the text field is 20 characters by default--&#62;
+<input type="text" name="firstnametextfieldname">
+<br>
+Text field last name--&#62;
+<input type="text" name="lastnametextfieldname">
+<p>
+<textarea rows="10" cols="30">Ten row and 30 column text area or text input multiple lines multilines.  These two sentences are default in text box.
+</textarea>
+<p>
+Drop Down List
+<br>
+<select name="drop down name cars">
+    <option value="volvo">Volvo</option>
+    <option value="saab">Saab</option>
+    <option value="ford" selected="selected">Ford is default first shown</option>
+    <option value="dodge">Dodge</option>
+</select>
+<p>
+Checkbox value Bike in group name vehicle--&#62;
+<input type="checkbox" name="groupnamevehicle" value="Bike">
+<br>
+Checkbox value Car in group name vehicle--&#62;
+<input type="checkbox" name="groupnamevehicle" value="Car">
+<br>
+Checkbox value Airplane in group name vehicle--&#62;
+<input type="checkbox" name="groupnamevehicle" value="Airplane">
+<p>
+Radio button value Male in group name sex default checked--&#62;
+<input type="radio" name="Sex" value="male" checked="checked">
+<br>
+Radio button value Female in group name sex default checked--&#62;
+<input type="radio" name="Sex" value="female">
+<p>
+<input type="button" value="Button text description here">
+<input type="button" value="Describe button">
+<input type="button" value="Tell user what button is used">
+</form>
+<form name="input" action="html_form_submit.asp" method="get">
+<p>The action attribute defines the name of the file to send the content to.  The file defined in the action attribute does something with the received input.</p>
+<p>Username:  <input type="text" name="user"><input type="submit" value="Submit">   
+</form>
+</fieldset>
+<hr>
+
 <!-- The action attribute provides the location (URL) of the application or script that will be used to process the form. The action attribute in this example sends the data to a script called mailinglist.php.  The method attribute specifies how the information should be sent to the server. For example, Inputbox1 = Sally Strongarm Inputbox2 = strongarm@example.com.  When the browser encodes that information for its trip to the server, it looks like Inputbox1=Sally+Strongarm&Inputbox2=strongarm%40example.com.  -->
 <!-- There are only two methods for sending this encoded data to the server: POST or GET, indicated by the method attribute in the form element. The method is optional and will default to GET if omitted. The GET method, the encoded form data gets tacked right onto the URL sent to the server. A question mark character separates the URL from the following data:  get http://www.bandname.com/mailinglist.php?inputbox1name=Sally+Strongarm&inputbox2name=strongarm%40example.com.  POST the browser sends a separate server request containing some special headers followed by the data.  Make sure HTTPS is enabled on your server so the user's data is encrypted and inaccessible in transit. -->
 <!-- The name attribute provides the variable name for the control.  For example inputbox1name and inputbox2name are the variables for the name attribute. The information is passed as inputbox1name=*user input from inputbox1name*.  -->
