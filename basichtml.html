@@ -70,6 +70,10 @@
 <p><small>Small text</small></p>
 <p><sub>Subscript</sub> text below the text line</p>
 <p><sup>Superscript</sup> text above the text line like the exponent</p>
+<p><font size="2" face="Verdana">Font size 2 font type Verdana.  The font tag is deprecated. Use cascading style sheets (CSS) or style sheets for short.</font></p>
+<p><font size="3" face="Times" color="yellow">Font size 3 font type Times.  Attributes are size="positive or negative number increase or decrease font size, or no sign" face="face name" color="color value" no commas separate attributes.</font></p>
+<p style="font-family:courier; font-size:200%; color=green">An example using CSS for the &lt;p&gt; tag.  Courier font, double size at 200%, and green color inside quotes.  All style attributes separate by a semicolon.</p>
+
 
 <pre>
 Preformatted text preserves both spaces and line breaks.  The text font is monospace font.  Whitespace.
@@ -84,13 +88,13 @@ Does preformatted text &#60;pre&#62; still work?        End preformatted here.
 
 <p>Escape characters</p>
 <ul>
-<li>Less than symbol ampersandlt &lt; or ampersand#60 &#60;
-<li>Greater than symbol ampersandrt &rt; or ampersand#62 &#62;
-<li>Double quotes quotation symbol ampersandquot &quot; or ampersand#034 &#034;
-<li>Single quote apostrophe symbol ampersandapos &apos; or ampersand#039 &#039;
-<li>Ampersand symbol ampersandamp &amp; or ampersand#038 &#038;
-<li>Non-breaking space or blank space ampersandnbsp &nbsp; or ampersand#160 &#160;
-<li>Horizontal ellipsis hellip; copyright copy; trademark trade;
+<li>Less than symbol ampersandlt; &lt; or ampersand#60; &#60;
+<li>Greater than symbol ampersandgt; &gt; or ampersand#62; &#62;
+<li>Double quotes quotation symbol ampersandquot; &quot; or ampersand#034; &#034;
+<li>Single quote apostrophe symbol ampersandapos; &apos; or ampersand#039; &#039;
+<li>Ampersand symbol ampersandamp; &amp; or ampersand#038; &#038;
+<li>Non-breaking space or blank space ampersandnbsp; &nbsp; or ampersand#160; &#160;
+<li>Horizontal ellipsis ampersandhellip; &hellip; copyright ampersandcopy; &copy; or ampersand#169; &#169; trademark ampersandtrade; &trade;
 </ul>
 
 <p>Computer output tags display computer code or programming code on the page.
@@ -140,6 +144,12 @@ Does preformatted text &#60;pre&#62; still work?        End preformatted here.
 <p style="font-family:verdana; color:red">Change paragraph font.  Font is verdana.  Color is red spelled out.</p>
 
 <p style="font-family:times; color:#008000">Change paragraph font.  Font is times.  Color is green hexadecimal.</p>
+
+<p style="background-color:#c0c0c0">Use Hexadecimal to define a color.  style="background-color:#c0c0c0"</p>
+
+<p style="background-color:rgb(192,192,192)">Use rgb values to define a color.  style="background-color:rgb(192,192,192)"</p>
+
+<p style="background-color:yellow">Use spelling color to define a color.  style="background-color:yellow".  The old monitors display maximum 256 colors are the web safe colors.  Not important today beause of today's modern monitors display millions of different colors.  16 valid color names spelling:  Aqua, Black, Blue, Fuchsia, Gray, Green, Lime, Maroon, Navy, Olive, Purple, Red, Silver, Teal, White, and Yellow.</p>
 
 <p style="font-size:30px">Font size is 30 pixels.</p>
 
@@ -256,6 +266,14 @@ Does preformatted text &#60;pre&#62; still work?        End preformatted here.
     <td>One sentence</td>
 </table>
 
+<table border="1" width="100%" cellpadding="10">
+    <tr>
+        <td width="50%" valign="top">Two columns.  The left 50% of the column or column 1 of two.</td>
+        <td width="50%" valign="top">Two columns.  The right 50% of the column or column 2 of two.</td>
+    </tr>
+</table>
+
+
 <table border="1" cellpadding="10" bgcolor="green">
     <tr>
         <td>Added cellpadding create more white space between the cell content and its borders.  Green background color table.  Can use an image as background background="imagename.jpg".</td>
@@ -322,6 +340,35 @@ Does preformatted text &#60;pre&#62; still work?        End preformatted here.
 </ul>
 
 <iframe src="anotherwebpage.html" width="400" height="200">Display webpage anotherwebpage.html file in the same directory.  iframe creates a windown in a window.  There are security concerns using iframes.  Hackers can sneak in an open window.  Book doesn't explain iframe security.</iframe>
+
+<hr>
+<h2>Audio, Video, Media</h2>
+<video src="bartsimpsonsbankrun.mp4" poster="imageshowninplaceofvideo.jpg" width="480" height="360" controls autoplay loop muted preload="none">Message if browser doesn't support HTML5 video.  Controls attribute prompts the browser to display its built-in media controls play/pause button, seeker bar, and volume.  Autoplay makes the video start playing automatically after downloaded enough for the media file to play without stopping.  loop attribute to make the video play again after it has finished (ad infinitum), muted for playing the video track without the audio, and preload for suggesting to the browser whether the video data should be fetched as soon as the page loads (preload="auto") or wait until the user clicks the play button (preload="none"). Setting preload="metadata" loads information about the media file, but not the media itself. A device can decide how to best handle the auto setting; for example, a browser in a smartphone may protect a user’s data usage by not preloading media, even when it is set to auto.</video>
+
+<p>The source elements inside the video element point to each different video format file.  Browsers look down the list until they find one they support and download only that version. The following example provides a video clip in the souped-up WebM/VP9 format for supporing browsers, as well as an MP4 and Ogg Theora for other browsers.</p>
+<video id="video" controls poster="imageshowninplaceofvideo.jpg" width="480" height="360" >
+<source src="bartsimpsonsbankrun.webm" type="video/webm">
+<source src="bartsimpsonsbankrun.mp4" type="video/mp4">
+<source src="bartsimpsonsbankrun.ogg" type="video/ogg">
+<a href="bartsimpsonsbankrun.mp4">Download the Bart Simpson Bank Run .mp4 file.</a>
+</video>
+
+<p>Add subtitles options.  Use the track element inside the video or audio element you wish to annotate.  The track element must appear after all the source elements.  If there are multiple subtitles, then repeat the &#60;track src&#62;.  RM:  the .vtt file says captions and en-US.  Book says kind="subtitles" and srclang="en".  And the subtitles don't appear.  Researched online.  Markup language same as book.</p>
+<video width="640" height="480" controls>
+<source src="johnolivermckinsey.mp4" type="video/mp4">
+<source src="johnolivermckinseyanothervideotype.webm" type="video/webm">
+<track src="johnolivermckinseyenglishsubtitles.vtt" label="English" kind="captions" srclang="en-us" default>
+<track src="johnolivermckinseyenglishsubtitles.vtt" kind="subtitles" srclang="en" label="English subtitles">
+<track src="johnolivermckinseyfrenchsubtitles.vtt" kind="captions" srclang="fr" label="French subtitles">
+</video>
+
+<p>Play The Price Is Right Double Showcase With Siren</p>
+<audio id="tpirdoubleshowcase" controls preload="auto">
+<source src="priceisrightdoubleshowcasewinnersiren.webm" type="audio/webm">
+<source src="priceisrightdoubleshowcasewinnersiren.mp3" type="audio/mp3">
+<source src="priceisrightdoubleshowcasewinnersiren.ogg" type="audio/ogg">
+<a href="priceisrightdoubleshowcasewinnersiren.mp4">Download TPIR Double Showcase With Siren .mp3 file.</a>
+</audio>
 
 </main>
 <footer>The footer section.  Material at the end of a page such as author, copyright information, or navigation.</footer>
