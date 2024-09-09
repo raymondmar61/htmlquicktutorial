@@ -1,13 +1,16 @@
 <!-- Learn HTML And CSS With W3schools by Refsnes, etc. -->
 <!-- Learning Web Design by Jennifer Robbins -->
 
-<!DOCTYPE html> <!-- Document type declaration -->
+<!DOCTYPE html> <!-- Document type declaration tells browser the markup language version -->
 <html>
 <head>
 <meta charset="utf-8"> <!-- metadata information about the document or file.  charset specifies the character encoding. utf-8 is default.  -->
+<meta name="description" content="Describe the web page">
+<meta name="keywords" content="HTML, CSS, HTML tutorial, keywords describing the web page">
+<meta name="somethingunique" content="Meta tags can be anything which includes information for the author.">
 <title>Webpage title Basic HTML</title>
 <body style="background-color:gray">
-<header>The header section.  Introductory material appearing at the beginning of the web page or the top section.
+<header>The header section.  Introductory material appearing at the beginning of the web page or the top section.  It's not the &lt;head&gt; section.
 </header>
 
 <!-- <main> element identifies the primary content.  Headers and sidebars are excluded in <main> section. -->
@@ -23,7 +26,7 @@
 <p>Paragraph.  The &#60;body&#62; tag is the visible page content.  Headings and paragraphs display as block elements by default.  Block elements are stacked rectangular boxes.  Each block element begins on a new line.  Most browsers add an empty line before and after paragraphs.  Browsers remove extra spaces and extra lines.</p>
 <br>br tag is line break  It starts a new line without starting a new paragraph.
 
-<p><a href="https://www.youtube.com">Link to YouTube external resource on the web called a hyperlink</a>
+<p><a href="https://www.youtube.com">Link to YouTube external resource on the web called a hyperlink</a>  Open links in a new window type &lt;base target="_blank"&gt; in the header or in the href link &lt;a href="https://www.youtube.com" target="_blank"&gt;
 <br><a href="anotherwebpage.html">Link to another page in the same directory called an anchor.  Relative URL another file in same directory.</a>
 <br><a href="anotherwebpage.html" target="_blank">target="_blank" opens link in new browser.  My desktop using Chrome opens new tab.</a>
 <br>target="_self" opens in the same frame or same browser window which is default.  target="_parent" opens in the parent frameset.  "target=_top" opens in the full body of the window.  target="display" opens a new window with the name called display; however, if you target the display window from every link on the page, each linked document will open in the same second window. Unfortunately, if that second window stays hidden behind the user's current window, it may look as though the link simply didn't work.
@@ -86,15 +89,16 @@ next i
 Does preformatted text &#60;pre&#62; still work?        End preformatted here.
 </pre>
 
-<p>Escape characters</p>
+<p>Escape characters or character entities</p>
 <ul>
+<li>Nonbreaking space &nbsp; or ampersand#160 &#160;.
 <li>Less than symbol ampersandlt; &lt; or ampersand#60; &#60;
 <li>Greater than symbol ampersandgt; &gt; or ampersand#62; &#62;
 <li>Double quotes quotation symbol ampersandquot; &quot; or ampersand#034; &#034;
 <li>Single quote apostrophe symbol ampersandapos; &apos; or ampersand#039; &#039;
 <li>Ampersand symbol ampersandamp; &amp; or ampersand#038; &#038;
 <li>Non-breaking space or blank space ampersandnbsp; &nbsp; or ampersand#160; &#160;
-<li>Horizontal ellipsis ampersandhellip; &hellip; copyright ampersandcopy; &copy; or ampersand#169; &#169; trademark ampersandtrade; &trade;
+<li>Horizontal ellipsis ampersandhellip; &hellip; copyright ampersandcopy; &copy; or ampersand#169; &#169; trademark ampersandtrade; &trade; registered trademark &reg; or ampersand#174; &#174;
 </ul>
 
 <p>Computer output tags display computer code or programming code on the page.
@@ -121,8 +125,8 @@ Does preformatted text &#60;pre&#62; still work?        End preformatted here.
 
 <p>Depreciated tags and attributes.  Don't use the following tags:  center, font, basefont, strike for strikeout text; for example, use tyle="text-align:center" instead of &#60;center&#62;.  Don't use the following attributes:  align, bgcolor, and color; for example, use style="background-color:gray" instead of bgcolor="gray".</p>
 
-<p><abbr title="United Nations">Abbreviation for UN.  Hover the mouse to view the spelled out version or full version as a tooltip.  There is a dotted line below the text.</abbr>
-<br><acronym title="World Wide Web">Acronym for WWW.  Hover the mouse to view the spelled out version or full version as a tooltip.  There is a dotted line below the text.</acronym></p>
+<p><abbr title="United Nations">Abbreviation for UN.  Hover the mouse to view the spelled out version or full version as a tooltip tool tip.  There is a dotted line below the text.</abbr>
+<br><acronym title="World Wide Web">Acronym for WWW.  Hover the mouse to view the spelled out version or full version as a tooltip tool tip.  There is a dotted line below the text.</acronym></p>
 
 <p>Your browser may suppport bidirectional override from the right to the left &#60;bdo dir="rtl"&#62; >Here is backward text.:  <bdo dir="rtl">Here is backward text.</bdo></p>
 
