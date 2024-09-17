@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"> <!-- metadata information about the document or file.  charset specifies the character encoding. utf-8 is default.  -->
+<title>Style Sheets Introduction</title>
+</head>
+<style>
+/*html {font-size: 100%;}*/
+body {background-color: gray;}
+h1 {color: green;}
+p {font-size: large; font-family: sans-serif; color: yellow !important;}
+p#paragraphid {font-family: "Times New Roman"; color: black !important;}
+img {float: right; margin: 0 12px;}
+/* Use Grouped Selectors to add green color borders to see the CSS elements border: 1px solid green; */
+h1, p, img {border: 1px solid green;}
+li em {color: teal;}
+h2 em, h3 em {color: red;}
+</style>
+<body>
+<h1>The h1 tag is green color.</h1>
+<!-- <h1 style="border-color: orange; border border-bottom: 2px">The h1 tag is green color with a bottom border.</h1> -->
+<p>The p tag is font size large, font family sans-serif, and font color yellow.</p>
+<p style="margin-left: 100px;">A style margin left 100 pixels for a specific p tag.</p>
+<p style="color: red">A color red for a specific p tag is not red.  It's still yellow because of the !important indicator at the p css rule.  The !important indicator is not a get-out-of-jailfree card. Best practices dictate that it should be used sparingly, if at all, and certainly never just to get yourself out of a sticky situation with inheritance and the cascade.</p>
+<img src="roselink.jpg" alt="Style sheet right side 0 margin top and bottom and 12px margin left and right">
+<p>CSS units of measurement absolute:  px pixels.  in inches.  mm millimeters.  cm centimeters.  q 1/4 millimeter.  pt points 1/72 inch used in print design.  pc picas 1 pica=12points or 1/6 inch used in print design.</p>
+<p>CSS units of measurement relative:  em unit of measurement equal to the current font size.  ex x-height approximately the height of a lowercase "x" in the font.  rem root em equal to the em size of the root element html.  ch zero width equal to the width of a zero in the current font and size.  vw viewport width unit equal to 1/100 of the current viewport browser window width.  vh viewport height unit equal to 1/100 of the current viewport height.  vmin viewport minimum unit equal to the value of vw or vh whichever is smaller.  vmax viewport maximum unit equal to the value of vw or vh whichever is larger.</p>
+<p>Percentages are another common measurement value for web page elements. Percentages are calculated relative to another value.  When used for page layouts, percentage values ensure that page elements stay proportional.</p>
+
+<h1>Font Properties</h1>
+<p>Universally supported font properties:  font-family, font-size, font-weight, font-style, font-variant, font.</p>
+<p style="font-family: 'Dura Sans',Verdana,sans-serif;">Specify more than one font.  RM: specify more than one font necessary for today's browsers?  All font names, except generic font families, must be capitalized.  Use commas to separate multiple font names.  Font names with spaces must be surrounded in quotes.  Generic font families, which don't need to be capitalized, examples include serif, sans-serif, monospace, cursive, and fantasy.  The best practice is start with your first choice, provide similar alterneatives, and end with a generic font family; for example, font-family: Oswald, Univers, Tahoma, Geneva, sans-serif;.</p>
+<p style="font-size: x-large">font-size values are the length number and length unit, percentage number, xx-small, x-small, small, medium, large, x-large, xx-large, smaller or larger is the relative to the surrounding text.  Default is medium.  The preferred values for font-size in contemporary web design are the relative length units em and rem and percentage values.</p>
+<p>To maintain the browser's default size, set the font-size of the root element to 100%.  html {font-size: 100%;} That sets the basis for relative sizing. Because the default font size for all modern browsers is 16 pixels, we'll assume our base size is 16 pixels going forward.</p>
+<p style="font-size: 1.5rem;">The rem unit stands for root em relative to the size of the root or html element.  Root size is 16 pixels.  rem equals 16 pixels.  1.5rem is 1.5 * 16pixels = 24pixels. h1 {font-size=1.5rem;}</p>
+<p style="font-size: 2em;">Em units are based on the font size of the current element.  Em is relative to the inherited size for the element.  h1 inherited the default 16 pixel font size from the root.  2em is 2 * 16pixels = 32pixels.  p {font-size: 2em;}.  There are a few snags with em.  1 rounding errors and inconsistency how browsers render in em.  2 em based on the inherited size of the element, which means that their size is based on the context in which they are applied.  3 If you have elements nested several layers deep, the size increase or decrease compounds, which can create problems. With many layers of nesting, text may end up being way too small.  Use rem.</p>
+<p style="font-size: xx-large;">Keywords: xx-small, x-small, small, medium, large, x-large, and xx-large are predefined absolute.  They don't correspond to particular measurements.</p>
+<p style="font-size: larger;">Larger and smaller keywords are relative which shifts the size of the text relative to the size of the parent element text.</p>
+<p style="font-weight: 900;">Font weight for boldness.  Values are normal, bold, bolder, lighter, 100, 200, 300, 400, 500, 600, 700, 800, and 900.  Numeric settings of 600 and higher generally result in bold text.</p>
+<p style="font-style: italic;">Font style for posture.  Normal for vertical.  Italic and oblique for slanted.</p>
+<p style="font-variant: small-caps;">Font variant normal or small caps.</p>
+<p style="font-stretch: ultra-expanded;">Font-stretch property tells the browser to select a normal, condensed, or extended font in the font family.  Values are normal, ultra-condensed, extra-condensed, condensed, semi-condensed, semi-expanded, expanded, extra-expanded, and ultra-expanded</p>
+<!-- Comment reference p style="font: {font: style weight stretch variant size/line-height font-family;} -->
+<p style="font: normal bolder ultra-condensed small-caps 2rem/4rem Verdana, sans-serif;">Specify multiple font properties in shorthand font property. The values are font-style font-weight font-variant font-stretch font-size/line-height font-family | caption | icon | menu | message-box | small-caption | status-bar.  The value of the font property is a list of values for all the font properties separated by character spaces.  Order is important:  {font: style weight stretch variant size/line-height font-family;}.  At minimum, the font property must include a font-size value and a font-family value, in that order; for example, p {font: 1em sans-serif;}.</p>
+<p style="font-variant-caps: all-small-caps;">Small cap glyphs from the font's character set.</p>
+<p style="font-variant-position: super;">super for superscript and sub for subscript.</p>
+<h3 style="color: white;">White color.  17 standard color names:  black, white, purple, lime, navy, aqua, silver, maroon, fuchsia, olive, blue, orange, gray, red, green, yellow, and teal.</h3>
+<h3 style="color: #125407;">A green color hexadecimal.  Tools--&gt;Color Picker or Ctrl+Shift+C or Ctrl+Shift+P, type color picker to open color picker package.</h3>
+<h3 style="color: rgb(102,102,102);">RGB color</h3>
+<p>A descendant selector targets elements contained within another element.  It's an example of a contextual selector because it selects the element based on its context or relation to another element.  For example, li em{color:teal;} emphasized text em teal color when em appears in list items li only.</p>
+<ul>
+<li>Not teal color</li>
+<li><em>teal color because of li em{color:teal;}</em></li>
+</ul>
+<h2><em>h2 red color emphasized text because of h2 em, h3 em {color: red;}</em><h2>
+<h3><em>h3 red color emphasized text because of h2 em, h3 em {color: red;}</em><h3>
+<p id="paragraphid">The id attribute gives an element a unique identifying name or id reference.  The id attribute can be used with any element.  Use id selectors to target elements by their id values.  Use the hashtag # to identify id selectors.  id values must be unique in the document.  It's acceptable to omit the html element name.  #paragraphid {font-family: "Times New Roman"; color: black !important;} and p#paragraphid {font-family: "Times New Roman"; color: black !important;} are the same.  If you want an id attribute for a specific html element only, then mentioned the html element after the id name; for example, #idappliestoaelementonly a {text-decoration: none;}.</p>
+<p>There are other contextual selectors.  RM:  it's briefly mentioned in a container box.  The other three are child selectors, next-sibling selectors, and subsequent-sibling selectors.  
+<br>A child selector targets only the direct children of a given element indicated with the greater-than symbol (>). The following rule affects emphasized text only when it is directly contained in a p element. An em element inside a link (a) within the paragraph would not be affected. p &gt; em {font-weight: bold;}.
+<br>A next-sibling selector targets an element that comes directly after another element with the same parent. It is indicated with a plus (+) sign. This rule gives special treatment to paragraphs that follow an h1. h1 + p {font-style: italic;}
+<br>A subsequent-sibling selector selects an element that shares a parent with the specified element and occurs after it in the source order. They do not need to follow one another directly. The following rule selects any h2 that both shares a parent element (such as a section or article) with an h1 and appears after it in the document. h1 ~ h2 {font-weight: normal;}</p>
+
+</body>
+</html>
