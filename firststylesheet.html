@@ -8,13 +8,16 @@
 /*html {font-size: 100%;}*/
 body {background-color: gray;}
 h1 {color: green;}
-p {font-size: large; font-family: sans-serif; color: yellow !important;}
+/*p {font-size: large; font-family: sans-serif; color: yellow !important;}*/
+p {font-size: large; font-family: sans-serif; color: yellow}
 p#paragraphid {font-family: "Times New Roman"; color: black !important;}
 img {float: right; margin: 0 12px;}
 /* Use Grouped Selectors to add green color borders to see the CSS elements border: 1px solid green; */
 h1, p, img {border: 1px solid green;}
 li em {color: teal;}
 h2 em, h3 em {color: red;}
+.ignorecssstylesclass{all: revert;}
+.glossaryhighlightclass {color: blue; background-color: white;}
 </style>
 <body>
 <h1>The h1 tag is green color.</h1>
@@ -51,6 +54,17 @@ h2 em, h3 em {color: red;}
 <ul>
 <li>Not teal color</li>
 <li><em>teal color because of li em{color:teal;}</em></li>
+<li style="list-style-type: circle; list-style-position: outside;">style="list-style-type: circle;" or open circle bullet.  Default marker or bullet is outside the text.</li>
+<li style="list-style-type: square; list-style-position:  inside;">style="list-style-type: square;" which can be declared in ul, ol, and li elements.  Marker or bullet is inside the text.  Like indent bullet lists.</li>
+<li style="list-style-type: none;">style="list-style-type: none;" for a clean list.  Also used for horizontal navigation menu or entries in a web form.</li>
+<li style="list-style-type: decimal; list-style-position:  hanging;">style="list-style-type: decimal;" bullet numbers.  Marker or bullet is outside and abutting the left edge of the shaded area.  RM:  I don't see any difference.</li>
+<li style="list-style-type: decimal-leading-zero;">style="list-style-type: decimal-leading-zero;" add zero for single numbers.</li>
+<li style="list-style-type: lower-alpha;">style="list-style-type: lower-alpha;" Alphabet bullets.  lower-latin is the same.</li>
+<li style="list-style-type: upper-alpha;">style="list-style-type: upper-alpha;" Alphabet bullets.  upper-latin is the same.</li>
+<li style="list-style-type: lower-roman;">style="list-style-type: lower-roman;" roman bullets.</li>
+<li style="list-style-type: upper-roman;">style="list-style-type: upper-roman;" Roman bullets.</li>
+<li style="list-style-type: lower-greek;">style="list-style-type: lower-greek;" Greek letters.</li>
+<li>Use list-style-image for a custom image bullet.  list-style-image:  url(*url address*);.  For example, list-style-image: url(/images/rainbow.gif);.  Can declare list-style-type, list-style-position, and list-style-image in the ul tag declared at style section below head.</li>
 </ul>
 <h2><em>h2 red color emphasized text because of h2 em, h3 em {color: red;}</em><h2>
 <h3><em>h3 red color emphasized text because of h2 em, h3 em {color: red;}</em><h3>
@@ -59,6 +73,32 @@ h2 em, h3 em {color: red;}
 <br>A child selector targets only the direct children of a given element indicated with the greater-than symbol (>). The following rule affects emphasized text only when it is directly contained in a p element. An em element inside a link (a) within the paragraph would not be affected. p &gt; em {font-weight: bold;}.
 <br>A next-sibling selector targets an element that comes directly after another element with the same parent. It is indicated with a plus (+) sign. This rule gives special treatment to paragraphs that follow an h1. h1 + p {font-style: italic;}
 <br>A subsequent-sibling selector selects an element that shares a parent with the specified element and occurs after it in the source order. They do not need to follow one another directly. The following rule selects any h2 that both shares a parent element (such as a section or article) with an h1 and appears after it in the document. h1 ~ h2 {font-weight: normal;}</p>
-
+<p style="line-height: 2;">Example 1 line height twice the height of the font size.  Can declare css at the style tag p{line-height:2;}</p>
+<p style="line-height: 2em;">Example 2 line height twice the height of the font size.  Can declare css at the style tag p{line-height:2em;}.  em based on the current font size of the element.</p>
+<p style="line-height: 300%;">Example 3 line height triple the height of the font size.  Can declare css at the style tag p{line-height:300%;}.  Percentage based on the current font size of the element.</p>
+<p style="text-indent: 2em;">Indent the first line of a text.  If you want the entire paragraph or text to be indented, use margin or padding.</p>
+<p style="text-indent: 25%;">Indent the first line of a text.  Percentage based on the width of the parent element.  Percentage also passes down to their descendant elements.  If a div has a text-indent:  10%; then all its descendats indent 10%.</p>
+<p style="text-indent: -35px;">Indent the first line of a text.  Causes the first line of text to hang out to the left edge or hanging indent.  RM:  a counter indent or opposite indent.  The rest of the sentences are to the right of the hanging left indent.  Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi sunt vel iste doloribus ab quos omnis labore illum fuga facere fugiat alias, tempore quisquam molestiae facilis pariatur similique. Rerum, numquam. Lorem ipsum dolor sit, amet consectetur, adipisicing elit. Consequuntur quidem nulla assumenda vitae, eveniet minima nihil aspernatur rerum cum earum voluptatem eum deserunt expedita possimus nobis pariatur nesciunt quisquam quo.</p>
+<p style="text-align: center;">Horizontal text alignment text-align:  choose left, right, center, justify, start, or end.  Start and end specify the side of the line box the text aligns.  text-align-last aligns the last line of text.  text-justify for more fine-tuned control over how space is inserted in justified text.</p>
+<p style="text-align: end;">Text-align end. Lorem ipsum dolor sit amet, consectetur adipisicing, elit. Accusamus maiores, fuga quod facere quibusdam quasi, tempore corporis beatae exercitationem dicta qui perferendis rem voluptas voluptatem placeat dolorum eaque consectetur ea. Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam quibusdam dignissimos quo aperiam dolore harum perspiciatis eius! Et, earum modi porro nobis, nesciunt veritatis, possimus laborum amet laudantium impedit, beatae! Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor magnam culpa, a cupiditate totam voluptate incidunt, nostrum ducimus officiis ad nobis cum ullam, iure tempore corporis maxime suscipit veritatis eveniet.</p>
+<p style="text-decoration: underline;">Lines on text under, over, or through.  Also blink.</p>
+<p><a href="https://innovateinfinitely.com" style="text-decoration: none;">Innovate Infinitely not underlined</a>.  Use a{text-decoration: none;} to remove underlines in links at style tag section.</p>
+<p style="text-transform: uppercase;">Capitalize none, capitalize which is title case, lowercase, uppercase, or full-width.  Change capitalization capital letters capital strings.</p>
+<p style="letter-spacing: 8px;">Letter spacing inserts spaces between letters.</p>
+<p style="word-spacing: 1.5em;">Word spacing inserts spaces between words.  Using em the calculated size is passed down to child elements.</p>
+<p style="text-shadow: .2em .2em silver;">Add shadow below text.  text-shadow:  *horizontal offset* *vertical offset* *blur radius* *color or none*.  Examples.  text-shadow: .2em .2em silver; is a silver shadow southeast direction.  text-shadow: -.3em -.3em silver; is a silver shadow northwest direction.  text-shadow: .2em .2em .3em silver; is a silver shadow southeast blurred.  Unblurred shadow or sharp shadow doesn't look well.  Need a blur in radius measurements.  0 is no blur.  The higher the number, the softer the blur.</p>
+<p>Other text properties are white-space, vertical-align, word-break, line-break, text-justify, text-algin-last, tab-size, hyphens, overflow-wrap, and hanging punctuation.</p>
+<p class="ignorecssstylesclass" style="color: black;">Use color CSS black.  The paragraph is black foreground color text.  Create css class to revert or ignore css from style tag.  Wrote .ignorecssstylesclass{all: revert;} at style element.  Each element type class="ignorecssstylesclass" </p>
+<p class="ignorecssstylesclass">the quick</p>
+<p class="ignorecssstylesclass" style="color: blue; border: 1px solid red;">Use color CSS blue.  The paragraph is blue foreground color text and border solid red line.</p>
+<p class="ignorecssstylesclass" style="background-color: white;">Background color white</p>
+<p>Use as a highlighter blue text.  Highlight in white <dfn class="glossaryhighlightclass">the quick brown fox jumps over the lazy dog</dfn>.  Text italics.  First time I head of dfn being definition?</p>
+<p>background-clip:  border-box, padding-box, or content-box controls where the background color begins and ends.  border-box background colors applies all reas.  padding-box background colors padding and text only.  content-box background color applies text only.</p>
+<p>opacity:  number between 0 to 1 is the transparency.  0 is transparent.  1 is opaque or no transparency.</p>
+<p>Pseudo-class selector. It's elements in a certain state belong to the same class. However, the class name isn’t in the markup—it’s something the browser just keeps track of.  Pseudo-class selectors are indicated by the colon (:) character. They typically go immediately after an element name—for example, li:first-child.</p>
+<p>Link colors is an example of pseudo-class.  a:link is unvisited link.  a:visited is visited link or link user clicked.  a:focus is user clicks links.  a:hover is user hovers mouse on link.  a:active is browser is going to the link.  For example, a:hover {color: maroon; background-color: #ffd9d9;} link is pink background color when the mouse hovers over link.  When you apply styles to a elements with all five pseudo-classes, the required order for pseudo-classes is: :link :visited :focus :hover :active.  The order in which they appear is important for them to function properly; for example, if you put :link or :visited last, they override the other states, preventing them from appearing.  Use LVFHA, which you can remember with LoVe For Hairy Animals mnemonic device.</p>
+<p>a {text-decoration: none;} /* turns underlines off for all links */ LVFHA a:link {color: maroon;} a:visited {color: gray;} a:focus {color: maroon; background-color: #ffd9d9;} a:hover {color: maroon; background-color: #ffd9d9;} a:active {color: red; background-color: #ffd9d9;}</p>
+<p></p>
+<p>Pseudo-elements are indicated by a double colon (::) symbol to differentiate them from pseudo-classes. However, all browsers support the single-colon syntax (:) as they were defined in CSS2, so many developers stick with that to ensure backward compatibility with older browsers.</p>
 </body>
 </html>
