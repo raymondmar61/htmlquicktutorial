@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"> <!-- metadata information about the document or file.  charset specifies the character encoding. utf-8 is default.  -->
+<title>Flexbox And Grid</title>
+</head>
+<style>
+body {background-color: gray;}
+.boldreadbetter {font-weight: bold;}
+.outlineclass {outline: 2px solid black;}
+#containersetup {display: flex;}
+#containercolumnreverse {display: flex; flex-direction: column-reverse;}
+#containerwraptext {display: flex; flex-wrap: wrap; width: 20%}
+#containerwrapcolumn {display: flex; flex-wrap: wrap; flex-direction: column; height: 200px;}
+#containerflexflow {display: flex; flex-flow: row-reverse nowrap; width: 300px;}
+#justifycontentspacebetweenrow {display: flex; justify-content: space-between;}
+#justifycontentspacearoundcolumn {display: flex; flex-direction: column; justify-content: space-around;}
+#mimictable {display: flex; flex-flow: row; justify-content: space-between; width: 200px; height: 300px;}
+#overridecrossaxis {display: flex; flex-flow: row; width: 500px; height: 200px;}
+#distirbutespace {display: flex; flex-direction: row; flex-wrap: wrap; align-content: flex-start; width: 25%;}
+</style>
+<html>
+<body>
+<p>Box 1 here is a longer sentence.
+<br>another line below.</p>
+<p>Box 2</p>
+<p>Box 3</p>
+<p>Box 4</p>
+<p>Box 5</p>
+<p class="boldreadbetter">Set display to flex or inline-flex to turn out flexbox.  display:  flex;  The inline-flex value also generates an inline-level flex container box.  Author focuses more on flex.  A flex container is created.  All direct child elements including div, list items, and paragraphs become flex items in the container.  float, clear, and vertical-align doesn't work with elements in flexbox mode.  Margins don't collapse.  Avoid using percentage values for margin and padding.</p>
+<div id="containersetup">
+<p>Box 1 here is a longer sentence display: flex;.</p>
+<p>Box 2</p>
+<p>Box 3</p>
+<p>Box 4</p>
+<p>Box 5</p>
+</div>
+<p class="boldreadbetter">Set direction using flex-direction.  Values are row, column row-reverse, and column-reverse.  Default is row.</p>
+<div id="containercolumnreverse">
+<p>Box 1 here is a longer sentence display: flex; flex-direction: column-reverse;.
+<br>another line below.</p>
+<p>Box 2</p>
+<p>Box 3</p>
+<p>Box 4</p>
+<p>Box 5</p>
+</div>
+<p class="boldreadbetter">Set wrapping using flex-wrap.  Values are nowrap, wrap, wrap-reverse.  Default is nowrap.</p>
+<div id="containerwraptext" class="outlineclass">
+<p>Box 1 here is a longer sentence display: flex; flex-wrap: wrap; width: 20%.</p>
+<p>Box 2</p>
+<p>Box 3</p>
+<p>Box 4</p>
+<p>Box 5</p>
+<p>Box 6</p>
+<p>Box 7</p>
+<p>Box 8</p>
+<p>Box 9</p>
+</div>
+<div id="containerwrapcolumn" class="outlineclass">
+<p>Box 1 here is a longer sentence display: flex; flex-wrap: wrap; flex-direction: column; height: 200px;.</p>
+<p>Box 2</p>
+<p>Box 3</p>
+<p>Box 4</p>
+<p>Box 5</p>
+<p>Box 6</p>
+<p>Box 7</p>
+<p>Box 8</p>
+<p>Box 9</p>
+</div>
+<p class="boldreadbetter">Use flex-flow to make flex-direction and flex-wrap easier.  flex-flow: *set flex-direction* *set flex-wrap*.  Default is row nowrap.</p>
+<div id="containerflexflow" class="outlineclass">
+<p>Box 1 here is a longer sentence display: flex; flex-flow: row-reverse nowrap; width: 300px;.</p>
+<p>Box 2</p>
+<p>Box 3</p>
+<p>Box 4</p>
+<p>Box 5</p>
+<p>Box 6</p>
+<p>Box 7</p>
+<p>Box 8</p>
+<p>Box 9</p>
+</div>
+<p class="boldreadbetter">Alignment of items along the main axis justify-content and cross axis align-items and align-content.  Justify content property defines how much extra space is distributed around or between items which are inflexible or reached their maximum size.  justify-content values flex-start, flex-end, center, space-between, and space-around.  Default is flex-start.</p>
+<div id="justifycontentspacebetweenrow" class="outlineclass">
+<p>Box 1 here is a longer sentence display: flex; justify-content: space-between;.</p>
+<p>Box 2</p>
+<p>Box 3</p>
+<p>Box 4</p>
+<p>Box 5</p>
+<p>Box 6</p>
+<p>Box 7</p>
+<p>Box 8</p>
+<p>Box 9</p>
+</div>
+<p>&nbsp;</p>
+<div id="justifycontentspacearoundcolumn" class="outlineclass">
+<p>Box 1 here is a longer sentence display: flex; flex-direction: column; justify-content: space-around;.</p>
+<p>Box 2</p>
+<p>Box 3</p>
+<p>Box 4</p>
+<p>Box 5</p>
+<p>Box 6</p>
+<p>Box 7</p>
+<p>Box 8</p>
+<p>Box 9</p>
+</div>
+<p class="boldreadbetter">Cross axis.  Align up and down when the direction is row.  Align left and right when the direction is column.  align-items values flex-start, flex-end, center, baseline, and stretch.  Default is stretch.</p>
+<div id="justifycontentspacebetweencenter" class="outlineclass">
+<p>Box 1 here is a longer sentence display: flex; flex-direction: row; justify-content: space-between; align-items: center; height: 200px;.</p>
+<p>Box 2</p>
+<p>Box 3</p>
+<p>Box 4</p>
+<p>Box 5</p>
+<p>Box 6</p>
+<p>Box 7</p>
+<p>Box 8</p>
+<p>Box 9</p>
+</div>
+<div id="mimictable" class="outlineclass">
+<p>Box 1 here is a longer sentence display: flex; flex-flow: row; justify-content: space-between; width: 200px; height: 300px;.</p>
+<p>Box 2 mimic a table</p>
+<p>Box 3 the width and height are both too short</p>
+<p>Box 4</p>
+<p>Box 5</p>
+<p>Box 6</p>
+<p>Box 7</p>
+<p>Box 8</p>
+<p>Box 9</p>
+</div>
+<p class="boldreadbetter">Override a cross-axis setting use the align-self on an individual item element(s).  Values are flex-start, flex-end, center, baseline, and stretch.  Default is stretch.</p>
+<div id="overridecrossaxis" class="outlineclass">
+<p>Box 1 here is a longer sentence display: flex; flex-flow: row; width: 500px; height: 200px;.</p>
+<p>Box 2</p>
+<p>Box 3</p>
+<p style="align-self: flex-end;">Box 4 start from the bottom</p>
+<p>Box 5</p>
+<p>Box 6</p>
+<p>Box 7</p>
+<p>Box 8</p>
+<p>Box 9</p>
+</div>
+<p class="boldreadbetter">Align multiple lines using align-content.  Applies when there are multiple wrapped flex lines or when flex-wrap is set to wrap or wrap-reverse and there are multiple lines to align.  How multiple flex lines are spread across the cross axis.  align-content values are flex-start, flex-end, center, space-around, space-between, and stretch.  Default is stretch.</p>
+<div id="distirbutespace" class="outlineclass">
+<p>Box 1 here is a longer sentence display: flex; flex-direction: row; flex-wrap: wrap; align-content: flex-start; width: 25%;.</p>
+<p>Box 2 abcdefg</p>
+<p>Box 3 abcdefg</p>
+<p>Box 4 abcdefg</p>
+<p>Box 5 abcdefg</p>
+<p>Box 6 abcdefg</p>
+<p>Box 7 abcdefg</p>
+<p>Box 8 abcdefg</p>
+<p>Box 9 abcdefg</p>
+</div>
+</body>
+</html>
+
