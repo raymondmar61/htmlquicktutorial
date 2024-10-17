@@ -1,3 +1,4 @@
+<!-- Learning Web Design by Jennifer Robbins -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,6 +19,8 @@ body {background-color: gray;}
 #mimictable {display: flex; flex-flow: row; justify-content: space-between; width: 200px; height: 300px;}
 #overridecrossaxis {display: flex; flex-flow: row; width: 500px; height: 200px;}
 #distirbutespace {display: flex; flex-direction: row; flex-wrap: wrap; align-content: flex-start; width: 25%;}
+#quickflex {flex: 1 0 200px;}
+#noexpansionflex {flex: 0 1 auto;}
 </style>
 <html>
 <body>
@@ -150,6 +153,30 @@ body {background-color: gray;}
 <p>Box 8 abcdefg</p>
 <p>Box 9 abcdefg</p>
 </div>
+<p class="boldreadbetter">Flex or resize to fit in the available space.  Flex grows or shrinks to make items fit.  flex values are none, flex-grow flex-shrink flew-basis.  Default is 0 1 auto which is 0 for flex-grow, 1 for flex-shink, and auto for flex-basis.  1 is on.  0 is off.</p>
+<p class="boldreadbetter">flex-grow specifies whether an item stretch larger or expand.  Default is 0 item can't grow wider than the size of its content or specified width.</p>
+<div id="quickflex" class="outlineclass">
+<p>Box 1 Quick flex example flex: 1 0 200px; is fill extra space 1, no shrink 0, and 200 pixes wide.</p>
+<p>Box 2 RM:  does nothing.</p>
+<p>Box 3</p>
+<p>Box 4</p>
+<p>Box 5</p>
+<p>Box 6</p>
+<p>Box 7</p>
+<p>Box 8</p>
+<p>Box 9</p>
+</div>
+<div id="noexpansionflex" class="outlineclass">
+<p>Box 1 No expansion flex: 0 1 auto; is no fill extra space 0, yes shrink 1, and auto width(?)</p>
+<p>Box 2 RM:  does nothing.</p>
+<p>Box 3</p>
+<p>Box 4</p>
+<p>Box 5</p>
+<p>Box 6</p>
+<p>Box 7</p>
+<p>Box 8</p>
+<p>Box 9</p>
+</div>
+
 </body>
 </html>
-
