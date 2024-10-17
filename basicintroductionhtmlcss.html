@@ -1,0 +1,32 @@
+<!-- Learn HTML And CSS With W3schools by Refsnes, etc. -->
+<!DOCTYPE html> <!-- Document type declaration tells browser the markup language version -->
+<html>
+<head>
+<meta charset="utf-8"> <!-- metadata information about the document or file.  charset specifies the character encoding. utf-8 is default.  -->
+<link rel="stylesheet" type="text/css" href="externalcssstylesheet.css">
+<title>Introduction Basic CSS</title>
+</head>
+<style type="text/css">
+body {background-color: gray;}
+h1 {color: red;}
+h3 {color: blue;}
+a {text-decoration: none;}
+</style>
+<body>
+<p>Declare CSS style sheets below the head tag and above the body tag.  &lt;style type="text/css"&gt; . . . &lt;style&gt;</p>
+<h1>The heading one is red font color.  h1 {color: red;}</h1>
+<p>The background color is gray.  body {background-color: gray;}</p>
+<h3>The heading three is blue font color.  h3 {color: blue;}</h3>
+<a href="https://innovateinfinitely.com">The Innovate Infinitely Link not underlined.</a>
+<p>Link to an external style sheet which is a css style sheet file.  Declare between the head tags.  &lt;link rel="stylesheet" type="text/css" href=*url .css file path*&gt;</p>
+<p class="paragraphredfont">Red font.  The css came from an external css file externalcssstylesheet.css</p>
+<p class="paragraphredfont">Another red font</p>
+<p class="paragraphbluefont">Blue font and left margin 20px.  The css came from an external css file externalcssstylesheet.css</p>
+<p class="paragraphbluefont">Another blue font.  Lorem, ipsum dolor sit amet consectetur, adipisicing elit. Nulla obcaecati dolorum autem, aliquam alias, quis magnam ipsa totam nihil velit, rem hic corporis ipsam. Vitae molestiae, earum doloremque odio! Fuga!</p>
+<p style="color: green; margin-left: 30px">Inline style or inline CSS style or CSS style at the html tag.  An inline style should be used when a unique style is to be applied to a single occurrence of an element. To use inline styles, you use the style attribute in the relevant tag. The style attribute can contain any CSS property.  style is style="color: green; margin-left: 30px".</p>
+<p style="color: green; margin-left: 30px">Inline style tags can be used in link, div which defines a section, and span which also defines a section.</p>
+<p>Core attributes class, id, style, and title.  Not valid in base, head, html, meta, param, script, style, and title elements html elements.  Class is a class rule or style rule for multiple html elements.  Id is an id name for a unique html element; in other words, used once.  Style is an inline style to define CSS at a html element.  Title is a toolip or text to display as a tool tip.</p>
+<p>Language attributes dir and lang.  Not valid in base, br, frame, frameset, hr, iframe, param, and script elements.  Dir sets the text direction.  Lang sets the language code.</p>
+<p>Keyboard attributes accesskey and tabindex.  Accesskey sets a keyboard shortcut to access an element.  Tabindex sets the tab order of an element.</p>
+</body>
+</html>
