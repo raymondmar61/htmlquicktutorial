@@ -1,0 +1,183 @@
+<!-- Learning Web Design by Jennifer Robbins -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"> <!-- metadata information about the document or file.  charset specifies the character encoding. utf-8 is default.  -->
+<title>CSS For Tables</title>
+</head>
+<style>
+body {background-color: gray;}
+.boldreadbetter {font-weight: bold;}
+.outlineclass {outline: 2px solid black;}
+.purplebordercells {border: 3px solid purple;}
+#separateborderseachcell {border:  none; border-collapse: separate; border-spacing: 15px 5px;}
+.separateborderincells {border: 3px solid purple; border-collapse: separate;}
+#collapseborderseachcell {border:  none; border-collapse: collapse; border-spacing: 15px 5px;}
+#separateborderseachcellhideempty {border:  none; border-collapse: separate; border-spacing: 15px 5px; empty-cells: hide;}
+#tablewidthfixed {table-layout: fixed;}
+#tablewidthauto {table-layout: auto;}
+#captionbelowtable {caption-side: bottom;}
+</style>
+<html>
+<body>
+<p class="boldreadbetter">Two methods to display borders between cells which are seqparated or collapsed.  border-collapse: separate or border-collapse: collapse.  Separate is default.</p>
+<p class="boldreadbetter">Table below separate each cell with padding.  #separateborderseachcell {border:  none; border-collapse: separate; border-spacing: 15px 5px;}.  15px separates each cell left and right.  5px separates each cell top and bottom. .separateborderincells {border: 3px solid purple; border-collapse: separate;}.  3px border width.</p>
+<table id="separateborderseachcell">
+<tr>
+<td class="separateborderincells">Cell 1</td>
+<td class="separateborderincells">Cell 2</td>
+<td class="separateborderincells">Cell 3</td>
+<td class="separateborderincells">Cell 4</td>
+<td class="separateborderincells">Cell 5</td>
+</tr>
+<tr>
+<td class="separateborderincells">Cell 6</td>
+<td class="separateborderincells">Cell 7</td>
+<td class="separateborderincells">Cell 8</td>
+<td class="separateborderincells">Cell 9</td>
+<td class="separateborderincells">Cell 10</td>
+</tr>
+<tr>
+<td class="separateborderincells">Cell 11</td>
+<td class="separateborderincells">Cell 12</td>
+<td class="separateborderincells">Cell 13</td>
+<td class="separateborderincells"></td>
+<td class="separateborderincells"></td>
+</tr>
+</table>
+<p class="boldreadbetter">Collapse border the adjacent borders touch each other for which only one border is visible.  Space is removed.</p>
+<p class="boldreadbetter">Table below.  #collapseborderseachcell {border:  none; border-collapse: collapse; border-spacing: 15px 5px;}  15px separates each cell left and right.  5px separates each cell top and bottom. .purplebordercells {border: 3px solid purple;}  3px border width.</p>
+<table id="collapseborderseachcell">
+<tr>
+<td class="purplebordercells">Cell 1</td>
+<td class="purplebordercells">Cell 2</td>
+<td class="purplebordercells">Cell 3</td>
+<td class="purplebordercells">Cell 4</td>
+<td class="purplebordercells">Cell 5</td>
+</tr>
+<tr>
+<td class="purplebordercells">Cell 6</td>
+<td class="purplebordercells">Cell 7</td>
+<td class="purplebordercells">Cell 8</td>
+<td class="purplebordercells">Cell 9</td>
+<td class="purplebordercells">Cell 10</td>
+</tr>
+<tr>
+<td class="purplebordercells">Cell 11</td>
+<td class="purplebordercells">Cell 12</td>
+<td class="purplebordercells">Cell 13</td>
+<td class="purplebordercells"></td>
+<td class="purplebordercells"></td>
+</tr>
+</table>
+<p class="boldreadbetter">Normal table.  Added purple borders .purplebordercells {border: 3px solid purple;}  3px border width.</p>
+<table>
+<tr>
+<td class="purplebordercells">Cell 1</td>
+<td class="purplebordercells">Cell 2</td>
+<td class="purplebordercells">Cell 3</td>
+<td class="purplebordercells">Cell 4</td>
+<td class="purplebordercells">Cell 5</td>
+</tr>
+<tr>
+<td class="purplebordercells">Cell 6</td>
+<td class="purplebordercells">Cell 7</td>
+<td class="purplebordercells">Cell 8</td>
+<td class="purplebordercells">Cell 9</td>
+<td class="purplebordercells">Cell 10</td>
+</tr>
+<tr>
+<td class="purplebordercells">Cell 11</td>
+<td class="purplebordercells">Cell 12</td>
+<td class="purplebordercells">Cell 13</td>
+<td class="purplebordercells"></td>
+<td class="purplebordercells"></td>
+</tr>
+</table>
+<p class="boldreadbetter">Table below separate each cell with padding.  #separateborderseachcell {border:  none; border-collapse: separate; border-spacing: 15px 5px;}.  15px separates each cell left and right.  5px separates each cell top and bottom. .separateborderincells {border: 3px solid purple; border-collapse: separate;}.  3px border width.  Don't display empty cells or empty cells null empty-cells: hide.  Default is empty-cells: show.</p>
+<table id="separateborderseachcellhideempty">
+<tr>
+<td class="separateborderincells">Cell 1</td>
+<td class="separateborderincells">Cell 2</td>
+<td class="separateborderincells">Cell 3</td>
+<td class="separateborderincells">Cell 4</td>
+<td class="separateborderincells">Cell 5</td>
+</tr>
+<tr>
+<td class="separateborderincells">Cell 6</td>
+<td class="separateborderincells">Cell 7</td>
+<td class="separateborderincells">Cell 8</td>
+<td class="separateborderincells">Cell 9</td>
+<td class="separateborderincells">Cell 10</td>
+</tr>
+<tr>
+<td class="separateborderincells">Cell 11</td>
+<td class="separateborderincells">Cell 12</td>
+<td class="separateborderincells">Cell 13</td>
+<td class="separateborderincells"></td>
+<td class="separateborderincells"></td>
+</tr>
+</table>
+<p class="boldreadbetter">Table layout property allows authors to specify a fixed value for the table width on width values provided for the table, columns, or cells.  Or auto value based on the width of the table on the minimum width of the table contents.  RM:  minimum?  I think maximum.  #tablewidthauto {table-layout: auto;}</p>
+<table id="tablewidthauto" border="1px">
+<tr>
+<td width="200px">Cell 1 all cells 200px</td>
+<td width="200px">Cell 2</td>
+<td width="200px">Cell 3</td>
+<td width="200px">Cell 4</td>
+<td width="200px">Cell 5</td>
+</tr>
+<tr>
+<td width="200px">Cell 6</td>
+<td width="200px">Cell 7</td>
+<td width="200px">Cell 8</td>
+<td width="200px">Cell 9</td>
+<td width="200px">Cell 10</td>
+</tr>
+<tr>
+<td width="200px">Cell 11</td>
+<td width="200px">Cell 12</td>
+<td width="200px">Cell 13</td>
+<td width="200px"></td>
+<td width="200px"></td>
+</tr>
+</table>
+<p class="boldreadbetter">Table layout property allows authors to specify a fixed value for the table width on width values provided for the table, columns, or cells.  Or auto value based on the width of the table on the minimum width of the table contents.  RM:  minimum?  I think maximum.  #tablewidthfixed {table-layout: fixed;}</p>
+
+<table id="tablewidthfixed" border="1px">
+<tr>
+<td width="50px">Cell 1 row one cells 50px</td>
+<td width="50px">Cell 2</td>
+<td width="50px">Cell 3</td>
+<td width="50px">Cell 4</td>
+<td width="50px">Cell 5</td>
+</tr>
+<tr>
+<td width="100px">Cell 6 row two cells 100px</td>
+<td width="100px">Cell 7</td>
+<td width="100px">Cell 8</td>
+<td width="100px">Cell 9</td>
+<td width="100px">Cell 10</td>
+</tr>
+<tr>
+<td width="150px">Cell 11 row three cells 150px</td>
+<td width="150px">Cell 12</td>
+<td width="150px">Cell 13</td>
+<td width="150px"></td>
+<td width="150px"></td>
+</tr>
+</table>
+<p class="boldreadbetter">Caption bottom of table use caption-side: bottom.  Default is top.  caption-side: top.</p>
+<table id="captionbelowtable">
+<caption>Caption tag table centered on top most of table above border</caption>
+<tr>
+<td class="separateborderincells">Cell 1</td>
+<td class="separateborderincells">Cell 2</td>
+<td class="separateborderincells">Cell 3</td>
+<td class="separateborderincells">Cell 4</td>
+<td class="separateborderincells">Cell 5</td>
+</tr>
+</table>
+
+</body>
+</html>
