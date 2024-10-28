@@ -4,9 +4,27 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="externalcssfile.css" rel="stylesheet" media="screen" type="text/css">
 <title>HTML Beginners Basic Of Web Design by Paul Gibbs</title>
-<style>
-body {background-color: grey;}
+<style type="text/css">
+body {background-color: grey}
+h5 {color: #097D00; font-size: 18px}
+h6 {background-color: #CCCCCC}
+.highlightclass {color: #D02210; font-weight: bold; background-color: #097D00}
+p.ptagonlyclass {padding-right: 3px; padding-left: 3px; text-align: left; font-size: 12px}
+.nohtmlelementinfrontofperiodclass {font-size: 16px}
+#nohtmlelementinfrontofhashtagid {background-color: lightblue}
+.definefontsizeexercise {font-size: 16px; background-color: #CCCCCC; font-family: Arial; Helvetica, sans-serf}
+h5.modifyh5tag {background-color: #FFFF99; font-family: Geneva, Arial, sans-serif; border-style: solid; border-width: 1px}
+.quoteblocktext {font-size: 90%; font-style: italic; font-family: Arial, Helvetica, sans-serif; margin: 30px, 0px, 20px, 20px; border: thin #000000 solid; background-color: #FFFFCC}
+a.url {text-decoration: none; font-weight: 900; font-size: 110%}
+a.url:link {color: #2199E8}
+a.url:visited {color: #7FC9FF}
+a.url:hover {color: #FF00FF; background-color: #FFFFFF}
+a.url:active {color: #FF0000; background-color: #FFFFFF}
+/*a.backgroundcolornone:hover {background-color: transparent; } */
+.imageborder {border: 10px; border-color: #CCCCCC; border-style: solid;}
+.imageshadow {box-shadow: 10px 10px 5px #888888}
 </style>
 </head>
 <body>
@@ -15,6 +33,7 @@ body {background-color: grey;}
 <p>Definitions</p>
 <ul>
     <li>Cascading:  page elements styled depending on rules which control which style takes precedence when there are more than one style for an element.
+    <li>Cascading Style Sheet CSS:  Statements or rules specify how content of an element appears.  Cascading is rules on precedence.  1 Later properties override earlier properties.  2 More specific selectors override less specific selectors.  3 Specified properties override inherited properties.  The rule cascades down from general to specific.  For example, a p tag within the div tag with font type is chosen over a div tag with font type.
     <li>Inheritance:  certain styles are inherited down the document tree; for example, a font-family in the body style means all text on the page have the font-family.
     <li>In-line styles:  a method to place styles directly on the element instead of the head of the document or a style sheet.
     <li>Class:  a class to style more than one element.
@@ -24,11 +43,13 @@ body {background-color: grey;}
     <li>Attributes:  properties of an element added in the element; for example, the url for the href and the image name for the img.
     <li>POST and GET:  send data to another webpage to process the data used in forms.
     <li>HTML:  hypertext Mark Up Language the text to represent information on a web browser.
+    <li>A style is rules defining a particular attribute.  Styles can be written in line on an HTML element tag, in the header, or a separate style sheet file.
 </ul>
 <h1 style="color: blue; font-family: Verdana, Arial; font-size: 20pt;">Format a text using attributes.  Declare attributes inside the element tag.  The attributes for the h1 element tag are blue color font, verdana or arial font type, and font size 20.  Attributes are inside the style=.  Modifying an element inside the element tag is an in-line style.</h1>
+<p style="border: thin #000000 solid; padding: 5px; border-radius: 10px;">Another in line style example.  A quick apply a style without creating named styles.  Begin with style="*inline style inside quotes separated by semicolons".  style="border: thin #00000 solid; padding: 5px; border-radius: 10px;"</p>
 <p><strong>Use &lt;strong&gt; tag to bold instead of &lt;b&gt;.</strong></p>
 <img src="imageshowninplaceofvideo.jpg">
-<p>Use the div tag below to give a section its own style.  Div is a container.  The image is centered using div.  I add a border using the border attribute in the img tag</p>
+<p>Use the div tag below to give a section its own style.  Div is a container or a block.  The image is centered using div.  I add a border using the border attribute in the img tag</p>
 <div align="center">
 <img src="imageshowninplaceofvideo.jpg" border="5">
 </div>
@@ -58,6 +79,33 @@ Center a block width 700px with margin-left auto and margin-right auto.  I didn'
         <td colspan="3">Merge three cells or three columns to one cell or one column.</td>        
     </tr>
 </table>
+<h1>CSS Style Sheets</h1>
+<p>Inheritance is some style properties are inherited by their child elements.  A font family in the body style means all child elements inherit the property.  Border properties don't have inheritance.  For example, the font-family in the body style is inherited.  Use the word inherit after the property to force a property to inherit from its parent.</p>
+<h5>I created an example of CSS style sheet declared in the head.  Create a rule to target the H5 HTML element.  h5 {color: #097D00; font-size: 18px}.  Property is color and value is #097D00.  Property is font size and value is 18px.  The structure is {property1: value1; property2: value2; property3: value3; . . . }.  Declare styles between &lt;style type="text/css"&gt; and &lt;/style&gt;  I used the ColorPicker package in Sublime Text Ctrl+Shift+C.  Select a color, copy the hexcode, close the ColorPicker window, paste the hexcode.</h5>
+<p>A mark element using a CSS class within a <mark class="highlightclass">paragraph</mark> sentence for highlighting.  .highlightclass {color: #D02210; font-weight: bold; background-color: #097D00}.  The default mark element is yellow.</p>
+<p>The ID selector is used once for an unique element defined using the hashtag # character.  An ID name is used once on a webpage.  A class selector is used to set the style for many elements defined using the period . character.  RM:  think of the period like a sentence with many words.  Class used many times.</p>
+<p class="ptagonlyclass">Create a style for a specific p element identify with class="ptagonlyclass" inside the p element.  p.ptagonlyclass {padding-right: 3px; padding-left: 3px; text-align: left; font-size: 12px}</p>
+<p>Font sizes can be points pt, picas pc, pixels px, ems em, or percent percentage %.  Points and picas are used in print media.  One point is 1/72 of an inch.  One pica is 1/6 of an inch.  Avoid using points and picas.  Pixels are fixed size units in screen media read on a screen.  One pixel is one dot on the screen.  Ems is a scalable unit in web document media.  An em is equal to the current font size; for example, if the font size is 12pt, 1em is equal to 12pt, 2em is 24pt, .5em is 6pt.  1em is the height of the letter "M".  Percent is like the em.  If the font size is 12pt, then 12pt is 100%.  Author recommends percentages or ems.</p>
+<p>Create a separate style sheet or create a style sheet file.  Define using the code in the head section &lt;link href="filename.css" rel="stylesheet" media="screen" type="text/css"&gt; for which link href="css file name" is the external style sheet file.  Don't reference in the &lt;style type="text/css"&gt;</p>
+<p class="referencefromcssfile">I apply a style sheet from the file name externalcssfile.css.  The CSS code on line 1 is p.referencefromcssfile {padding-right: 10px; padding-left: 10px; text-align: justify; font-family: Arial; font-size: 16px;}</p>
+<p>The @media rule define different style rules for different media such as screen, screens with different width, printer, speech, and others.  The author discussed briefly.</p>
+<h6>Use heading h6 as a build in tag.  The style applies to all h6 tags.  h6 {background-color: #CCCCCC;}</h6>
+<h6>Heading h6 for the second time.</h6>
+<p class="nohtmlelementinfrontofperiodclass">Classes apply to any tag to change the style more than once.  Increase the font size to 16px.  No need to mention the html element tag before the period</p>
+<p class="nohtmlelementinfrontofperiodclass">nohtmlelementinfrontofperiodclass for the second time</p>
+<div id="nohtmlelementinfrontofhashtagid"><p>IDs apply to any tag to change the style once.  IDs are often used with div or division tags which define the layout.  No need to mention the html element tag before the hashtag.  #nohtmlelementinfrontofhashtagid {background-color: lightblue;} defined in the style</p></div>
+<p class="definefontsizeexercise">.definefontsizeexercise {font-size: 16px; background-color: #CCCCCC; font-family: Arial; Helvetica, sans-serf;}</p>
+<h5 class="modifyh5tag">h5.modifyh5tag {background-color: #FFFF99; font-family: Geneva, Arial, sans-serif; border-style: solid; border-width: 1px;}</h5>
+<p class="quoteblocktext">The CSS code for a quote block .quoteblocktext {font-size: 90%; font-style: italic; font-family: Arial, Helvetica, sans-serif; margin: 30px, 0px, 20px, 20px; border: thin #000000 solid; background-color: #FFFFCC;}</p>
+<p>Links.  Apply styles.  a:link is unvisited or link unclicked.  a:visited is visited or link clicked.  a:active is link moment clicked.  a:hover is mouse on top of the link.  The a:'s applies to all of the links.  :active is after :hover in CSS definition order.  A standard order is :link, :visited, :hover, and :active.  RM:  To remove text-decoration for all links, type a {text-decoration: none}.  Book is partially incorrect.</p>
+<p><a class="url" href="https://innovateinfinitey.com">Innovate Infinitely</a></p>
+<p><a class="url" href="file:///D:/htmlcsswebdesign/basichtmlbeginners.html">Present file basichtmlbeginners.html</a></p>
+<p>Add an image border and add a shadow</p>
+<img class="imageborder"src="imageshowninplaceofvideo.jpg">
+<img class="imageshadow"src="imageshowninplaceofvideo.jpg">
+
+
+
 <a href="#topofpage">Anchor tag.  Click link go to the top of the page.  Use &lt;a name="*destination name or anchor tag name*"&gt; to reference user to go.  Use &lt;a href="#*destination name or anchor tag name*"&gt; for user to click the destination name or anchor tag with hash tag as the first character.</a>
 </body>
 </html>
