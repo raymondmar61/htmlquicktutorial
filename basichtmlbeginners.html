@@ -25,6 +25,13 @@ a.url:active {color: #FF0000; background-color: #FFFFFF}
 /*a.backgroundcolornone:hover {background-color: transparent; } */
 .imageborder {border: 10px; border-color: #CCCCCC; border-style: solid;}
 .imageshadow {box-shadow: 10px 10px 5px #888888}
+#cssfortables {width: 550px; border-collapse: collapse; border: 1px; border-style: solid}
+#cssforth {background: #CCCCCC; text-align: left}
+#cssforthtd {padding: 5px 10px 5px 10px; border: 1px; border-style: dotted}
+#cssfortr:nth-of-type(odd) {background-color: #EFEFEF}
+#cssfortr:hover {background-color: #CCCCCC}
+.money {text-align: right}
+
 </style>
 </head>
 <body>
@@ -44,6 +51,8 @@ a.url:active {color: #FF0000; background-color: #FFFFFF}
     <li>POST and GET:  send data to another webpage to process the data used in forms.
     <li>HTML:  hypertext Mark Up Language the text to represent information on a web browser.
     <li>A style is rules defining a particular attribute.  Styles can be written in line on an HTML element tag, in the header, or a separate style sheet file.
+    <li>Block elements:  Block level elements start a new line.  &lt;h1&gt;, &lt;h2&gt;, &lt;p&gt;, &lt;div&gt; are examples.
+    <li>Inline elements:  In-line elements continue on the same line.  &lt;i&gt;, &lt;strong&gt;, &lt;span&gt; are examples.
 </ul>
 <h1 style="color: blue; font-family: Verdana, Arial; font-size: 20pt;">Format a text using attributes.  Declare attributes inside the element tag.  The attributes for the h1 element tag are blue color font, verdana or arial font type, and font size 20.  Attributes are inside the style=.  Modifying an element inside the element tag is an in-line style.</h1>
 <p style="border: thin #000000 solid; padding: 5px; border-radius: 10px;">Another in line style example.  A quick apply a style without creating named styles.  Begin with style="*inline style inside quotes separated by semicolons".  style="border: thin #00000 solid; padding: 5px; border-radius: 10px;"</p>
@@ -53,13 +62,42 @@ a.url:active {color: #FF0000; background-color: #FFFFFF}
 <div align="center">
 <img src="imageshowninplaceofvideo.jpg" border="5">
 </div>
-<div style="color: blue; font-family: Verdana, Arial; font-size: 20pt; background-color: #D0CDCD; text-align: center;">
-<p>Use the div tag above to give a section its own style.  Div is a container.  Blue color font, verdana or arial font type, and font size 20, background color light gray, and text centered.</p>
+<div style="float: left; width:550px">
+<div style="width: 300px; float: right">
+<img src="imageshowninplaceofvideo.jpg" width="300px" border="5">
 </div>
+<p>Float image to the right</p>
+</div>
+<div style="float: left; width:550px">
+<div style="width: 300px; float: left">
+<img src="imageshowninplaceofvideo.jpg" width="300px" border="5">
+</div>
+<p>Float image to the left</p>
+</div>
+<div style="color: blue; font-family: Verdana, Arial; font-size: 20pt; background-color: #D0CDCD; text-align: center;">
+<p>Use the div tag above to give a section its own style.  Div is a division or a container.  Div wraps sections.  Div groups element.  Blue color font, verdana or arial font type, and font size 20, background color light gray, and text centered.</p>
+</div>
+<span style="background-color: #00FF00">
+<p>Span is inline.  Use span to wrap small portions of text, images.  style="background-color: #00FF00" not working.</p>
+</span>
 <div style="width: 700px; margin-left: auto; margin-right: auto; border: 1px solid red;">
 Center a block width 700px with margin-left auto and margin-right auto.  I didn't center the text.
 </div>
+<div style="float: left; width: 300px; height:auto; border: 1px solid black">
+First block of text.  Float left.  Float takes the element from the normal flow and place either the left or the right of the container.  style="float: left; width: 300px; height:auto; border: 1px solid black"
+</div>
+<div style="float: right; width: 300px; height:auto; border: 1px solid black">
+Second block of text.  Float right.  Float takes the element from the normal flow and place either the left or the right of the container.  style="float: left; width: 300px; height:auto; border: 1px solid black"
+</div>
 <p>Hexadecimal hex colors are in the order of Red Green Blue colors three sets of numbers #RRGGBB.  RR is the hex value for red, GG is the hex value for green, and BB is the hex value for blue.  A hex number is base 16.</p>
+<div style="width: 60px; margin-left: auto; margin-right: auto; height: auto;">
+<div style="float: left; width: 40%; height: auto;">
+Center a block of text with two divs.  First block of text here.
+</div>
+<div style="float: right; width: 40%; height: auto;">
+Center a block of text with two divs.  Second block of text here.
+</div>
+</div>
 <table width="400" border="1">
     <tr>
         <th>Use &lt;th&gt; for column heading cell</th>
@@ -77,6 +115,38 @@ Center a block width 700px with margin-left auto and margin-right auto.  I didn'
     </tr>
    <tr>
         <td colspan="3">Merge three cells or three columns to one cell or one column.</td>        
+    </tr>
+</table>
+<table id="cssfortables">
+    <tr id="cssfortr">
+        <th id="cssforth" id="cssforthtd">Name Use CSS For Table</th>
+        <th id="cssforth" id="cssforthtd">Job two id in &lt;th&gt;. Order of id matter</th>
+        <th id="cssforthtd">Dept</th>
+        <th id="cssforthtd">Salary</th>
+    </tr>
+    <tr id="cssfortr">
+        <td id="cssforthtd">Fred Blogs</td>
+        <td id="cssforthtd">Programmer</td>
+        <td id="cssforthtd">IT</td>
+        <td id="cssforthtd">35000</td>
+    </tr>
+    <tr id="cssfortr">
+        <td id="cssforthtd">Pete Smith</td>
+        <td id="cssforthtd">Systems Engineer</td>
+        <td id="cssforthtd">IT</td>
+        <td id="cssforthtd">28000</td>
+    </tr>
+    <tr id="cssfortr">
+        <td id="cssforthtd">Joe Soap #cssfortr:hover {background-color: #CCCCCC} hover row changes color</td>
+        <td id="cssforthtd">HR Admin</td>
+        <td id="cssforthtd">HR</td>
+        <td id="cssforthtd" class="money">16000</td>
+    </tr>
+    <tr id="cssfortr">
+        <td id="cssforthtd">#cssfortr:nth-of-type(odd) {background-color: #EFEFEF} alternate colors odd and even row numbers</td>
+        <td id="cssforthtd">#cssfortr:hover {background-color: #CCCCCC} hover row changes color</td>
+        <td id="cssforthtd">Research</td>
+        <td id="cssforthtd" class="money">.money {text-align: right} id and class tags in &lt;td&gt;</td>
     </tr>
 </table>
 <h1>CSS Style Sheets</h1>
@@ -104,7 +174,13 @@ Center a block width 700px with margin-left auto and margin-right auto.  I didn'
 <img class="imageborder"src="imageshowninplaceofvideo.jpg">
 <img class="imageshadow"src="imageshowninplaceofvideo.jpg">
 
-
+<h1>CSS Box Model</h1>
+<p>Every element is considered a rectangular box.  The properties for a CSS box model is the content, padding, border, and margin.  The padding is around the content.  The padding is a gutter around the content.  The border is a line around the padding or a line on the outside of the padding.  The margin creates spacing between boxes.  The padding adds space between the content and the border.  The margin adds space between the border and other content.</p>
+<p>The width and height assigned to the box refers to the content only.  The padding, borders, and margins are added to give the total box width.  For example, a 100px wide box is defined {margin: 10px; padding: 10px; width: 60px} left margin 10px, left padding 10px, width of the content 60px, right padding 10px, and right margin 10px 10+10+60+10+10=100.</p>
+<div style="margin: 10px; padding: 10px; width: 60px; text-align: justify; border-style: solid">
+<p>A 100px wide box.</p>
+<p>10+10+60+10+10=100</p>
+</div>
 
 <a href="#topofpage">Anchor tag.  Click link go to the top of the page.  Use &lt;a name="*destination name or anchor tag name*"&gt; to reference user to go.  Use &lt;a href="#*destination name or anchor tag name*"&gt; for user to click the destination name or anchor tag with hash tag as the first character.</a>
 </body>
