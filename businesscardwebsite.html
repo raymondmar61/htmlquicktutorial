@@ -1,0 +1,81 @@
+<!-- HTML Beginners Basic Of Web Design by Paul Gibbs Chapter 06 Site Examples -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Card Web Site Single Webpage</title>
+    <style type="text/css">
+        #header {background-color: #000000; color: #FFF000; margin: 0px; padding: 20px; font-size: 120%}
+        #header a:visited {color: #FFF000; text-decoration: none}
+        #header a:link {color: #FFF000; text-decoration: none}
+        #header a:hover {color: #F00000; text-decoration: none}
+        #logo {background-color: #000000; color: #FFF000; font-size: 240%; padding-top: 30px; padding-right: 40px; padding-bottom: 40px; padding-left: 120px; border-top-width: thick; border-top-style: solid; border-top-color: #CCC000}
+        #description, #openinghrs, #location, #prices, #contactus {padding-top: 20px; padding-right: 250px; padding-bottom: 10px; padding-left: 250px; text-align: center}
+        #description h1,#openinghrs h1, #location h1, #prices h1, #contactus h1 {font-size: 120%; color: #F30000;}
+        #footer {background-color: #000000; color: #FFF000; margin: 0px; padding: 20px}
+    </style>
+</head>
+<body>
+<div id = "container">
+
+    <div id="header">
+        <p>Home | Opening Hours | <a href="#location">Click link Location</a> | Prices | Contact Us</p>
+    </div>
+
+    <div id="logo">
+        <p>Logo goes here.  Archibald's Barber Shop.  The CSS for the logo includes the top border yellow color border-top-width: thick; border-top-style: solid; border-top-color: #CCC000.</p>
+    </div>
+
+    <div id="image">
+        <img src="image03.jpg" width="100%">
+    </div>
+
+    <div id="description">
+        <h1>Welcome to Archibal's Barber in Ilfracombe Devon</h1>
+        <p>You don't need an appointment and we are open late on Thursday evening to accommodate busy schedules.</p>
+        <p>Try our professional hairdresser today.</p>
+    </div>
+
+    <div id="openinghrs">
+        <h1>Come Visit Us</h1>
+        <p>Opening Hours</p>
+        <p>Monday Closed All Day
+        <br>Tuesday 8.00 am to 5.30 pm
+        <br>Wednesday 8.00 am to 5.30 pm
+        <br>Thursday 11.00 am to 6.30 pm
+        <br>Friday 11.00 am to 6.30 pm
+        <br>Saturday Closed all day
+        <br>Sunday Closed all day</p>
+    </div>
+
+    <a name="location"></a><div id="location">
+        <h1>Location</h1>
+        <p>Named anchor link &lt;a href="#location"&gt;Click link Location&lt;/a&gt;</p>
+        <p>Named anchor destination &lt;a name="location"&gt;&lt;/a&gt;</p>
+        <p>North Field Road
+        <br>Ilfracombe
+        <br>Devon
+        <br>EX34 8AL</p>
+    </div>
+
+    <div id="prices">
+        <h1>Prices</h1>
+        <p>Adults 7.00
+        <br>Children 6.00
+        <br>Senior Citizens 4.00</p>
+    </div>
+
+    <div id="contactus">
+        <h1>Contact Us</h1>
+        <p>07824728621</p>
+    </div>
+    <div id="mapcanvas"></div>
+
+    <div id="footer">
+        &copy; 2016
+    </div>
+
+</div>
+</body>
+</html>
