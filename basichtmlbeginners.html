@@ -31,7 +31,9 @@ a.url:active {color: #FF0000; background-color: #FFFFFF}
 #cssfortr:nth-of-type(odd) {background-color: #EFEFEF}
 #cssfortr:hover {background-color: #CCCCCC}
 .money {text-align: right}
-
+#cssulimagebullet {list-style-image:url(lightbulb.png)}
+a.cssrolloverbutton {display: block; width: 110px; height: 35px; text-decoration: none; background: url("buynow.png")}
+a.cssrolloverbutton:hover {background-position: -110px 0}
 </style>
 </head>
 <body>
@@ -54,6 +56,24 @@ a.url:active {color: #FF0000; background-color: #FFFFFF}
     <li>Block elements:  Block level elements start a new line.  &lt;h1&gt;, &lt;h2&gt;, &lt;p&gt;, &lt;div&gt; are examples.
     <li>Inline elements:  In-line elements continue on the same line.  &lt;i&gt;, &lt;strong&gt;, &lt;span&gt; are examples.
 </ul>
+<p>Unordered list bullet list style types are the default disc as a solid circle, circle as a hollow circle, square as a solid square, decimal as numbers, decimal-leading zero as numbers with zeros for single digits, lower-roman, upper-roman, lower-greek as Greek characters, lower-latin as lower case letters, upper-latin as upper case letters, and none as no marker.  Also armenian, georgian, lower-alpha equivalent of lower-roman, and upper-alpha equivalent of upper-roman.  &lt;ul "style=list-style-type: none"&gt;</p>
+<ul style="list-style-type: none">
+    <li>There
+    <li>is
+    <li>no
+    <li>style
+    <li>no
+    <li>bullets
+    <li>any type and any style.
+</ul>
+<p>Ordered list bullet list style types numbered are the default 1 as numbers, A as uppercase letters, a as lowercase letters, I as uppercase roman numbers, i as lowercase roman numbers.  &lt;ol type="A"&gt;</p>
+<ol type="A">
+    <li>
+    <li>
+    <li>
+    <li>
+    <li>
+</ol>
 <h1 style="color: blue; font-family: Verdana, Arial; font-size: 20pt;">Format a text using attributes.  Declare attributes inside the element tag.  The attributes for the h1 element tag are blue color font, verdana or arial font type, and font size 20.  Attributes are inside the style=.  Modifying an element inside the element tag is an in-line style.</h1>
 <p style="border: thin #000000 solid; padding: 5px; border-radius: 10px;">Another in line style example.  A quick apply a style without creating named styles.  Begin with style="*inline style inside quotes separated by semicolons".  style="border: thin #00000 solid; padding: 5px; border-radius: 10px;"</p>
 <p><strong>Use &lt;strong&gt; tag to bold instead of &lt;b&gt;.</strong></p>
@@ -149,6 +169,90 @@ Center a block of text with two divs.  Second block of text here.
         <td id="cssforthtd" class="money">.money {text-align: right} id and class tags in &lt;td&gt;</td>
     </tr>
 </table>
+<p>Movie, video 480x360 video show controls.  Always define the dimensions.  The webpage may change the video dimensions.  Include controls to add the video controls for the user.  Include loop for continuously playback.  Formats supported are mp4, ogg, and webm.  Not all browsers support all formats.  Can provide multiple versions.</p>
+<video width="480" height="360" controls loop>
+<source src="bartsimpsonsbankrun.mp4" type="video/mp4">
+<source src="bartsimpsonsbankrunoggformatforreference.ogg" type="video/ogg">
+<source src="bartsimpsonsbankrunwebmformatforreference.webm" type="video/webm">
+Your browser does not support the video tag.
+</video>
+<p>Audio, music show controls.  Include controls to add the audio controls for the user.  Format supports are mp3, wav, and ogg.  Can provide multiple versions.</p>
+<audio controls>
+<source src="priceisrightdoubleshowcasewinnersiren.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+<form action="*url where php script is located to send the form*" method="post">
+Name:<br> <input type="text" name="name text box" value="Show or display inside text box"><br>
+Email:<br> <input type="email" name="email text box" value="Type email here"><br>
+Password:<br> <input type="password" name="userpassword"><br>
+Textarea:<br> <textarea name="comments" cols="20" rows="3"></textarea><br>
+Checkbox not dependent or independent.  Can check any number: <input type="checkbox" name="checkbox1" value="1">
+<input type="checkbox" name="checkbox2" value="2">
+<input type="checkbox" name="checkbox3" value="3"><br><br>
+Radio button:  They're dependent on each other.   Can select one only.  Use name field to group radio buttons for user to select one:  Yes radio button label <input name="employed" type="radio" value="Yes"><br>
+No radio button label <input name="employed" type="radio" value="No"><br>
+No answer radio button label <input name="employed" type="radio" value="No answer"><br><br>
+Dropdown list:  <select name="types" size="1">
+<option name="sizemustbe1">size attribute must be 1</option>
+<option name="fulltime">Full Time</option>
+<option name="parttime">Part Time</option>
+<option name="he">What is HE</option>
+<option name="temp">Temp</option>
+<option name="temp2">Temp2</option>
+<option name="temp3">Temp3</option>
+</select><br>
+Comment:<br> <input type="text" name="comment text" value="Type comments here" size="50"><br><br>
+<input type="submit" name="Send" value="Send display on button">
+<input type="reset" name="reset" value="Reset">
+Image button:  <input type="image" src="lightbulb.png" width="16" height="16">
+<input type="hidden" name="fromaddress which is a hidden field" value="*email address to receive form?"><br><br>
+<input type="date" name="date"><br>
+</form>
+<p>HTML 5 has the fieldset, legend and label elements specifically for laying out forms.  Labels are a way of improving usability to a web page. The label is often used to create the name for the &lt;input&gt; element The label element does not in itself display anything special for the user.  The label can be bound to an element by using the for attribute, or by placing the element inside the &lt;label&gt; element.  The fieldset provides a way to break up a form into sections and legend is used to title a fieldset.</p>
+<form action="*url use fieldset, legend, and label*" method="post">
+<fieldset>
+<legend>Contact Details.  Note the required attribute</legend>
+<p>
+<label for="Name">Name:</label>
+<input type="text" name="Name" required />
+</p>
+<p>
+<label for="Email">Email:</label>
+<input type="email" name="Email" required />
+</p>
+<p>
+<label for="Start Date">Start Date:</label>
+<input type="date" name="startdate" required />
+</p>
+<p>
+<label for="agelabel">Number input type minimum 18 and maximum 99</label>
+<input type="number" name="agelabel" min="18" max="99" value="21">
+</p>
+<p>
+<input type="submit" name="Submit" />
+</p>
+</fieldset>
+
+<fieldset>
+<legend>Departments</legend>
+<p>
+<label ID="lblModerator">Moderator</label>
+<input type="text" ID="txtModerator">
+</p>
+<p>
+<label ID="lblDept_Title">Dept Title</label>
+<input type="text" ID="txtDept_Title">
+</p>
+<p>
+<label ID="lblDept_Order">Dept Order</label>
+<input type="text" ID="txtDept_Order">
+</p>
+<p>
+<input type="submit" ID="cmdSubmit" value="Create" class="submit">
+</p>
+</fieldset>
+</form>
+
 <h1>CSS Style Sheets</h1>
 <p>Inheritance is some style properties are inherited by their child elements.  A font family in the body style means all child elements inherit the property.  Border properties don't have inheritance.  For example, the font-family in the body style is inherited.  Use the word inherit after the property to force a property to inherit from its parent.</p>
 <h5>I created an example of CSS style sheet declared in the head.  Create a rule to target the H5 HTML element.  h5 {color: #097D00; font-size: 18px}.  Property is color and value is #097D00.  Property is font size and value is 18px.  The structure is {property1: value1; property2: value2; property3: value3; . . . }.  Declare styles between &lt;style type="text/css"&gt; and &lt;/style&gt;  I used the ColorPicker package in Sublime Text Ctrl+Shift+C.  Select a color, copy the hexcode, close the ColorPicker window, paste the hexcode.</h5>
@@ -173,6 +277,19 @@ Center a block of text with two divs.  Second block of text here.
 <p>Add an image border and add a shadow</p>
 <img class="imageborder"src="imageshowninplaceofvideo.jpg">
 <img class="imageshadow"src="imageshowninplaceofvideo.jpg">
+<p>Use CSS to create image bullets for lists.</p>
+<ul id="cssulimagebullet">
+    <li>Write css code at style section
+    <li>#cssulimagebullet {list-style-image:url(lightbulb.png)}
+    <li>lightbulb image as bullets
+    <li>The CSS adjusts length image size by default for big images big pictures.
+    <li>The book didn't explain how to use CSS to adjust the image size manually.
+    <li>The book didn't elaborate how to use CSS list properties list-style, list-style-image, list-style-position, and list-style-type; although some can figure out because using these in the ul tag can be used for CSS.
+</ul>
+<p>Original buynow.png image</p>
+<img src="buynow.png">
+<p>buynow.png with css class named cssrolloverbutton.  Original image on left.  Hover mouse over original image becomes image on the right.</p>
+<a href="#" class="cssrolloverbutton" title="title is Buy Now"></a>
 
 <h1>CSS Box Model</h1>
 <p>Every element is considered a rectangular box.  The properties for a CSS box model is the content, padding, border, and margin.  The padding is around the content.  The padding is a gutter around the content.  The border is a line around the padding or a line on the outside of the padding.  The margin creates spacing between boxes.  The padding adds space between the content and the border.  The margin adds space between the border and other content.</p>
