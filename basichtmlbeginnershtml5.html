@@ -1,0 +1,350 @@
+<!-- HTML Beginners Basic Of Web Design by Paul Gibbs Chapter 14 HTML 5 Design -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="html5css.css" rel="stylesheet" media="screen" type="text/css">
+<!-- [if lt IE 9] -->
+<script src=“http://html5shiv.googlecode.com/svn/trunk/html5.js”></script>
+<!-- [end if] -->
+<title>HTML 5 Design HTML 5 Layout</title>
+</head>
+<style type="text/css">
+    header, section, footer, aside, nav, figure, figcaption {display: block}
+    body {
+        color: #1F1C1C;
+        background-color: grey;
+        background-image: url("lgren033.jpg");
+        background-position: center;
+        font-family: Arial, Verdana;
+        line-height: 1.3em;
+        margin: 0px;
+    }
+    .wrapper {
+        width :960px;
+        margin: 10px auto 10px auto;
+        border: 2px solid #000000;
+        background-color: #FFFFFF;
+    }
+    header {
+        height: 160px;
+        background-image: url("tractorheader.jpg");
+    }
+    h1#applytextindent {
+        text-indent: -9999px;
+        width: 960px;
+        height: 130px;
+        margin: 0px;
+        border: 1px solid red;
+    }
+    nav, footer {
+        clear: both;
+        color: #FFFFFF;
+        background-color: #42573C;
+        height: 30px;
+    }
+    nav ul {
+        margin: 0px;
+        padding: 5px 0px 5px 30px;
+    }
+    nav li {
+        display: inline;
+        margin-right: 40px;
+    }
+    nav li a {
+        font-weight: bold;
+        color: #FFFFFF;
+    }
+    nav li a:hover, nav li a.current {color: #FB9294}
+    section.products {
+        float: left;
+        width: 669px;
+        border-right: 1px solid #EEEEEE;
+    }
+    article {
+        clear: both;
+        overflow: auto;
+        width: 100%;
+    }
+    hgroup {margin-top 40px;}
+    figure {
+        float: left;
+        width: 290px;
+        height: 220px;
+        padding: 5px;
+        margin: 20px;
+        border: 1px dotted red;
+    }
+    figcaption {
+        font-size: 90%;
+        text-align: left;
+    }
+    aside {
+        width: 240px;
+        float: left;
+        padding: 0px 0px 0px 20px;
+        border: 1px solid green;
+    }
+    aside section a {
+        display: block;
+        padding: 10px;
+        border-bottom: 1px solid blue;
+    }
+    aside section a:hover {
+        color: #985D6A;
+        background-color: #EFEFEF;
+    }
+    aside h2 {
+        padding: 30px 0px 10px 0px;
+        color: #DE6581;
+    }
+    a {
+        color: #DE6581;
+        text-decoration: none;
+    }
+    h1, h2, h3 {font-weight: normal;}
+    h2 {
+        line-height: 1.2em;
+        margin: 10px 0px 5px 0px;
+        padding: 0px;
+    }
+    h3 {
+        margin: 0px 0px 10px 0px;
+        color: #DE6581;
+    }
+    footer {
+        font-size: 80%;
+        padding: 8px 0px 0px 20px;
+        border: 3px solid aquamarine;
+    }
+</style>
+<body>
+<p>HTML 5 has introduced extra mark-up tags to define the structure of a web page.  For example, we used div tags to define the footer page structure such as &lt;div id="footer"&gt; . . . &lt;/div&gt;.  HTML 5 introduced schematic mark-up tags with meaning and purpose.  Some of the schematic HTML 5 elements are header, footer, section, article, aside, nav, figure, figcaption.  div tags can be used.</p>
+<ul>
+    <li>&lt;header&gt; Top of the web page.  Can be used inside &lt;article&gt; and &lt;section&gt;.  A blog post could be an article element with its own header and footer.
+    <li>&lt;footer&gt; Bottom of the webpage.  Can be used inside &lt;article&gt; and &lt;section&gt;.  A blog post could be an article element with its own header and footer.
+    <li>&lt;nav&gt; Navigation elements.
+    <li>&lt;article&gt; Define content considered as standalone information such as a comment, blog post, or an item to sell.
+    <li>&lt;aside&gt; Place inside an article element.  The content relates to the article.  Can be used outside an article element related to the entire web page.
+    <li>&lt;section&gt; Group different sections.  Examples are news, products, comments, and blogs.
+    <li>&lt;hgroup&gt; Heading groups.  Group together headings &lt;h1&gt; to &lt;h6&gt;.  There are headings and subheadings.
+    <li>&lt;figure&gt; and &lt;figcaption&gt; Figures.  Used for images and videos.  Figure Caption is the text description of the image.
+    <li>&lt;div&gt; Section elements.  Use when there's no HTML 5 schematic markup used in its place.
+    <li>htmlshiv code.  Used for Internet Explorer browsers below 9.  The JavaScript code used to correctly recognize HTML 5.  Type in the &lt;head&gt; element <!-- [if lt IE 9]> --> <!-- <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script> --> <!-- [endif] -->
+</ul>
+<h1>HTML 5 Exercise Layout</h1>
+<p>&lt;title&gt;The title of the webpage is Antique Tractors - The Olde Tractor Store&lt;/title&gt;</p>
+<h2>Basic Structre</h2>
+<div class="wrapper">
+    <header>
+        <h1 id="applytextindent">The Olde Tractor Store</h1>
+            <p>Navigation here</p>
+        <section class="products">
+        <article>
+            <p>First product here</p>
+        </article>
+        <article>
+            <p>Second product here</p>
+        </article>
+    </section>
+    <aside>
+        <p>Two sections here.  Spares items and contact information.</p>
+    </aside>
+
+    <footer>
+        &copy;The Olde Tractor Store
+    </footer>
+</div>
+
+<h2>Add Text Add Images</h2>
+<div class="wrapper">
+    <header>
+        <h1 id="applytextindent">The Olde Tractor Store</h1>
+        <nav>
+            <ul>
+                <li><a href="" class="current">HOME</a></li>
+                <li><a href="">SPARES</a></li>
+                <li><a href="">FAIRS</a></li>
+                <li><a href="">ABOUT</a></li>
+                <li><a href="">CONTACT</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="products">
+        <article>
+            <figure>
+                <img src="masseyferg_290.jpg" alt="Tractor">
+                <figcaption>1979 Massey Ferguson 575</figcaption>
+            </figure>
+            <hgroup>
+                <h2>1979 Massey Ferguson 575</h2>
+                    <h3>&pound;4,500 Plus VAT</h3>                    
+            </hgroup>
+            <p>1979 Massey Ferguson 2wd Tractor with multi-power, comes with MF leader (not fitted), done 5555 hours, with PUH and 2 double spool valves, overall in reasonable condition for its age.</p>
+        </article>
+        <article>
+            <figure>
+                <img src="ford_290.jpg" alt="Tractor">
+                <figcaption>Fordson Major 6 Cylinder, 90HP</figcaption>
+            </figure>
+            <hgroup>
+                <h2>Fordson Major 6 Cylinder, 90HP</h2>
+                    <h3>&pound;2,650 Plus VAT</h3>                    
+            </hgroup>
+            <p>This has ahd a Ford 6 cylinder fitted and repainted a while ago.  Starts, runs and drives well, very useful to run a grain blower, or other stationery P.T.O. application.</p>
+        </article>
+    </section>
+    <aside>
+        <section class="spare-list">
+            <h2>Spares Needed</h2>
+            <a href="">Starter Motor - Perkins Engine</a>
+            <a href="">Radiator - David Brown</a>
+            <a href="">McCormick CX100 Filter Kit</a>
+            <a href="">Case IH Clutch Kit</a>
+        </section>
+        <section class="contact-us">
+            <h2>Contact</h2>
+            <p>The Olde Tractor Store
+                <br>The Warehouse
+                <br>Chippenham
+                <br>Wilshire SN15 2JP
+            </p>
+        </section>
+    </aside>
+    <footer>
+        &copy;The Olde Tractor Store
+    </footer>
+</div>
+<p>We want to make the schematic markup style as block.  Block level elements start on a new line.  Block level elements is the basic building structure of the layout.  Create the body style with a background image.  RM:  I commented out the CSS code below; the CSS code is applied in the head tag.</p>
+<!--
+header, section, footer, aside, nav, figure, figcaption {display: block}
+body {
+    color: #1F1C1C;
+    background-color: grey;
+    background-image: url("lgren033.jpg");
+    background-position: center;
+    font-family: Arial, Verdana;
+    line-height: 1.3em;
+    margin: 0px;
+}
+-->
+<p>The next style is the wrapper class defining the width of the content and adds a header image.  RM:  I commented out the CSS code below; the CSS code is applied in the head tag.</p>
+<!-- .wrapper {
+    width :960px;
+    margin: 10px auto 10px auto;
+    border: 2px solid #000000;
+    background-color: #FFFFFF;
+}
+header {
+    height: 160px;
+    background-image: url("tractorheader.jpg");
+}
+-->
+<p>The h1 tag is set with text-index of -9999px.  The text itself is shifted off the screen to the left for which it's available for text screen readers.  The header image tractorheader.jpg displays the same text.   RM:  I commented out the CSS code below; the CSS code is applied in the head tag.  Also, I used an id= to exclude the other h1 tags.</p>
+<!--
+h1#applytextindent {
+    text-indent: -9999px;
+    width: 960px;
+    height: 130px;
+    margin: 0px;
+    border: 1px solid red;
+}
+ -->
+<p>The navigation style is the unordered list &lt;ul&gt; configured as a horizontal list.   RM:  I commented out the CSS code below; the CSS code is applied in the head tag.</p>
+<!-- 
+nav, footer {
+    clear: both;
+    color: #FFFFFF;
+    background-color: #42573C;
+    height: 30px;
+}
+nav ul {
+    margin: 0px;
+    padding: 5px 0px 5px 30px;
+}
+nav li {
+    display: inline;
+    margin-right: 40px;
+}
+nav li a {
+    font-weight: bold;
+    color: #FFFFFF;
+}
+nav li a:hover, nav li a.current {color: #FB9294}
+-->
+<p>The section and article elements CSS.  RM:  I commented out the CSS code below; the CSS code is applied in the head tag.</p>
+<!-- 
+section.products {
+    float: left;
+    width: 669px;
+    border-right: 1px solid #EEEEEE;
+}
+article {
+    clear: both;
+    overflow: auto;
+    width: 100%;
+}
+-->
+<p>Each article contains a &lt;figure&gt; and &lt;hgroup&gt; elements.  CSS.  RM:  I commented out the CSS code below; the CSS code is applied in the head tag.</p>
+<!-- 
+figure {
+    float: left;
+    width: 290px;
+    height: 220px;
+    padding: 5px;
+    margin: 20px;
+    border: 1px dotted red;
+}
+figcaption {
+    font-size: 90%;
+    text-align: left;
+}
+-->
+<p>The &lt;aside&gt; CSS.  RM:  I commented out the CSS code below; the CSS code is applied in the head tag.</p>
+<!--
+aside {
+    width: 240px;
+    float: left;
+    padding: 0px 0px 0px 20px;
+    border: 1px solid green;
+}
+aside section a {
+    display: block;
+    padding: 10px;
+    border-bottom: 1px solid blue;
+}
+aside section a:hover {
+    color: #985D6A;
+    background-color: #EFEFEF;
+}
+aside h2 {
+    padding: 30px 0px 10px 0px;
+    color: #DE6581;
+}
+-->
+<p>The final group links, h tags, and footer CSS.  RM:  I commented out the CSS code below; the CSS code is applied in the head tag.</p>
+<!-- 
+a {
+    color: #DE6581;
+    text-decoration: none;
+}
+h1, h2, h3 {font-weight: normal;}
+h2 {
+    line-height: 1.2em;
+    margin: 10px 0px 5px 0px;
+    padding: 0px;
+}
+h3 {
+    margin: 0px 0px 10px 0px;
+    color: #DE6581;
+}
+footer {
+    font-size: 80%;
+    padding: 8px 0px 0px 20px;
+    border: 3px solid aquamarine;
+}
+-->
+</body>
+</html>
