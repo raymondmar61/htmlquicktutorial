@@ -1,0 +1,114 @@
+<!-- HTML Beginners Basic Of Web Design by Paul Gibbs Chapter 15 Responsive Web Design (RWD) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="html5css.css" rel="stylesheet" media="screen" type="text/css">
+<!-- [if lt IE 9] -->
+<script src=“http://html5shiv.googlecode.com/svn/trunk/html5.js”></script>
+<!-- [end if] -->
+<title>@media query display different resolutions</title>
+</head>
+<style type="text/css">
+    body {background-color: grey}
+    @media screen and (max-width: 3840px) {
+        h1 {color: red}
+        }
+    @media screen and (max-width: 2560px) {
+            h1 {color: blue}
+        }
+    @media screen and (max-width: 2048px) {
+            h1 {color: green}
+        }
+    @media screen and (max-width: 1920px) {
+            h1 {color: black}
+        }
+    @media screen and (max-width: 1680px) {
+            h1 {color: white}
+        }
+    @media screen and (max-width: 1600px) {
+            h1 {color: orange}
+        }
+    @media screen and (max-width: 1440px) {
+            h1 {color: yellow}
+        }
+    @media screen and (max-width: 1280px) {
+            h1 {color: brown}
+        }
+    @media screen and (max-width: 1024px) {
+            h1 {color: pink}
+        }
+    @media screen and (max-width: 800px) {
+            h1 {color: purple}
+        }
+    @media screen and (max-width: 650px) {
+            h1 {color: aqua}
+        }
+    @media screen and (max-width: 320px) {
+            h1 {color: darkblue}
+        }
+    @media screen and (max-width: 240px) {
+            h1 {color: orangered}
+        }
+
+</style>
+<body>
+<p>We develop a web site that will work in multiple devices using the @media query which is used in style sheets to select different styles depending on the device. The @media query can change styles based on the characteristics of the device, such as the display type, width[,] height, orientation and resolution.  For example, here is the @media query displaying different background images based on the screen size.  RM:  I commented out for easier reading.</p>
+<!--
+@media screen {
+    #firstimage {
+    background-image: url(/graphics/firstimage980.jpg);
+    height:100px;
+    }
+}
+@media screen and (max-width: 980px) {
+    #firstimage {
+    background-image: url(/graphics/firstimage980.jpg);
+    height:100px;
+    max-width:980px;
+    }
+}
+@media screen and (max-width: 650px) {
+    #firstimage {
+    background-image: url(/graphics/firstimage650.jpg);
+    height:95px;
+    max-width:650px;
+    }
+}
+@media screen and (max-width: 480px) {
+    #firstimage {
+    background-image: url(/graphics/firstimage480.jpg);
+    height:80px;
+    max-width:480px;
+    }
+}
+@media screen and (max-width: 320px) {
+    #firstimage {
+    background-image: url(/graphics/firstimage320.jpg);
+    height:60px;
+    max-width:320px;
+    }
+}
+@media screen and (max-width: 240px) {
+    #firstimage {
+    background-image: url(/graphics/firstimage240.jpg);
+    height:50px;
+    max-width:240px;
+    }
+}
+-->
+<p>Another example for different viewports.  In other words, the browser size.  The &lt;h1&gt; tag demonstrates the color when the browser size changes.</p>
+<h1>This demonstrates the way that styles can change as the size of the page changes.</h1>
+<p>CSS from the book.</p>
+<!-- 
+<style type=“text/css”>
+    @media (min-width: 500px) and (max-width: 600px) {
+        h1 {
+        color: fuchsia;
+        }
+    }
+</style>
+ -->
+</body>
+</html>
