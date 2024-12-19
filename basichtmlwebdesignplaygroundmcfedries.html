@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Design Playground by Paul McFedries</title>
+    <style type="text/css">
+        body {background-color: grey};
+        #lightbulbid {
+            list-style-image: url(lightbulb.png);
+        }
+        #imagebaseline {
+            vertical-align: baseline;
+        }
+        #imagebottom {
+            vertical-align: bottom;
+        }
+        #imagemiddle {
+            vertical-align: middle;
+        }
+        #imagetop {
+            vertical-align: top;
+        }
+    </style>
+</head>
+<body>
+    <h1>Images</h1>
+    <img src="masseyferg_290.jpg" alt="Tractor image description" title="Tooltip text from the image">
+    <p>If the image file is in the same directory as the HTML file, use the name of the file; otherwise, use the image's path and filename. If you've created in your site's main folder a subfolder named images, and your image file is logo.png, your src value would be /images/logo.png.</p>
+    <p>alt is short for alternative is a word or short phrase which describes the image.  It could be used in place of the image in case the image file can't be displayed.  Alt text is also used by screen readers and Braille apps to give the user some idea of what the image is.  Do I have to include the alt attribute? Yes. Your web page won’t validate unless every one of your img tags has an alt attribute present. If you don't want to use alt text for decorative or other nonessential images, you can set the alt attribute equal to the empty string alt="".</p>
+    <p>title is a tooltip text which appears when the user hovers the mouse pointer over the image.</p>
+    <p>Brief file image formats.  Graphics Interchange Format .gif files limited to 256 colors, transparent backgrounds, and short animations.  Joint Photographic Experts Group .jpg or .jpeg compressed images, small file size, and lossy which means redundant pixels discarded and less sharpness.  Phortable Network Graphics .png compress images, big file size, and lossless which means retain sharpness; supports transparency.</p>
+    <p>An image in the text is called a figure in HTML5.  A figure is a semantic page element designated with the &lt;figure&gt; element.  Use &lt;figcaption&gt; for the image caption.</p>
+    <figure>
+        <img src="masseyferg_290.jpg" alt="alternate description" title="title tooltip description">
+        <figcaption>Caption text figcaption tag</figcaption>
+    </figure>
+    <p>Random text below figure element above.  The &lt;figure&gt; element indents the image.</p>
+    <p>Use image as the bullet in a bullet list.  Need to use CSS.</p>
+    <ul id="lightbulbid">
+        <li>abc</li>
+        <li>123</li>
+        <li>def</li>
+        <li>456</li>
+        <li>not working</li>
+    </ul>
+    <ul>
+        <li>abc</li>
+        <li>123</li>
+        <li>def</li>
+        <li>456</li>
+        <li id="lightbulbid">not working</li>
+    </ul>
+        <ul style="list-style-image: url(lightbulb.png);">
+        <li>abc</li>
+        <li>123</li>
+        <li>def</li>
+        <li>456</li>
+        <li>working bullets are an image</li>
+    </ul>
+    <p>The img element and text the default is the bottom edge of the image aligns with the case line of the current line.  Use CSS vertical-align:  baseline or bottom or middle or top to control the vertical alignment.  The first set and second set of images no div element.  The third set of images yes div element.</p>
+    <img src="ford_290.jpg" alt="" title="" id="imagebaseline">default baseline
+    <img src="ford_290.jpg" alt="" title="" id="imagemiddle">image middle of text
+    <img src="ford_290.jpg" alt="" title="" id="imagebottom">image bottom of text
+    <img src="ford_290.jpg" alt="" title="" id="imagetop">image top of text
+    <hr>
+    <img src="ford_290.jpg" alt="" title="" id="imagetop">image top of text
+    <img src="ford_290.jpg" alt="" title="" id="imagebottom">image bottom of text
+    <img src="ford_290.jpg" alt="" title="" id="imagemiddle">image middle of text
+    <img src="ford_290.jpg" alt="" title="" id="imagebaseline">default baseline
+    <hr>
+    <div>
+        <img src="ford_290.jpg" alt="" title="" id="imagebaseline">default baseline
+    </div>
+    <div>
+        <img src="ford_290.jpg" alt="" title="" id="imagebottom">image bottom of text
+    </div>
+    <div>
+        <img src="ford_290.jpg" alt="" title="" id="imagemiddle">image middle of text
+    </div>
+    <div>
+        <img src="ford_290.jpg" alt="" title="" id="imagetop">image top of text
+    </div>
+    <p>Skipped background images pages and a hero image which is a photo taking up the entire browser window on the landing page or introduction page pages 94-100.</p>
+    <h1>Videos and Audios</h1>
+    <p>Web video formats.  WebM .webm is open source and royalty free uses VP8 or VP9 video codec and Vorbis or Opus audio codec.  Ogg .ogg or .ogv is open source and royalty free uses Theora video codec and Vorbis or Opus audio codec.  MPEG-4 .mp4 patented yet free for end users uses H.264 video codec and AAC audio codec.</p>
+    <p>Audio formats.  MP3 .mp3 is both container and audio codec patented yet free for end users.  WAV .wav both container and audio codec.  WebM .webm is open source and royalty free uses Vorbis or Opus audio codec.  Ogg .ogg or .ogv is open source and royalty free uses Vorbis or Opus audio codec.  MPEG-4 .m4a patented yet free for end users uses the AAC audio codec.</p>
+    <video src="bartsimpsonsbankrun.mp4" poster="imageshowninplaceofvideo.jpg", width="480" height="360" controls autoplay loop></video>
+    <p>poster is the image to display before the video playback begins.  controls tells the browser to display playback controls in the video window; mention controls is true.  autoplay tells the browser to begin playing the video as soon as video is downloaded enough.  loop tells the browser to being playback from the beginning each the video ends.</p>
+    <p>Remove the src attribute for two or more video formats.  Place with multiple source elements.  &lt;video&gt; &lt;source src=".mp4 version" type='video/mp4; codecs="avc1.4D401E, mp4a.40.2"'&gt; &lt;source src=".webm version" type='video/webm'&gt; &lt;source src=".ogv version" type='video/ogg'&gt; &lt;/video&gt;</p>
+    <audio src="priceisrightdoubleshowcasewinnersiren.mp3" controls autoplay loop></audio>
+</body>
+</html>
