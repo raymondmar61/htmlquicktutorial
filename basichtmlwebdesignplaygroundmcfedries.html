@@ -21,7 +21,24 @@
         #imagetop {
             vertical-align: top;
         }
+        #internalstylesheet1 {
+            font-weight: bold;
+        }
+        #internalstylesheet2 {
+            font-size: 24px;
+            font-style: italic;
+        }
+        .firstclassuseperiods {
+            font-size:  22px;
+        }
+        .tableofcontents {
+            float: right;
+        }
+        .stopfloat {
+            clear: right;
+        }
     </style>
+    <link href="externalstylesheetcss.css" rel="stylesheet">
 </head>
 <body>
     <h1>Images</h1>
@@ -82,6 +99,7 @@
         <img src="ford_290.jpg" alt="" title="" id="imagetop">image top of text
     </div>
     <p>Skipped background images pages and a hero image which is a photo taking up the entire browser window on the landing page or introduction page pages 94-100.</p>
+    
     <h1>Videos and Audios</h1>
     <p>Web video formats.  WebM .webm is open source and royalty free uses VP8 or VP9 video codec and Vorbis or Opus audio codec.  Ogg .ogg or .ogv is open source and royalty free uses Theora video codec and Vorbis or Opus audio codec.  MPEG-4 .mp4 patented yet free for end users uses H.264 video codec and AAC audio codec.</p>
     <p>Audio formats.  MP3 .mp3 is both container and audio codec patented yet free for end users.  WAV .wav both container and audio codec.  WebM .webm is open source and royalty free uses Vorbis or Opus audio codec.  Ogg .ogg or .ogv is open source and royalty free uses Vorbis or Opus audio codec.  MPEG-4 .m4a patented yet free for end users uses the AAC audio codec.</p>
@@ -89,5 +107,178 @@
     <p>poster is the image to display before the video playback begins.  controls tells the browser to display playback controls in the video window; mention controls is true.  autoplay tells the browser to begin playing the video as soon as video is downloaded enough.  loop tells the browser to being playback from the beginning each the video ends.</p>
     <p>Remove the src attribute for two or more video formats.  Place with multiple source elements.  &lt;video&gt; &lt;source src=".mp4 version" type='video/mp4; codecs="avc1.4D401E, mp4a.40.2"'&gt; &lt;source src=".webm version" type='video/webm'&gt; &lt;source src=".ogv version" type='video/ogg'&gt; &lt;/video&gt;</p>
     <audio src="priceisrightdoubleshowcasewinnersiren.mp3" controls autoplay loop></audio>
+
+    <h1>CSS Styles:  Declaring And Using</h1>
+    <p style="font-size: 1.5em;">Declare CSS styles in a HTML element is an inline style.  style="font-size: 1.5em;" inside the p tag is an example of an inline style.</p>
+    <ul style="color: darkgreen; font-family: 'Trebuchet MS',sans-serif; font-size: 1.25em;">
+        <li>Multiple styles declared in ul tag.
+        <li>style="color: darkgreen; font-family: 'Trebuchet MS',sans-serif; . . .
+        <li>font-size: 1.25em;"
+        <li>Two font-families declared
+    </ul>
+    <p>Declare CSS styles in the same HTML file is an internal style sheet.  These styles are combined in the &lt;style&gt; tag in the page's header section between the &lt;head&gt; tags.</p>
+    <p id="internalstylesheet1">Internal style sheet:  Bold text.</p>
+    <p id="internalstylesheet2">Internal style sheet:  24px italics text.</p>
+    <p>Declare CSS styles in another file is an external style sheet.  These files use the .css extension.  The CSS declaration syntax is the same for internal style sheets.  Add the &lt;link&gt; to the header to let the browser know an external style sheet &lt;link href="location of external style sheet.css" relative="stylesheet"&gt;'  relative="stylesheet" tells the browser the linked file is a style sheet.  Include the file path if the .css file is a subdirectory.  Use the forward slashes.  Must include full URL path if the .css file is on a remote server.</p>
+    <p id="externalstylesheet1">External style sheet:  Bold text.</p>
+    <p id="externalstylesheet2">External style sheet:  24px italics text.</p>
+    <p class="firstclassuseperiods">Use CSS multiple times defined using class.  Class CSS is declared in the styles with a period.</p>
+    <p class="firstclassuseperiods">Use class="firstclassuseperiods" for the second time.  firstclassuseperiods declared in styles element.</p>
+    <h3 class="firstclassuseperiods">class="firstclassuseperiods" used in a h3 tag.</h3>
+
+    <h1>CSS Styles:  Floating</h1>
+    <h2>Not float normal h2</h2>
+    <div>
+        <div>Color</div>
+        <div>Schemes</div>
+        <div>Caveats</div>
+        <div>Examples</div>
+        <div>Practices</div>
+        <div>CSS</div>
+        <div>Resources</div>
+    </div>
+    <p>paragraph1</p>
+    <p>paragraph2</p>
+    <p>paragraph3</p>
+    <h2>Float normal h2</h2>
+    <div class="tableofcontents">
+        <div>Color</div>
+        <div>Schemes</div>
+        <div>Caveats</div>
+        <div>Examples</div>
+        <div>Practices</div>
+        <div>CSS</div>
+        <div>Resources</div>
+    </div>
+    <p>paragraph1</p>
+    <p>paragraph2</p>
+    <p>paragraph3</p>
+    <p>These paragraphs move up take over the Color, Schemes div section.</p>
+    <p>If you float an inline element, then give it a width for the browser to know how much space to give.</p>
+    <h2>Float the table of contents only h2</h2>
+    <div class="tableofcontents">
+        <div>Color</div>
+        <div>Schemes</div>
+        <div>Caveats</div>
+        <div>Examples</div>
+        <div>Practices</div>
+        <div>CSS</div>
+        <div>Resources</div>
+    </div>
+    <p class="stopfloat">paragraph1</p>
+    <p>paragraph2</p>
+    <p>paragraph3</p>
+    <p>These paragraphs remain along the flow as if the Color, Schemes div section were above these paragraphs.</p>
+    <div style="border: 1px solid red; background-color: lightcyan;">
+        <p> If you float two consecutive elements, the second floated element will always appear either beside the first floated element or below it.</p>
+        <p>For example, if you float the elements left, the second will appear to the right of the first. If there isn’t enough room to the right, it will appear below the first element. </p>
+    </div>
+    <div style="border: 1px solid red; background-color: lightcyan;">
+        <p style="float: left; width: 300px"> If you float two consecutive elements, the second floated element will always appear either beside the first floated element or below it.</p>
+        <p style="float: left; width: 300px">For example, if you float the elements left, the second will appear to the right of the first. If there isn’t enough room to the right, it will appear below the first element.</p>
+        <p style="float: left; width: 300px">The div style="border: 1px solid red; background-color: lightcyan;" container nealry disappeared.  The red line remains.  RM:  yes, red line remains.  The div container saw it no longer contained anything.</p>
+        <p style="float: left; width: 300px">To fix the problem, tell the parent element to clear its own child elements to prevent collapse.  The CSS code is style="content: ''; display: block; clear: both;".  content: ""; inserts an empty string.  display: block; makes it a block.  clear: both; clears left and clears right.</p>
+    </div>
+    <div style="content: ''; display: block; clear: both;">
+        <p> If you float two consecutive elements, the second floated element will always appear either beside the first floated element or below it.</p>
+        <p>For example, if you float the elements left, the second will appear to the right of the first. If there isn’t enough room to the right, it will appear below the first element.</p>
+        <p>To fix the problem, tell the parent element to clear its own child elements to prevent collapse.</p>
+    </div>
+    <!-- <div style="clear: left;"> -->
+    <div style="clear: left; display: inline;">
+        <div style="float: left; width: 333px;">
+    <p>A</p>
+    <ul>
+    <li>The Hitchhiker's Guide To The Galaxy by Douglas Adams
+    <li>The Snow Queen by Hans Christian Anderson
+    <li>i, Robot by Isaac Asimov
+    </ul>
+        </div>
+        <div style="float: left; width: 333px;">
+    <p>B</p>
+    <ul>
+    <li>Tuck Everlasting by Natalie Babbitt
+    <li>The Fermata by Nicholson Baker
+    <li>Uncle John's Great Big Bathroom Reader by The Bathroom Readers' Institute
+    <li>The Wonderful Wizard Of Oz by L. Frank Baum
+    <li>The Last Unicorn by Peter Beagle
+    <li>City Of Thieves by David Benioff
+    <li>All The President's Men by Carl Bernstein and Bob Woodward
+    <li>Forever . . . by Judy Blume
+    <li>Superfudge by Judy Blume
+    <li>Tales Of A Fourth Grade Nothing by Judy Blume
+    <li>Mystery Of The Fat Cat by Frank Bonham
+    <li>The Bridge Over The River Kawi by Pierre Boulle
+    <li>Black Hawk Down by Mark Bowden
+    <li>The Tuscan Child by Rhys Bowen
+    <li>Fahrenheit 451 by Ray Bradbury
+    <li>World War Z by Max Brooks
+    <li>The Secret Garden by Frances Hodgson Burnett
+    <li>Kissing School by Cherie Byrd
+    </ul>
+        </div>
+        <div style="float: left; width: 333px;">
+    <p>C</p>
+    <ul>
+    <li>The Art Of Hugging by William Cane
+    <li>The Art Of Kissing by William Cane
+    <li>Ender's Game by Orson Scott Card
+    <li>Don't Sweat The Small Stuff . . . And It's All Small Stuff by Richard Carlson
+    <li>How To Win Friends And Influence People by Dale Carnegie
+    <li>Alice's Adventures In Wonderland And Through The Looking-Glass by Lewis Carroll
+    <li>The Perks Of Being A Wallflower by Stephen Chbosky
+    <li>Girl With A Pearl Earring by Tracy Chevalier
+    <li>Influence The Psychology Of Persuasion by Robert Cialdini
+    <li>The Hunt For Red October by Tom Clancy
+    <li>Dear Mr. Henshaw by Beverly Cleary
+    <li>The Alchemist by Paulo Coelho
+    <li>Built To Last by Jim Collins
+    <li>Good To Great by Jim Collins
+    <li>The Hunger Games trilogy by Suzanne Collins
+    <li>The Power Of One by Bryce Courtenay
+    <li>The 7 Habits Of Highly Effective People by Stephen Covey
+    <li>The Red Badge Of Courage by Stephen Crane
+    <li>Jurassic Park by Michael Crichton
+    </ul>
+        </div>
+        <div style="float: left; width: 333px;">
+    <p>D</p>
+    <ul>
+    <li>Charlie And The Chocolate Factory by Roald Dahl
+    <li>1906 A Novel by James Dalessandro
+    <li>Blade Runner (Do Androids Dream Of Electric Sheep) by Philip K. Dick
+    <li>The Man In The High Castle by Philip K. Dick
+    <li>The Preserving Machine by Philip K. Dick
+    <li>A Christmas Carol by Charles Dickens
+    <li>A Tale Of Two Cities by Charles Dickens
+    <li>All The Light We Cannot See by Anthony Doerr
+    <li>Negotiating For Dummies by Michael and Mimi Donaldson
+    <li>The Greatest Beer Run Ever by John "Chick" Donohue and JT Molloy
+    <li>The Adventures Of Sherlock Holmes by Sir Arthur Conan Doyle
+    <li>The Return Of Sherlock Holmes by Sir Arthur Conan Doyle
+    </ul>
+        </div>
+        <div style="float: left; width: 333px;">
+    <p>E</p>
+    <ul>
+    <li>Clear the float because there's no books for E authors?  No.   Because it resets the floating.
+    </ul>
+        </div>
+        <div style="float: left; width: 333px;">
+    <p>F</p>
+    <ul>
+    <li>The Great Gatsby by F. Scott Fitzgerald
+    <li>Ranger's Apprentice Book 1:  The Ruins Of Gorland by John Flanagan
+    <li>Cold Mountain by Charles Frazier
+    <li>The World Is Flat by Thomas Friedman
+    <li>Inkheart by Cornelia Funke
+    </ul>
+        </div>
+    </div>    
+    <p style="clear: left;">
+    <span style="float: left; padding-top: .1em; padding-right: .1em; color: darkred; font-size: 5em; line-height: .6em;">A</span> drop cap is the paragraph's first letter as big size.  Select the opening letter and float to the left of the paragraph with font size, line height, and padding.  The CSS class if declaring at the CSs styles .first-paragraph::first-letter the ::first-letter is a pseudo-element selects the first letter-->.first-paragraph::first-letter {float: left; padding-top: .1em; padding-right: .1em; color: darkred; font-size: 5em; line-height: .6em;}
+    </p>
+    <p>A pull quote is a short excerpt copied from an article displayed as a separate element between the text or to the side of the text.  <span style="float: right; width: 50%; margin: 1.25em 0 1em .25em; padding-top: .5em; border-top: 1px solid black; border-bottom: 1px solid black; font-size: 1.05em; font-style: italic; color: #666;">It's the job of the pull quote to entice the reader.</span>  It's important the pull quote is styled to stand apart. Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, voluptatem cumque quasi quis molestiae aliquid facilis cupiditate. Optio, unde neque esse nostrum velit assumenda fuga distinctio accusamus facilis perspiciatis eos? Lorem ipsum dolor sit, amet consectetur, adipisicing elit. Saepe ipsum explicabo ullam dolore sunt labore ea consectetur in? Accusamus commodi rerum modi nobis, tenetur dolores, aspernatur quasi veritatis quam animi.  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi sapiente delectus eligendi quisquam ea? Aliquid magni, maiores libero dolores nemo placeat in aperiam, ab. Quos consequuntur fugiat expedita quaerat accusamus.
+    </p>
 </body>
 </html>
