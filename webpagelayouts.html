@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Design Playground by Paul McFedries Chapter 11 Learning Page Layout Basics</title>
+    <style type="text/css">
+        body {background-color: gray}
+        .headermain {
+            border: 1px solid black;
+            padding: .25em 0;
+        }
+        .headermain img {
+            float: left;
+            padding-left: 1em;
+        }
+        .headermain h1 {
+            float: left;
+            padding-left: .5em;
+        }
+        .headermain::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+        .navcss {
+            border: 1px solid red;
+            padding: .5em;
+        }
+        .navcss ul {
+            list-style-type: none;
+        }
+        .navcss li {
+            float: left;
+            padding-right: 1.5em;
+        }
+        .navcss::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <header class="headermain">
+        <img src="your-logo-here.png" alt="Float the image element to the left from .headermain img CSS.">
+        <h1>Header element for introductory content such as site title and site logo.  Float h1 element to the left.  Finally, clear the header css which is clearfix to prevent header from collapsing with ::after.</h1>
+    </header>
+    <nav class="navcss">
+        <ul>
+        <li><a href="#">Nav element contains navigation content.</a></li>
+        <li><a href="#">Links to other section or a search box.</a></li>
+        <li><a href="#">Typically appears after the header element.</a></li>
+        <li><a href="#">Float li elements to the left to place next to each other with padding.</a></li>
+        </ul>
+    </nav>
+    <main>
+        <p>Unique content goes here.</p>
+        <p>Float page layouts adivce:  Let elements flow in the default manner.  Float when you need two or more elements to appear beside each other; usually to the left.  Clear the floats to continue default page flow.</p>
+        <article>
+            <header>
+                <h2>Okay to add a header for an article</h2>
+            </header>
+            <p>Article element is a self-contained composition such as a newspaper or magazine article, blog, forum, or essay.</p>
+            <section>
+                <p>Section element to surround any part of a page to see in an online.  Typically section elements appear in the article element.</p>
+            </section>
+            <section>
+                <h3>Introduction section</h3>
+                <p>Introduction text</p>
+            </section>
+            <section>
+                <h3>Argument section</h3>
+                <p>Argument text</p>
+            </section>
+            <section>
+                <h3>Summary section</h3>
+                <p>Summary text</p>
+            </section>
+        </article>
+        <aside>
+            <p>Aside element for a page isn't directly related to the page's unique content.  Examples are a sidebar containing site news, Twitter feed.  Can appear anywhere in the main element.  Can appear multiple times.  Best aside element appeare after the article element.</p>
+    </main>
+    <footer>
+        <p>Footer element contains closing content such as copyright, address, and contact information.</p>
+    </footer>
+</body>
+</html>
