@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Design Playground by Paul McFedries Chapter 11 Learning Page Layout Basics With Inline Blocks</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-size: 100%;
+        }        
+        body {
+            background-color: gray;
+            max-width: 50em;
+            font-size: 1em;
+            line-height: 1.4;
+        }
+        .headermain {
+            border: 1px solid black;
+            padding: .5em 0 .1em 1em;
+        }
+        .headermain h1 {
+            display: inline-block;
+            padding-left: .5em;
+            font-size: 2.5em;
+        }
+        .navcss {
+            border: 1px solid red;
+            padding: .5em;
+        }
+        .navcss ul {
+            list-style-type: none;
+            padding-left: .5em;
+        }
+        .navcss li {
+            display: inline-block;
+            padding-right: 1.5em;
+        }
+        .articletwocolumnlayouta {
+            display: inline-block;
+            width: 75%;
+            border: 1px solid black;
+        }
+        .asidetwocolumnlayouta {
+            display: inline-block;
+            width: 25%;
+            vertical-align: top;
+            border: 1px solid black;
+        }
+        .maintwocolumnlayoutb {
+            background-color: #b4a7d6;
+        }
+        .articletwocolumnlayoutb {
+            display: inline-block;
+            padding: 1em;
+            width: 75%;
+            background-color: white;
+        }
+        .asidetwocolumnlayoutb {
+            display: inline-block;
+            width: 25%;
+            vertical-align: top;
+            background-color: #b4a7d6;
+        }        
+        footer {
+            padding: 1em;
+            background-color: #b6d7a8;
+        }
+    </style>
+</head>
+<body>
+    <header class="headermain">
+        <img src="your-logo-here.png" alt="Image element inline block by default.">
+        <h1>Use inline block for page layouts.</h1>
+        <h1>Header element for introductory content such as site title and site logo.  Display h1 element as an inline block.  The img element is an inline block by default.  h1 as an inline block display:  inline-block places the img and h1 next to each other left to right.</h1>
+    </header>
+    <nav class="navcss">
+        <ul>
+        <li><a href="#">Nav element contains navigation content.</a></li>
+        <li><a href="#">Links to other section or a search box.</a></li>
+        <li><a href="#">Typically appears after the header element.</a></li>
+        <li><a href="#">Inline block li elements to the left to place next to each other with padding.</a></li>
+        </ul>
+    </nav>
+    <main>
+        <p>Unique content goes here.</p>
+        <p>Inline blocks page layout similar to floats page layout.  Display two or more elements to appear next to each other as inline blocks.  No clear elements explicitly required.</p>
+        <p>Inline blocks can create sophisticated layouts.  Must watch for vertical alignments.  Ensure no whitespace between blocks.  Can't send elements to the right side of the parents.  Can send using float:  right.  block: flexbox is new introduced in chapter 12.</p>
+        <p>The header, navigation, and content columns are side by side.  Use display: inline-block to get the elements out of the default page flow and rendered beside each other or next to each other.  Inline blocks are displayed left to right by default or according to the default inline orientation.  It's similar to declare float: left.</p>        
+        <article>
+            <header>
+                <h2>Okay to add a header for an article</h2>
+            </header>
+            <p>Article element is a self-contained composition such as a newspaper or magazine article, blog, forum, or essay.</p>
+            <section>
+                <p>Section element to surround any part of a page to see in an online.  Typically section elements appear in the article element.</p>
+            </section>
+            <section>
+                <h3>Introduction section</h3>
+                <p>Introduction text</p>
+            </section>
+            <section>
+                <h3>Argument section</h3>
+                <p>Argument text</p>
+            </section>
+            <section>
+                <h3>Summary section</h3>
+                <p>Summary text</p>
+            </section>
+        </article>
+        <article class="articletwocolumnlayouta">
+            <h2>Left column layout</h2>
+            <p>The article element and the aside element are asigned display:  inline-block which places them beside each other on the left side of the main element.  Assign a width value to set the size of the columns.</p>
+            <p>The &lt;/article&gt; article end tag and &lt;aside&gt; start tag must be together for no whitepsace between them.  The browser adds space when it renders the elements.</p>
+        </article><aside class="asidetwocolumnlayouta">
+            <h3>Right column layout</h3>
+            <p>Aside element for a page isn't directly related to the page's unique content.  Examples are a sidebar containing site news, Twitter feed.  Can appear anywhere in the main element.  Can appear multiple times.  Best aside element appeare after the article element.</p>
+            <p>Align the aside element text with the top using vertical-align: top;</p>
+        </aside>
+    </main>
+    <main class="maintwocolumnlayoutb">
+        <article class="articletwocolumnlayoutb">
+            <h2>Article Title.  Using book solution and webpagelayout.html using floats solution.</h2>
+            <p>The Article left column and aside right column are the same height.  Use technique called faux columns or fake columns.  1 Put a wrapper element around the article element and aside element.  The main element is the wrapper element.  2 Assign the same background color to a wrapper element and the aside element.  3 Use a different background color to the article element.  The a wrapper element which is main element and the aside element use the same background color.  The right column appears to align with the left column.  The article element must be taller than the aside element.</p>
+            <p>Article paragraph 2</p>      
+        </article><aside class="asidetwocolumnlayoutb">
+            <h3>Sidebar Title.  From book solution.</h3>
+            <p>Sidebar paragraph</p>
+        </aside>  
+    </main>
+    <footer>
+        <p>Footer element contains closing content such as copyright, address, and contact information.</p>
+    </footer>
+</body>
+</html>
