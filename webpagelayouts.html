@@ -3,9 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web Design Playground by Paul McFedries Chapter 11 Learning Page Layout Basics</title>
+    <title>Web Design Playground by Paul McFedries Chapter 11 Learning Page Layout Basics With Floats</title>
     <style type="text/css">
-        body {background-color: gray}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-size: 100%;
+        }        
+        body {
+            background-color: gray;
+            max-width: 50em;
+            font-size: 1em;
+            line-height: 1.4;
+        }
         .headermain {
             border: 1px solid black;
             padding: .25em 0;
@@ -39,11 +50,53 @@
             display: block;
             clear: both;
         }
+        .articletwocolumnlayouta {
+            float: left;
+            padding: 1em;
+            width: 75%;
+            border: 1px solid black;
+        }
+        .asidetwocolumnlayouta {
+            float: left;
+            width: 25%;
+            padding: .5em;
+            border: 1px solid black;
+        }
+        .self-clear::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+        .self-clear2 {
+            background-color: #b4a7d6;
+        }
+        .self-clear2::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+        .articletwocolumnlayoutb {
+            float: left;
+            padding: 1em;
+            width: 75%;
+            background-color: white;
+        }
+        .asidetwocolumnlayoutb {
+            float: left;
+            width: 25%;
+            padding: .5em;
+            background-color: #b4a7d6;
+        }
+        footer {
+            padding: .25em 1em;
+            background-color: #b6d7a8;
+        }
     </style>
 </head>
 <body>
     <header class="headermain">
         <img src="your-logo-here.png" alt="Float the image element to the left from .headermain img CSS.">
+        <h1>Use floats for page layouts.  h1 also float left.  Length too short to be below YOUR LOGO HERE.</h1>
         <h1>Header element for introductory content such as site title and site logo.  Float h1 element to the left.  Finally, clear the header css which is clearfix to prevent header from collapsing with ::after.</h1>
     </header>
     <nav class="navcss">
@@ -78,10 +131,31 @@
                 <p>Summary text</p>
             </section>
         </article>
-        <aside>
+        <article class="articletwocolumnlayouta">
+            <h2>Left column layout</h2>
+            <p>The article element and the aside element are asigned float:  left which places them beside each other on the left side of the main element.  I could float the aside element to the right to get the same layout.  Assign a width value to set the size of the columns.</p>
+            <p>Paragraph 2</p>
+        </article>
+        <aside class="asidetwocolumnlayouta">
+            <h3>Right column layout</h3>
             <p>Aside element for a page isn't directly related to the page's unique content.  Examples are a sidebar containing site news, Twitter feed.  Can appear anywhere in the main element.  Can appear multiple times.  Best aside element appeare after the article element.</p>
+            <p>Div element self-clear from solutions below aside element to clear the CSS.</p>
+        </aside>
+        <div class="self-clear"></div>
     </main>
-    <footer>
+    <main class="self-clear2">
+        <article class="articletwocolumnlayoutb">
+            <h2>Article Title.  From book solution.</h2>
+            <p>The Article left column and aside right column are the same height.  Use technique called faux columns or fake columns.  1 Put a wrapper element around the article element and aside element.  The main element with self-clear2 as the CSS is the wrapper element.  2 Assign the same background color to a wrapper element and the aside element.  3 Use a different background color to the article element.  The a wrapper element which is main element and the aside element use the same background color.  The right column appears to align with the left column.  The article element must be taller than the aside element.</p>
+            <p>Article paragraph 2</p>      
+        </article>
+    
+        <aside class="asidetwocolumnlayoutb">
+            <h3>Sidebar Title.  From book solution.</h3>
+            <p>Sidebar paragraph</p>
+        </aside>  
+    </main>
+    <footer class="self-clear">
         <p>Footer element contains closing content such as copyright, address, and contact information.</p>
     </footer>
 </body>
