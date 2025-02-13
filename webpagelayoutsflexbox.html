@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Design Playground by Paul McFedries Chapter 12 Creating Page Layouts With Flexbox</title>
+    <style type="text/css">        
+        body {
+            background-color: gray;
+            height: 75vh;
+            width: 75vw;
+        }
+        .item {
+            padding: .1em;
+            color: white;
+            font-family: "Verdana";
+            font-size: 2.5em;
+            text-align: center;
+            text-shadow: 5px 5px 0 rgba(0,0,0,0.2);
+        }
+        .itemsubclassA {
+            background-color: crimson;
+        }
+        .itemsubclassB {
+            background-color: indigo;
+        }
+        .itemsubclassC {
+            background-color: navy;
+        }
+        .itemsubclassD {
+            background-color: darkgreen;
+        }
+        .itemsubclassE {
+            background-color: saddlebrown;
+        }
+        .itemsubclassF {
+            background-color: black;
+        }
+        .flexdirectionrow {
+            display: flex;
+            flex-direction: row;
+        }
+        .flexdirectionrowreverse {
+            display: flex;
+            flex-direction: row-reverse;
+        }
+        .flexdirectioncolumn {
+            display: flex;
+            flex-direction: column;
+        }
+        .flexdirectioncolumnreverse {
+            display: flex;
+            flex-direction: column-reverse;
+        }
+        .flexdirectionrowjustifycontentspacearound {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+        .rowspacearoundflexend {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: flex-end;
+            border: 1px solid red;
+        }
+        .rowspacearoundflexendwrap {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: flex-end;
+            flex-wrap: wrap;
+            border: 1px solid blue;
+        }
+        .rowspacearoundflexendwrapspacebetween {
+            width: 40vw;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-content: space-between;
+            outline: 1px solid green;
+        }
+
+    </style>
+</head>
+<body>
+    <p>The default flexbox is stack the blocks.  The div elements are stacked and extended the width of the browser window.  The <i>flex</i> from flexbox refers to the child items should be able to change the width and height dimensions by filling empty space if there's too much or shrinking to allow for reduction.  The dimension change happens when the content changes or the size of the screen changes.</p>
+    <p>Two drawbacks.  The inherit flexibility can behave nonsensical.  It's not suitable for large-scale layouts; best for components of a page such as header or sidebar, or small-scale layouts.</p>
+    <p>Containers and items are the two kinds of page objects working with flexbox.  A flex container is any type of parent block element which surrounds one or more elements such as div, p, and body.  A flex item is any type of child elements.</p>
+    <h4>The CSS declaration is display: flex;  The container's child elements automatically become flex items.  Flexbox containers have two axes which are main and cross.  Main is the axis which runs in the same direction as the container's items.  Cross or secondary axis is the axis which runs perpendicular to the main axis.  RM:  main axis horizontal and cross axis vertical?</h4>
+    <div class="noflexbox">
+        <div class="item itemsubclassA">A1</div>
+        <div class="item itemsubclassB">B2</div>
+        <div class="item itemsubclassC">C3</div>
+        <div class="item itemsubclassD">D4</div>
+        <div class="item itemsubclassE">E5</div>
+        <div class="item itemsubclassF">F6</div>
+    </div>
+    <h4>Flexbox default flex-direction row items run left to right.  It's the same as float: left or display: inline-block.  No need to style each child element.</h4>
+    <div class="flexdirectionrow">
+        <div class="item itemsubclassA">A1</div>
+        <div class="item itemsubclassB">B2</div>
+        <div class="item itemsubclassC">C3</div>
+        <div class="item itemsubclassD">D4</div>
+        <div class="item itemsubclassE">E5</div>
+        <div class="item itemsubclassF">F6</div>
+    </div>
+    <h4>Flexbox flex-direction row-reverse items run right to left.  It's the same as float: right.  Impossible using inline blocks.  No need to style each child element.</h4>
+    <div class="flexdirectionrowreverse">
+        <p>Flexbox flex-direction row-reverse items run right to left.  RM:  intentionally added sentence.</p>
+        <div class="item itemsubclassA">A1</div>
+        <div class="item itemsubclassB">B2</div>
+        <div class="item itemsubclassC">C3</div>
+        <div class="item itemsubclassD">D4</div>
+        <div class="item itemsubclassE">E5</div>
+        <div class="item itemsubclassF">F6</div>
+    </div>
+    <h4>Flexbox flex-direction column items run top to bottom.</h4>
+    <div class="flexdirectioncolumn">
+        <div class="item itemsubclassA">A1</div>
+        <div class="item itemsubclassB">B2</div>
+        <div class="item itemsubclassC">C3</div>
+        <div class="item itemsubclassD">D4</div>
+        <div class="item itemsubclassE">E5</div>
+        <div class="item itemsubclassF">F6</div>
+    </div>
+    <h4>Flexbox flex-direction column-reverse items run bottom to top.</h4>
+    <div class="flexdirectioncolumnreverse">
+        <p>Flexbox flex-direction column-reverse items run bottom to top.  RM:  intentionally added sentence.</p>
+        <div class="item itemsubclassA">A1</div>
+        <div class="item itemsubclassB">B2</div>
+        <div class="item itemsubclassC">C3</div>
+        <div class="item itemsubclassD">D4</div>
+        <div class="item itemsubclassE">E5</div>
+        <div class="item itemsubclassF">F6</div>
+    </div>
+    <h4>Justify-content sets how the items are arranged along the main axis.  Flex-start places items at the beginning of the container which is default.  Flex-end places items at the ending.  Center places items in the middle.  Space-between places items in an even distribution including the beginning and the ending.  Space-around distributes each item evenly.</h4>
+    <div class="flexdirectionrowjustifycontentspacearound">
+        <p>Flexbox flex-direction row and justify-content space-around all items each space evenly distributed.  RM:  intentionally added sentence.</p>
+        <div class="item itemsubclassA">A1</div>
+        <div class="item itemsubclassB">B2</div>
+        <div class="item itemsubclassC">C3</div>
+        <div class="item itemsubclassD">D4</div>
+        <div class="item itemsubclassE">E5</div>
+        <div class="item itemsubclassF">F6</div>
+    </div>
+    <h4>Align-items sets how the items are arranged along the cross axis.  Stretch expands each item along the cross axis to fill the container which is default.  Flex-start aligns the items with the beginning of the cross axis.  Flex-end aligns the items at the end of the cross axis.  Center aligns the items in the middle of the cross axis.  Baseline aligns the items along their baseline of the flex container.  RM:  use for favorite quotes for my webpage.</h4>
+    <div class="rowspacearoundflexend">
+        <p>Flexbox flex-direction row, justify-content space-around all items each space evenly distributed, and flex-end align items at the end of the cross axis or all touch the bottom.  RM:  intentionally added sentence.</p>
+        <div class="item itemsubclassA">A1</div>
+        <div class="item itemsubclassB">B2</div>
+        <div class="item itemsubclassC">C3</div>
+        <div class="item itemsubclassD">D4</div>
+        <div class="item itemsubclassE">E5</div>
+        <div class="item itemsubclassF">F6</div>
+    </div>
+    <h4>Flexbox treats a container as a single row or a single column by default.  Flexbox shrinks the items along the main axis to make them fit.  Can wrap the container's items to multiple rows or columns using flex-wrap.  Nowrap doesn't wrap which is default.  Wrap does wrap items as many rows or columns as needed.  Wrap-reverse does wrap items at the end of the cross axis.</h4>
+    <div class="rowspacearoundflexendwrap">
+        <p>Flexbox flex-direction row, justify-content space-around all items each space evenly distributed, flex-end align items at the end of the cross axis or all touch the bottom, and wrap.  RM:  intentionally added sentence.</p>
+        <div class="item itemsubclassA">A1</div>
+        <div class="item itemsubclassB">B2</div>
+        <div class="item itemsubclassC">C3</div>
+        <div class="item itemsubclassD">D4</div>
+        <div class="item itemsubclassE">E5</div>
+        <div class="item itemsubclassF">F6</div>
+    </div>
+    <h4>Multiple rows or multiple columns along the cross axis.  It's similar to arrange individual flex items along the main axis and handle entire lines of line.  Use the align-content property.  Stretch expands the wrapped lines along the cross axis to fill the container height which is default.  Center places the lines in the middle of the cross axis.  Flex-start places the lines at the beginning of the cross axis.  Flex-end places the lines at the end of the cross axis.  Space-between places the first line at the beginning of the cross axis, the last line at the end, and the rest of the lines evenly distributed in between.  Space-around distributes the lines evenly within the container each line a set amount of space on its sides.</h4>
+    <div class="rowspacearoundflexendwrapspacebetween">
+        <p>Flexbox flex-direction row, wrap, and space-between.  Width is 40vw.  Use outline instead of border which is outline 1px solid green.  RM:  intentionally added sentence can't duplicate from the book accurately.  Book error?.</p>
+        <div class="item itemsubclassA">A1 Lorem ipsum dolor sit amet consectetur, adipisicing elit.</div>
+        <div class="item itemsubclassB">B2</div>
+        <div class="item itemsubclassC">C3</div>
+        <div class="item itemsubclassD">D4</div>
+        <div class="item itemsubclassE">E5</div>
+        <div class="item itemsubclassF">F6</div>
+    </div>
+</body>
+</html>
