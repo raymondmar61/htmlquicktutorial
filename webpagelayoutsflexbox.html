@@ -80,7 +80,110 @@
             align-content: space-between;
             outline: 1px solid green;
         }
-
+        .centerhorizontalvertical {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 10vh;
+            outline: 1px solid yellow;
+        }
+        .itemsubclassAflexgrow {
+            background-color: crimson;
+            flex-grow: 1;
+        }
+        .itemsubclassBflexgrow {
+            background-color: indigo;
+            flex-grow: 2;
+        }
+        .itemsubclassCflexgrow {
+            background-color: navy;
+            flex-grow: 1;
+        }
+        .itemsubclassAflexshrink1 {
+            background-color: crimson;
+            flex-shrink: 5;
+        }
+        .subbody1csscode {
+            display: flex;
+            outline: 1px solid orange;
+            background-color: #14662d;
+        }
+/*        .dictionarycontainerfrombook {
+            list-style-type: none;
+            padding: 2em;
+            max-width: 40em;
+            border-radius: .25em;
+            background-color: white;
+        }*/
+        .dictionarycontainer {
+            list-style-type: none;
+        }
+        .dictionaryitem {
+            display: flex;
+        }
+        .dictionaryimage {
+            flex-shrink: 0;
+        }
+        .dictionaryimage img {
+            border-radius: 10px;
+            height: 80px;
+            width: 80px;
+        }
+        .dictionaryentry {
+            flex-grow: 1;
+            padding-left: 1em;
+        }
+        .subbody2csscode {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            max-width: 50em;
+            /* min-height: 100vh;*/
+        }
+        .subbody2csscode header {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            border: 1px solid black;
+            padding: 1em;
+        }
+        .subbody2csscode img {
+            flex-shrink: 0;
+        }
+        .subbody2csscode h1 {
+            flex-grow: 1;
+            padding-left: .5em;
+            font-size: 2.5em;
+        }
+        .subbody2csscode p {
+            flex-grow: 1;
+            padding-left: .5em;
+        }
+        .subbody2csscode nav {
+            padding: .5em;
+            border: 1px solid black;
+        }
+        .subbody2csscode nav ul {
+            display: flex;
+            justify-content: flex-start;
+            list-style-type: none;
+            padding-left: .5em;
+        }
+        .subbody2csscode li {
+            padding-right: 1.5em;
+        }
+        .subbody2csscode main {
+            display: flex;
+            flex-grow: 1;
+        }
+        .subbody2csscode article {
+            flex-grow: 3;
+            border: 1px solid black;
+        }
+        .subbody2csscode aside {
+            flex-grow: 1;
+            border: 1px solid black;
+        }
     </style>
 </head>
 <body>
@@ -174,5 +277,104 @@
         <div class="item itemsubclassE">E5</div>
         <div class="item itemsubclassF">F6</div>
     </div>
+    <div class="centerhorizontalvertical">
+        <h4>Center an element horizontally and vertically.</h4>
+    </div>
+        <p>justify-content: center; centers horizontally.  align-items: center; centers vertically.  height:  10vh sets the height of the window above.</p>
+    <h4>Flexbox default flex-direction row items run left to right.  It's the same as float: left or display: inline-block.  Objects fill empty space.  Use the flex-grow.  flex-grow:  numbervalue;  Default is zero.  The number value is a positive number.  Any positive number to one flex item the amount of empty space in the container is added.  Assign the same positive number to multiple flex items the amount of empty space in the container is divided evenly.  Assign different positive numbers to multiple flex items the amount of empty space in the container is divided proportionally based on the values.</h4>
+    <div class="flexdirectionrow">
+        <div class="item itemsubclassAflexgrow">A1</div>
+        <div class="item itemsubclassBflexgrow">B2</div>
+        <div class="item itemsubclassCflexgrow">C3</div>
+        <div class="item itemsubclassD">D4</div>
+        <div class="item itemsubclassE">E5</div>
+        <div class="item itemsubclassF">F6</div>
+    </div>
+    <h4>Flexbox default flex-direction row items run left to right.  It's the same as float: left or display: inline-block.  Objects fill empty space.  Use the flex-shrink.  flex-shrink:  numbervalue;  Default is one.  The number value is positive.  Zero is no shrinking.  Number greater than 1 the browser shrinks more than the other items by a factor proportional to the value provided.  Number greater than 0 and less than 1 the browser shrinks the item less than the other items.</h4>
+    <h4>The browser won't shrink an item to a size less than the minimum required to display its content. If you keep increasing an item's flex-shrink value, and the item refuses to get smaller, the item is probably at its minimum possible size.  RM:  I can't make an item shrink.</h4>
+    <div class="flexdirectionrow" style="outline: 1px solid red;">
+        <div class="item itemsubclassAflexshrink1">A1</div>
+        <div class="item itemsubclassB">B2</div>
+        <div class="item itemsubclassC">C3</div>
+        <div class="item itemsubclassD">D4</div>
+        <div class="item itemsubclassE">E5</div>
+        <div class="item itemsubclassF">F6</div>
+    </div>
+    <p>Skipped initial size for an item, flex shorthand properties, and change item order.</p>
+    <h1>Thumbnail List</h1>
+    <p>Thumbnail image on the left and a description on the right.  Use flexbox.  Each li becomes a flex container.  Images don't shrink.  Each entry uses the rest of the container.</p>
+    <div class="subbody1csscode">
+    <ul class="dictionarycontainer">
+        <li class="dictionaryitem">
+            <div class="dictionaryimage">
+                <img src="animalpath.jpg" alt="Photo of an animal path">
+            </div>
+            <div class="dictionaryentry">
+                <h4>Animal Path</h4>
+                <p>A footpath or track made by the constant and long-term walking of animals.</p>
+            </div>
+        </li>
+        <li class="dictionaryitem">
+            <div class="dictionaryimage">
+                <img src="bridleway.jpg" alt="Photo of a bridleway">
+            </div>
+            <div class="dictionaryentry">
+                <h4>Bridleway</h4>
+                <p>A footpath that is also suitable for a horse and rider.</p>
+            </div>
+        </li>
+        <li class="dictionaryitem">
+            <div class="dictionaryimage">
+                <img src="coffintrail.jpg" alt="Photo of an coffin trail">
+            </div>
+            <div class="dictionaryentry">
+                <h4>Coffin Trail</h4>
+                <p>A footpath used for transporting a coffin to a cemetary for burial.</p>
+            </div>
+        </li>
+        <li class="dictionaryitem">
+            <div class="dictionaryimage">
+                <img src="desireline.jpg" alt="Photo of an desire line">
+            </div>
+            <div class="dictionaryentry">
+                <h4>Desire Line</h4>
+                <p>An informal path that pedestrians prefer to take to get from one location to another rather than using a sidewalk or other official route.</p>
+            </div>
+        </li>
+    </ul>
+    </div>
+    <h1>Header Flexbox</h1>
+    <p>The header is a flex container arranged at the start of the main horizontal axis and centered on the cross vertical axis</p>
+    <div class="subbody2csscode">
+        <header>
+            <img src="your-logo-here.png" alt="Our Logo">
+            <h1>Site Title</h1>
+        </header>
+        <h1>Navigation Bar Flexbox</h1>
+        <p>Navigation bar is a horizontal flex container.  ul is a flex container meaning the li become flex items arranged horizontally from the start.</p>
+        <nav>
+            <ul>
+                <li>Home</li>
+                <li>Item</li>
+                <li>Item</li>
+                <li>Item</li>
+            </ul>
+        </nav>
+        <h1>Content Columns main tag, article tag, and aside tag Flexbox</h1>
+        <p>The article and aside tags are flex items to give a two column content layout.</p>
+        <p>The main element is a flex container for the article element and aside element.  Set flex-grow to 1 for the main element tells the browser to give the main element all the empty vertical space.  Article element flex-grow is 3 and aside element flex-grow is 1 for a 75% horizontal space for article and 25% horizontal space for aside.</p>
+        <main>
+            <article>
+                <h2>Article Title</h2>
+                <p>Article paragraph 1</p>
+                <p>Article paragraph 2</p>
+            </article>
+            <aside>
+                <h3>Sidebar Title</h3>
+                <p>Sidebar paragraph</p>
+            </aside>
+        </main>
+    </div>
+
 </body>
 </html>
