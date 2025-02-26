@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Design Playground Photo Gallery Chapter 15 by Paul McFedries</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            line-height: 1.3;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            min-height: 100vh;
+            font-family: Optima, Calibri, sans-serif;
+            background-color: #221900;
+            color: #ecd078;
+        }
+        header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1em 0;
+            width: 100%;
+            background-color: #542437;
+        }
+        h1 {
+            padding-left: .5em;
+            font-family: cursive;
+            font-size: 3em;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+/*            background-color: inherit;*/
+        }
+        nav ul {
+            display: flex;
+            list-style-type: none;
+        }
+        nav li {
+            padding: 1em 2.5em;
+            text-transform: uppercase;
+        }
+        .currentpage {
+            padding: .75em;
+            background-color: #ecd078;
+/*            color: #221900;*/
+        }
+        a {
+/*            color: inhert;*/
+            text-decoration: none;
+        }
+        a:hover {
+            color: #d95b43;
+            text-decoration: underline;
+        }
+        main {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            align-content: flex-start;
+            flex-grow: 1;
+            max-width: 960px;
+            font-family: Optima, Calibri, sans-serif;
+
+        }
+        footer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            padding: 1em 0;
+            text-transform: uppercase;
+            background-color: #542437;
+        }
+        footer p {
+            padding: 0 1.5em;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="ampersand-photography.png" alt="Logo">
+        <h1>Ampersand Photography</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><span class="currentpage"><a href="photogallery.html">Gallery 1 photogallery.html</a></span></li>
+            <li><a href="gallery2.html">Gallery 2</a></li>
+            <li><a href="gallery3.html">Gallery 3</a></li>
+            <li><a href="gallery4.html">Gallery 4</a></li>
+        </ul>
+    </nav>
+    <main>
+        <p>The body CSS code is a single-column container which gives a vertical main axis--flexbox container. Items aligned with the start of the vertical main axis or the top of the page.  Centered horizontally.  Footer appears at the bottom of the screen.</p>
+        <p>Set minimum height min-height:  100vh;.  vh is the viewport height unit where 100vh equals 100% of the current viewport height.  The footer section always appear at the bottom of the screen.</p>
+        <p>The header is a flexbox container.  The header uses the full width of the window.</p>
+        <p>The navigation is an unordered list of links flexbox container centered horizontally and vertically.  The unordered list doesn't have bullets.  The CSS color: inherit on the a element tells the browser to use the parent's color for the links.</p>
+        <p>Further, add a span element for the navigation link for which the user is  currently on its page.  Also, add CSS code when the user hovers over the link.</p>
+        <p>Main is a flexbox container centers the thumbnails horizontally and wrap.</p>
+        <p>The footer is aligned horizontally and vertically using flex container.  Set the main element flex-grow to 1 to force main to fill space and allow footer to appear at the bottom even wthen the main element doesn't fill the browser window vertically.  Set align-content:  flex-start to elimiate weird vertical spacing in the thumbnails.</p>
+        <a href="image01.jpg" target="_blank"><img src="image01-thumbnail.jpg" alt="Thumbnail for image 1"></a>
+        <a href="image02.jpg" target="_blank"><img src="image02-thumbnail.jpg" alt="Thumbnail for image 2"></a>
+        <a href="image03.jpg" target="_blank"><img src="image03-thumbnail.jpg" alt="Thumbnail for image 3"></a>
+    </main>
+    <footer>
+        <p>Copyright and social media links</p>
+    </footer>
+</body>
+</html>
