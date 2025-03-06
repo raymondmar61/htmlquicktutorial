@@ -70,12 +70,18 @@
             flex-grow: 1;
             max-width: 960px;
             font-family: Optima, Calibri, sans-serif;
+/*            padding-bottom: 3.5em;*/
 
+        }
+        p {            
+            font-size: 1.5em;
         }
         footer {
             display: flex;
             justify-content: center;
             align-items: center;
+/*            position: fixed;
+            bottom: 0;*/
             width: 100%;
             padding: 1em 0;
             text-transform: uppercase;
@@ -84,6 +90,43 @@
         footer p {
             padding: 0 1.5em;
         }
+        .image-thumbnail {
+            position: relative;
+            cursor: pointer;
+            margin-left: 1em;
+            margin-bottom: 1em;
+            width: 300px;
+            height: 200px;
+        }
+        .image-caption {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 300px;
+            height: 200px;
+            opacity: 0;
+            background-color: rgba(32, 32, 32, 0.75);
+            color: #ecd078;
+            -webkit-transition: opacity 1s ease;
+            transition: opacity 1s ease;
+        }
+        .image-caption:hover {
+          opacity: 1;
+        }
+        .caption-title {
+          padding-bottom: .5em;
+          font-size: 1.2em;
+          text-align: center;
+          text-transform: uppercase;
+        }
+        .caption-text {
+          font-size: .8em;
+          text-align: center;
+        }
+
     </style>
 </head>
 <body>
@@ -93,7 +136,7 @@
     </header>
     <nav>
         <ul>
-            <li><span class="currentpage"><a href="photogallery.html">Gallery 1 photogallery.html</a></span></li>
+            <li><span class="currentpage"><a href="photogallery.html">Gallery 1 file name is photogallery.html</a></span></li>
             <li><a href="gallery2.html">Gallery 2</a></li>
             <li><a href="gallery3.html">Gallery 3</a></li>
             <li><a href="gallery4.html">Gallery 4</a></li>
@@ -107,12 +150,84 @@
         <p>Further, add a span element for the navigation link for which the user is  currently on its page.  Also, add CSS code when the user hovers over the link.</p>
         <p>Main is a flexbox container centers the thumbnails horizontally and wrap.</p>
         <p>The footer is aligned horizontally and vertically using flex container.  Set the main element flex-grow to 1 to force main to fill space and allow footer to appear at the bottom even wthen the main element doesn't fill the browser window vertically.  Set align-content:  flex-start to elimiate weird vertical spacing in the thumbnails.</p>
-        <a href="image01.jpg" target="_blank"><img src="image01-thumbnail.jpg" alt="Thumbnail for image 1"></a>
-        <a href="image02.jpg" target="_blank"><img src="image02-thumbnail.jpg" alt="Thumbnail for image 2"></a>
-        <a href="image03.jpg" target="_blank"><img src="image03-thumbnail.jpg" alt="Thumbnail for image 3"></a>
+        <p>Fixed footer.  Add padding-bottom: 3.5em; in CSS main.  Add position: fixed;
+            bottom: 0; in CSS footer.</p>
+        <p>Image captions below pic</p>
+        <div class="image-thumbnail">
+            <a href="image01.jpg" target="_blank"><img src="image01-thumbnail.jpg" alt="Thumbnail for image 1"></a>
+            <figure>
+                <figcaption>Ladies gossiping in Montreal</figcaption>
+            </figure>
+        </div>
+        <div class="image-thumbnail">
+            <a href="image02.jpg" target="_blank"><img src="image02-thumbnail.jpg" alt="Thumbnail for image 2"></a>
+            <figure>
+                <figcaption>To an ant, a flower is a world</figcaption>
+            </figure>
+        </div>
+        <div class="image-thumbnail">
+            <a href="image03.jpg" target="_blank"><img src="image03-thumbnail.jpg" alt="Thumbnail for image 3"></a>
+            <figure>
+                <figcaption>A bee bobbing for nectar</figcaption>
+            </figure>
+        </div>
+        <p>Image captions and title below pic</p>
+        <p>The image caption on the image somehow I can't click on link for a bigger size.</p>
+        <div class="image-thumbnail">
+            <a href="image01.jpg" target="_blank"><img src="image01-thumbnail.jpg" alt="Thumbnail for image 1"></a>
+            <figure>
+                <figcaption class="image-caption">
+                    <p class="caption-title">Les Chuchoteuses</p>
+                    <p class="caption-text">Sculpture of ladies gossiping in Montreal</p>
+                </figcaption>
+            </figure>
+        </div>
+        <div class="image-thumbnail">
+            <a href="image02.jpg" target="_blank"><img src="image02-thumbnail.jpg" alt="Thumbnail for image 2"></a>
+            <figure>
+                <figcaption class="image-caption">
+                    <p class="caption-title">Busy Bee</p>
+                    <p class="caption-text">A bee bobbing for nectar</p>
+                </figcaption>
+            </figure>
+        </div>
+        <div class="image-thumbnail">
+            <a href="image03.jpg" target="_blank"><img src="image03-thumbnail.jpg" alt="Thumbnail for image 3"></a>
+            <figure>
+                <figcaption class="image-caption">
+                    <p class="caption-title">On the Wing</p>
+                    <p class="caption-text">An unknown yellow bird, mid-flight</p>
+                </figcaption>
+            </figure>
+        </div>
+        <div class="image-thumbnail">
+            <a href="image05.jpg"  target="_blank"><img src="image05-thumbnail.jpg" alt="Thumbnail version of a photo showing a Spiderman toy on a chair"></a>
+            <figure>
+                <figcaption class="image-caption">
+                    <p class="caption-title">Sad Spiderman</p>
+                    <p class="caption-text">Doing whatever a spider can<br>(click to enlarge)</p>
+                </figcaption>
+            </figure>
+        </div>
+        <div class="image-thumbnail">
+            <a href="image06.jpg"  target="_blank"><img src="image06-thumbnail.jpg" alt="Thumbnail version of a photo showing a horse-and-cart toy"></a>
+<!--             <figure>
+                <figcaption class="image-caption">
+                    <p class="caption-title">Horse & Cart</p>
+                    <p class="caption-text">A horse-and-cart toy, ready to move out<br>(click to enlarge)</p>
+                </figcaption>
+            </figure> -->
+        </div>
     </main>
     <footer>
         <p>Copyright and social media links</p>
+        <p><a href="#">Facebook</a></p>
+        <p><a href="#">Twitter</a></p>
+        <p><a href="#">Instagram</a></p>
+        <p><a href="#">Any random link 1</a></p>
+        <p><a href="#">Any random link 2</a></p>
+        <p><a href="#">Any random link 3</a></p>
+        <p><a href="#">Any random link 4</a></p>
     </footer>
 </body>
 </html>
