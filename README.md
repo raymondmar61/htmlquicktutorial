@@ -1,6 +1,6 @@
 # htmlquicktutorial
 
-Update Nov 25, 2025:  Web Design Playground by Paul McFedries
+Update Nov 25, 2024:  Web Design Playground by Paul McFedries
 
 Update Oct 24, 2024:  HTML Beginners Basic Of Web Design by Paul Gibbs
 
