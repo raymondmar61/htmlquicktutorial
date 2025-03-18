@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Design Playground by Paul McFedries Typography</title>
+    <style type="text/css">
+        body {
+            background-color: grey;
+        }
+        h3 {
+            font-family: "Lucida Bright", Georgia, serif;
+        }
+        p, li {
+            font-family: Tahoma, Helvetica, Arial, sans-serif;
+        }
+        #smallercaps {
+            font-variant: small-caps;
+        }
+        #tightleading {
+            line-height: 0.5;
+        }
+        .looseleading {
+            line-height: 2.5;
+        }
+        #typographytitle {
+            font: bold 1.5em/1.3 Lora;
+        }
+        .dttext {
+            font: italic 1.1em/1.25 Lora;
+        }
+        #baselinesmallcaps {
+            font: small-caps 1em Lora;
+        }
+    </style>
+</head>
+<body>
+    <p>Typography matters.  Typefaces matter.  Type sizes and styles matter.  Spacing, alignment, and indents matter.</p>
+    <p>Use the font-family property separate the multiple font families.  It's called font stack.  The browser checks the first font to see whether it's installed when specifying a font stack.  If the first font family is not installed, the browser uses the next font family in the list.</p>
+    <h3>People Of Collar</h3>
+    <p>The adjectives <i>white-collar</i> and <i>blue-collar</i> are     familiar to most of us, but here are a few more whimsical variants that you might not have heard of:</p>
+    <ul>
+    <li>Black-and-blue-collar: Football players</li>
+    <li>Green-collar: Environmentalists</li>
+    <li>Grey-collar: Employees who perform both white- and bluecollar
+    tasks</li>
+    <li>Open-collar: People who work at home</li>
+    <li>Steel-collar: Robots</li>
+    </ul>
+    <p>A procedure for some text to be noticed.  It's a different way.  Use smallcaps.  Movable type was invented by <span id="smallercaps">Johannes Gutenberg</span> in the mid-fifteenth century. The first printing press in England was set up by <span id="smallercaps">William Caxton</span> in 1876.</p>
+    <p>Line height is the distance between the baselines of two adjacent lines of text.  The baseline is the invisible line upon which lowercase characters such as o and x appear to sit.  Use the CSS property line-height.  The values are number, length, percentage, and normal.  Number is a numeric value without a unit; the computed line height is the current type size multiplied by the number.  Length is a numeric value with a unit such as em.  Percentage is the computed line height multipled by the percentage.  Normal is a keyword to set the line height automatically based on the current type size.</p>
+    <p id="tightleading">The name <i>line height</i> is often used synonymously with <i>leading</i> (it's pronounced <i>ledding</i>). This term comes from the movable type profession, where typesetters often use a strip of lead to set the amount of space between two lines of text.</p>
+    <p id="tightleading">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo numquam cumque nisi ex quis minus dolore facilis reprehenderit dolor ipsa commodi et veritatis sed deserunt alias quidem, quisquam. Eum, tempore.  Lorem ipsum dolor sit, amet consectetur, adipisicing elit. Distinctio aut laboriosam voluptates doloremque perspiciatis fugit, enim quia suscipit repellat facilis sint doloribus, est, similique quam nihil ipsa accusamus aliquid. Corporis.  Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident laudantium, vitae dicta sunt ea inventore non neque qui voluptatum, quos iure repellat iusto atque incidunt in odio aliquid iste officiis.</p>
+    <p class="looseleading">The name <i>line height</i> is often used synonymously with <i>leading</i> (it's pronounced <i>ledding</i>). This term comes from the movable type profession, where typesetters often use a strip of lead to set the amount of space between two lines of text.</p>
+    <p class="looseleading">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo numquam cumque nisi ex quis minus dolore facilis reprehenderit dolor ipsa commodi et veritatis sed deserunt alias quidem, quisquam. Eum, tempore.  Lorem ipsum dolor sit, amet consectetur, adipisicing elit. Distinctio aut laboriosam voluptates doloremque perspiciatis fugit, enim quia suscipit repellat facilis sint doloribus, est, similique quam nihil ipsa accusamus aliquid. Corporis.  Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident laudantium, vitae dicta sunt ea inventore non neque qui voluptatum, quos iure repellat iusto atque incidunt in odio aliquid iste officiis.</p>
+    <p>The CSS font shorthand.  Font syntax template &larr; font: font-style font-weight font-variant font-size/line-height font-family.  The minimum must provide font-size and font-family in that order.  Font-style, font-weight, and font-variant values can be in any order as long as they're before font-size value.  Font-size/line-height syntax is like 12/18 12-point type and 18-point line height.</p>
+    <div id="typographytitle"?>Typography.  A glossary of terms.</div>
+    <dl>
+    <dt class="dttext">ascender</dt>
+    <dd>The part of a tall lowercase letter such as <i>b</i> or <i>h</i> that extends above lowercase letters such as <i>a</i> and <i>c</i>.
+    <dt class="dttext">baseline</dt>
+    <dd>The invisible line upon which lowercase characters such as <i>o</i> and <i>w</i> appear to sit.</dd>
+    <dt class="dttext">descender</dt>
+    <dd>The part of a lowercase letter such as <i>g</i> or <i>y</i> that extends below the <span>baseline</span>.
+    <dt class="dttext">leading</dt>
+    <dd>(pronounced <i>ledding</i>) See <span>line height</span>.</dd>
+    <dt class="dttext">line height</dt>
+    <dd>The distance between the <span id="baselinesmallcaps">baselines</span> of two adjacent lines of text.</dd><dt>x-height</dt>
+    <dd>The height of a typeface's lowercase <i>x</i>.</dd>
+    </dl>
+</body>
+</html>
