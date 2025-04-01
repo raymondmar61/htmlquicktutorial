@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Design Playground by Paul McFedries Chapter 20 Creating A Portfolio Page</title>
+    <style type="text/css">
+        body {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            min-height: 100vh;
+            margin-top: 1rem;
+            font-family: "Open Sans", Verdana, sans-serif;
+            background-color: #cdc9c1;
+            background-image: radial-gradient(circle farthest-side at center top, hsl(0, 0%, 100%) 0%, #cdc9c1 100%);
+            color: #362507; 
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            max-width: 60rem;
+        }
+        header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: .5rem 0;
+            width: 100%;
+        }
+        .headerleft {
+            flex: 1 0 33%;
+            text-align: left;
+        }
+        .headerright {
+            flex: 2 0 67%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+        h1 {
+            padding-top: 1 rem;
+            font-size: 4 rem;
+            font-weight: bold;
+            font-family: "Playfair Display", Georgia, serif;
+        }
+        .buttons {
+            background-color: #362507;
+            padding: .25rem .75rem;
+            border-radius: .75rem;
+            font-size: 1rem;
+            color: #cdc9c1;
+            text-transform: uppercase;
+        }
+        nav ul {
+            display: flex;
+            list-style-type: none;
+        }
+        nav li {
+            padding-left: 1rem;
+        }
+        a {
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="headerleft">
+            <img src="portfolio-logo.png" alt="The Old Book Logo">
+        </div>
+        <div class="headerright">
+        <nav>
+            <ul>
+                <li><a href="#Portfolio" class="buttons">Portfolio</a></li>
+                <li><a href="#About" class="buttons">About</a></li>
+                <li><a href="#Contact" class="buttons">Contact</a></li>
+            </ul>
+        </nav>
+        <h1>This Old Book</h1>
+        </div>
+    </header>
+    <main>
+        <section>
+            <h1>Portfolio</h1>
+            <img src="150x150.png", alt="">
+            <img src="150x150.png", alt="">
+            <img src="150x150.png", alt="">
+            <img src="150x150.png", alt="">
+        </section>
+        <section>
+            <p>Main flexbox container flex display in a row direction centered.</p>
+            <p>Nested flexbox div class=container flex dispaly in a column direction flex-start.  Maximum width 60rem.</p>
+            <p>Header flexbox container flex display all centered.  Justified center and aligned center.  The left header occupies one-third of the width.  The right header occupies two-thirds of the width.  The right header is a flexbox container wrap display flex-end justified.</p>
+            <p></p>
+        <section>
+            <h1>About Me</h1>
+        </section>
+        <section>
+            <h1>Contact Me</h1>
+        </main>
+    <footer>
+        <p>Copyright and social media links</p>
+    </footer>
+    
+</body>
+</html>
