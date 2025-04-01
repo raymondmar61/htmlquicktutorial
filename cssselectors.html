@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+7<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -60,6 +60,11 @@
         }
         #redcolor {
             color: red;
+        }
+        .inheritanceexample {
+            color: saddlebrown;
+            font-size: 1.1em;
+            line-height: 1.4;
         }
     </style>
 </head>
@@ -227,4 +232,21 @@
     <p id="plastletter1" data-end="g">Strin</p>
     <p id="plastletter2">Strin</p>
     <p>Strin<span id="redcolor">g</span></p>
+    <p>The universal selector * applies to every element.  The universal selector is a CSS reset to remove the web browser's default styles.  Example below reset defines the default font size and removes the browser's default margins and padding.</p>
+    <pre>
+        * {
+            font-size: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </pre>
+    <p>Common CSS reset declarations:  border 0; font-family: inherit; font-style: inherit; font-weight: inherit; vertical-align: baseline;</p>
+    <p>Inheritance is a parent element is styled with a property, its child and descendant elements are styled the same.  Many CSS properties are inherited by descendant elements, not all of them are inherited; for example, apply a border around the parent div element, the same border isn't applied to any of its descendants.</p>
+    <div class="inheritanceexample">
+        Some CSS properties <em>child em element inheriting css .inheritanceexample</em> inherit their parente's styles.  <sup>* child sump element inherting css .inheritanceexample</sup>.  Another inheritance is code element <code>p</code> element.
+        <div>
+            Child dev element <sup>sup element in child element </sup> both inheriting.
+        </div>
+    </div>
+    <p>Specificity.  The more specific a particular selector targets something on a web page, the greather weight given when the browser is calculating the rules.  Use when there are multiple CSS rules targeting the same html element.</p>
 </html>
