@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web Design Playground by Paul McFedries Chapter 20 Creating A Portfolio Page</title>
     <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-size: 100%;
+            line-height: 1.3;
+        }
         body {
             display: flex;
             flex-direction: row;
@@ -36,12 +43,13 @@
         .headerright {
             flex: 2 0 67%;
             display: flex;
+            flex-direction: row; /* Added from solution */
             flex-wrap: wrap;
             justify-content: flex-end;
         }
         h1 {
-            padding-top: 1 rem;
-            font-size: 4 rem;
+            padding-top: 1rem;
+            font-size: 4rem;
             font-weight: bold;
             font-family: "Playfair Display", Georgia, serif;
         }
@@ -53,6 +61,37 @@
             color: #cdc9c1;
             text-transform: uppercase;
         }
+        .intro {
+            display: flex;
+            align-items: center;
+            margin: 2rem 0;
+            width: 100%;
+            border: 3px solid #77613c;
+            color: #362507;
+            font-size: 1.25rem;
+            background-color: #a99879;
+            background-image: radial-gradient(ellipse closeat-corner at center, #cdc9c1 0%, #a99879 100%);
+        }
+        .introtext {
+            flex: 2 0 67%;
+            padding: 2rem 0 2rem 2rem;
+        }
+        .introtext p {
+            margin: 1.5rem 0;
+        }
+        .introimage p {
+            flex: 1 0 33%;
+        }
+        h2 {
+            font-size: 2.5rem;            
+        }
+        h3 {
+            font-size: 2rem;
+            font-style: italic;
+        }
+        h2, h3 {
+            font-family: "Playfair Display", Georgia, serif;
+        }
         nav ul {
             display: flex;
             list-style-type: none;
@@ -63,9 +102,77 @@
         a {
             text-decoration: none;
         }
+        .portfolio {
+            margin-bottom: 1rem;
+        }
+        .portfoliotext p {
+            margin: .5rem 0 1.5rem;
+            font-size: 1.25rem;
+        }
+        .portfolioimages {
+            display: flex;
+            justify-content: space-between;
+        }
+        .portfolioimagesingle {
+            position: relative;
+            cursor: pointer;
+            margin-bottom: 1rem;
+        }
+        .imageoverlay {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 200px;
+            height: 150px;
+            z-index: 1;
+            opacity: 0;
+/*            -webkit-transition: opacity 1.5s ease;*/
+            transition: opacity 1.5s ease;
+        }
+        .imageoverlay:hover {
+            opacity: 1;
+        }
+        .about {
+            margin-bottom: 1rem;            
+        }
+        .abouttext p {
+            margin: .5rem 0 1.5rem;
+            font-size: 1.25rem;
+        }
+        .contact {
+            margin-bottom: 1rem;            
+        }
+        .contacttext p {
+            margin: .5rem 0 1.5rem;
+            font-size: 1.25rem;
+        }
+        .contactsociallinks a {
+            margin-right: 1.5rem;
+        }
+        footer {
+            display: flex;
+            padding: 1em 0;
+            border-top: 1px solid #a99879;
+        }
+        .footercopyright {
+            flex: 1 0 50%;
+            text-align: left;
+            font-style: italic;
+            font-size: 1.25em;
+        }
+        .footerlinks {
+            flex: 1 0 50%;
+            text-align: right;
+            font-size: 1.25em;
+        }
+        .footerlinks a {
+            color: #362507;
+            margin-left: 1em;
+        }
     </style>
 </head>
 <body>
+    <div class="container">
     <header>
         <div class="headerleft">
             <img src="portfolio-logo.png" alt="The Old Book Logo">
@@ -78,31 +185,82 @@
                 <li><a href="#Contact" class="buttons">Contact</a></li>
             </ul>
         </nav>
-        <h1>This Old Book</h1>
+        <h1>This Old Book.  The em and rem values no spaces.</h1>
         </div>
     </header>
     <main>
-        <section>
-            <h1>Portfolio</h1>
-            <img src="150x150.png", alt="">
-            <img src="150x150.png", alt="">
-            <img src="150x150.png", alt="">
-            <img src="150x150.png", alt="">
+        <section class="intro">
+            <div class="introtext">
+                <h2>Book Restoration And Repair</h2>
+                <h3>If it's broke, I'll fix it</h3>
+                <p>Welcome to This Old Book, the online home Welcome to This Old Book, the online home of book restorer Paul McFedries. I take old books that have seen better days and breath new life into them with careful and respectful repairs and cleaning. Got a precious family Bible that’s a little worse for wear? Have a rare or important book that could use some TLC? Let’s talk.</p>
+                <div>
+                    <a href="#contact" class="buttons">Contact Me</a>
+                </div>
+                <div class="introimage">
+                    <img src="portfolio-intro.png" alt="Illustration showing several old books">
+                </div>
+        </section>
+        <!-- <section class="portfolio" id="portfolio"> -->
+        <section class="portfolio">
+            <div class="portfoliotext">
+                <h2>Some Recent Work</h2>
+                <p>Here are some of my recent restoration projects. The images you see below are the "before" versions of each book. To see an "after" version, move your mouse over an image (or tap it).</p>
+                <p>The portfolio images are in a flexbox container.  The before and after images use hovers the mouse over an image.  Create the CSS imageoverlay:hover for which no spaces at the colon.  The z-index value of 1 makes sure it appears on top of the before image and opacity value of 0 to prevent from appearing when the page first loads.  The hover event opacity is 1 to make the image appear.  The transition property animates the appearance of the overlay.</p>
+            </div>
+            <div class="portfolioimages">
+                <div class="portfolioimagesingle">
+                    <img src="portfolio-book1-before.png"><img class="imageoverlay" src="portfolio-book1-after.png">
+                </div>
+                <div class="portfolioimagesingle">
+                    <img src="portfolio-book2-before.png"><img class="imageoverlay" src="portfolio-book2-after.png">
+                </div>
+                <div class="portfolioimagesingle">
+                    <img src="portfolio-book3-before.png"><img class="imageoverlay" src="portfolio-book3-after.png">
+                </div>
+                <div class="portfolioimagesingle">
+                    <img src="portfolio-book4-before.png"><img class="imageoverlay" src="portfolio-book4-after.png">
+                </div>
+            </div>
+        </section>
+        <!-- <section class="about" id="about"> -->
+        <section class="about">
+            <div class="abouttext">
+                <h2>About Me</h2>
+                <p><b>Paul McFedries</b> is a book conservator, bookbinder, and an expert in the history and conservation of Gothic and Art Deco bookbindings. He is a graduate of the Canadian Bookbinding and Book Arts Guild, and apprenticed with some of the top North American and European book restorers, including Don Palmer, Rose Eldridge, and Betsy Taylor-Newlove. Paul was formerly president of the Gothic Book Workers Guild and is currently executive director of the Historical Art Deco Bookbinding Society. Working with both institutional and private clients, he has restored hundreds of books over the years.</p>
+            </div>
+        </section>
+        <!-- <section class="contact" id="contact"> -->
+        <section class="contact" id="contact">
+            <div class="contacttext">
+                <h2>Contact Me</h2>
+                <p>If you want to know more about my work, or if you want to
+                discuss a project, please get in touch:</p>
+                <p><i>paul at thisoldbook dot com</i></p>
+                <p>Alternatively, click an icon below to reach out using your favorite social network.  There is no css for contactsociallinksingle class.</p>
+            </div>
+            <div class="contactsociallinks">
+                <a href="#" class="contactsociallinksingle"><img src="facebook-round.png" alt="Facebook icon"></a>
+                <a href="#" class="contactsociallinksingle"><img src="twitter-round.png" alt="Facebook icon"></a>
+                <a href="#" class="contactsociallinksingle"><img src="instagram-round.png" alt="Facebook icon"></a>
+
         </section>
         <section>
             <p>Main flexbox container flex display in a row direction centered.</p>
             <p>Nested flexbox div class=container flex dispaly in a column direction flex-start.  Maximum width 60rem.</p>
             <p>Header flexbox container flex display all centered.  Justified center and aligned center.  The left header occupies one-third of the width.  The right header occupies two-thirds of the width.  The right header is a flexbox container wrap display flex-end justified.</p>
             <p></p>
-        <section>
-            <h1>About Me</h1>
-        </section>
-        <section>
-            <h1>Contact Me</h1>
+        </section>          
         </main>
     <footer>
-        <p>Copyright and social media links</p>
+        <div class="footercopyright">Copyright 2019 This Old Book.  The footer is a flexbox container.</div>
+        <div class="footerlinks">
+            <a href="#">Home</a>
+            <a href="#">FAQ</a>
+            <a href="#">Site Map</a>
+            <a href="#">Privacy</a>
+        </div>
     </footer>
-    
+    </div>
 </body>
 </html>
