@@ -1,5 +1,7 @@
 # htmlquicktutorial
 
+Update Apr 9, 2025:  Web Programming With HTML5, CSS, And JavaScript by John Dean
+
 Update Nov 25, 2024:  Web Design Playground by Paul McFedries
 
 Update Oct 24, 2024:  HTML Beginners Basic Of Web Design by Paul Gibbs
