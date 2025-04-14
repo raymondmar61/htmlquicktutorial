@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Programming With HTML5, CSS, And JavaScript by John Dean Chapter 2 Coding Standards, Block Elements, Text Elements, And Character References</title>
+    <style type="text/css">
+        body {
+            background-color: grey;
+        }
+        defaultblockquote {
+            display: block;
+            margin-before: 1em;
+            margin-after: 1em;
+            margin-start: 40px;
+            margin-end: 40px;
+        }
+        .nomarginbottom {
+            margin-bottom: 0;
+        }
+        .nomargintop {
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil quae aliquam libero minima perferendis asperiores quaerat saepe repellat at, pariatur reprehenderit fuga expedita praesentium aut, numquam quia in odit laudantium?</p>
+    <blockquote cite="https://www.mentionthesourceasaurl.com">Use &lt;blockquote&gt; for a quotation too long to embed within surrounding text.  &lt;blockquote&gt; is a block element for which it spans the width of its container.  The nonmarginal part of its enclosing container.  Default display is display: block and margins on the four sides 1em top, 40px right, 1em bottom, and 40px left.  I created a CSS defaultblockquote as reference code. 1em is equal to the height of a standard line of text.  Browsers do not display the cite attribute's value.</blockquote>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea ad, mollitia pariatur maiores nisi minima ullam numquam quo nemo unde nobis dolore quos expedita, voluptatum assumenda iure corrupti id incidunt.</p>
+    <p>Block formatting is a code style the start and end tags are on their own lines.  The enclosed text is indented  &lt;p&gt; and &lt;div&gt; are block elements.  Block elements span the width of their containers.</p>
+    <pre>    The &lt;pre&gt; displays noncollapsing blank lines above and below its text.  Preserve whitespace.  &lt;pre&gt; stands for preformatted text.
+        There are four spaces to my left.
+    There are zero spaces to my left.
+    The font is different.  Font is monospace.  If you type &lt;/pre&gt; on the next line, then another another line is inserted below.</pre>
+    <p>Phrasing elements are for text items in a paragraph.  Phrasing elements can be used with multiple container elements.  &lt;strong&gt; is an example of a phrasing element.  Use bullets.</p>
+    <ul>
+        <li>Editing elements &lt;ins&gt; and &lt;del&gt;.  <ins>text inserted</ins> and <del>text deleted</del>.
+        <li>Quoted text element &lt;q&gt;.  <q>Quoted text rendered within the flow of the surround text with inserted smart double quotes.</q>
+        <li>Cited element &lt;cite&gt;.  <cite>Cited text use to reference the source for the quoted text.</cite>
+        <li>Definition define word or define expression &lt;dfn&gt;.  <dfn>Not for definition.  Object being defined.  Typically text is italicized.</dfn>.
+        <li>Abbreivation or acronym &lt;abbr&gt;.  <abbr title="World Wide Web Consortium">W3C. The title attribute is a tooltip.  Dotted underline.</abbr>
+        <li>Time element &lt;time&gt;.  Indicate the text represents a date or a time.  <time datetime="2018-09-28">Friday September 28</time> <time datetime="12:00">noon</time> <time datetime="04:00">4 AM I guess 24 hour clock</time>.  Default formats &lt;time&gt; yyyy-mm-dd for date and hh:mm for time.  <time>1967-07-20</time> for date.  <time>17:00</time> for time.
+    </ul>
+    <p>Code elements or coding elements.  Use bullets.</p>
+    <ul>
+        <li>Code element &lt;code&gt; is programming code.  <code>code</code>
+        <li>Keyboard element &lt;kbd&gt; is input for a program.  <kbd>kbd</kbd>
+        <li>Sample element &lt;samp&gt; is text represent output for a program.  <samp>samp</samp>
+        <li>Variable element &lt;var&gt; is a variable for programming or mathematical variable.  <var>var</var>
+    </ul>
+    <p>lorem</p>
+    <p class="nomarginbottom">Quick CSS.  No margin bottom.</p>
+    <pre class="nomargintop">Quick CSS.  No margin top.</pre>
+    <p>No quick CSS.  No no margin bottom.</p>
+    <pre>No quick CSS.  No no margin top.</pre>
+    <p class="nomarginbottom">Quick CSS.  No margin bottom.</p>
+    <p class="nomargintop">Quick CSS.  No margin top.</p>
+    <p>No quick CSS.  No no margin bottom.</p>
+    <p>No quick CSS.  No no margin top.</p>
+</body>
+</html>
