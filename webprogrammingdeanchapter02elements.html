@@ -39,22 +39,37 @@
         <li>Cited element &lt;cite&gt;.  <cite>Cited text use to reference the source for the quoted text.</cite>
         <li>Definition define word or define expression &lt;dfn&gt;.  <dfn>Not for definition.  Object being defined.  Typically text is italicized.</dfn>.
         <li>Abbreivation or acronym &lt;abbr&gt;.  <abbr title="World Wide Web Consortium">W3C. The title attribute is a tooltip.  Dotted underline.</abbr>
-        <li>Time element &lt;time&gt;.  Indicate the text represents a date or a time.  <time datetime="2018-09-28">Friday September 28</time> <time datetime="12:00">noon</time> <time datetime="04:00">4 AM I guess 24 hour clock</time>.  Default formats &lt;time&gt; yyyy-mm-dd for date and hh:mm for time.  <time>1967-07-20</time> for date.  <time>17:00</time> for time.
+        <ul>
+            <li>Combine &lt;dfn&gt; and &lt;abbr&gt;.  The <dfn><abbr title="World Wide Web Consortium">W3C</abbr></dfn> is the governing body for various technologies on the Web.  Hover the mouse over the defined acronym W3C italicized dotted underline to display tooltip World Wide Web Consortium.  Subbullet nested bullet.
+        </ul>
+        <li>Time element &lt;time&gt;.  Indicate the text represents a date or a time.  <time datetime="2018-09-28">Friday September 28</time> <time datetime="12:00">noon</time> <time datetime="04:00">4 AM</time> I guess 24 hour clock.  Default formats &lt;time&gt; yyyy-mm-dd for date and hh:mm for time.  <time>1967-07-20</time> for date without datetime attribute.  <time>17:00</time> for time without datetime attribute.  Can specify a date and a time with one datetime attribute separating the date and time values with a T.  Join us on March 25, 2019 at 3:53pm for <time datetime="2019-03-25T15:53">party 3's</time> at the center.
     </ul>
     <p>Code elements or coding elements.  Use bullets.</p>
     <ul>
-        <li>Code element &lt;code&gt; is programming code.  <code>code</code>
+        <li>Code element &lt;code&gt; is programming code.  Good for align similar type of things or align text above and below the lines. <code>code</code>
         <li>Keyboard element &lt;kbd&gt; is input for a program.  <kbd>kbd</kbd>
         <li>Sample element &lt;samp&gt; is text represent output for a program.  <samp>samp</samp>
         <li>Variable element &lt;var&gt; is a variable for programming or mathematical variable.  <var>var</var>
     </ul>
+    <p>&lt;br&gt; is standard line break.  &lt;wbr&gt; is word break.  The browser interprets word break as a suggested break if the word bumps into the right side of its containing box.  It's unusual to use word break.  A common scenario is for a long sequence of nonblank characters with patterns; for example, an URL with dots and forward slashes.  www<wbr>.chessgeeks<wbr>.com<wbr>/caughtoncamera<wbr>/bronstein.mp4</p>
+    <p>Appearance elements.  W3C doesn't like &lt;b&gt;, &lt;u&gt;, and &lt;i&gt; elements.  They're still used today.</p>
+    <ul>
+        <li>Superscript element &lt;sup&gt;.  <sup>Slightly raised smaller font</sup> such as 19<sup>th</sup> the th in 19th century.
+        <li>Subscript element &lt;sub&gt;.  <sub>Slightly lowered smaller font</sub> such as H<sub>2</sub>0 the 2 for H20 water.
+        <li>Strike through element &lt;s&gt;.  <s>No longer accurate or no longer relevant</s>.  W3C says &lt;s&gt; no longer stricken text.  It's no longer accurate or no longer relevant.
+        <li>Mark element &lt;mark&gt;.  <mark>Marked</mark> or <mark>highlighted text</mark> to be referred for each other.
+        <li>Small element &lt;small&gt;.  <small>fine print for disclaimers</small>.
+        <li>Strong element &lt;strong&gt;.  <strong>text for strong importance</strong>  bold font.
+        <li>Emphatic element or emphasis element &lt;em&gt;.  <em>emphatic stress</em> italics font.
+    </ul>
+    <p>Character references.  HTML code to display difficult characters or difficult text.  Character entities.  Popular character references:  &lt; for less than.  &gt; for greater than.  &le; for less than or equal.  &frac12; for one half.  &frac14; for one fourth.  &amp; for ampersand.  &quot; for quote.  &apos; for apostrophe.  &nbsp; for nonbreaking space or blank space.  &larr; or &leftarrow; for left arrow.  &centerdot; for solid bullet.  &check; for check mark checkmark.  &copy; for copyright.</p>
     <p>lorem</p>
-    <p class="nomarginbottom">Quick CSS.  No margin bottom.</p>
-    <pre class="nomargintop">Quick CSS.  No margin top.</pre>
+    <p class="nomarginbottom">Quick CSS.  No margin bottom.  No blank line below.</p>
+    <pre class="nomargintop">Quick CSS.  No margin top.  No blank line above.</pre>
     <p>No quick CSS.  No no margin bottom.</p>
     <pre>No quick CSS.  No no margin top.</pre>
-    <p class="nomarginbottom">Quick CSS.  No margin bottom.</p>
-    <p class="nomargintop">Quick CSS.  No margin top.</p>
+    <p class="nomarginbottom">Quick CSS.  No margin bottom.  Zero height margin.</p>
+    <p class="nomargintop">Quick CSS.  No margin top.  Zero height margin.</p>
     <p>No quick CSS.  No no margin bottom.</p>
     <p>No quick CSS.  No no margin top.</p>
 </body>
