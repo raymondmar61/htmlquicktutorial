@@ -8,11 +8,39 @@
         body {
             background-color: grey;
         }
-
+        .redparagraph {
+            color: red;
+        }
+        q.redquotes {
+            background-color: red;
+        }
+        q.whitequotes {
+            background-color: white;
+        }
+        q.bluequotes {
+            background-color: blue;
+        }
     </style>
 </head>
 <body>
     <p>The chapter teaches CSS concepts and CSS basic syntax.  Apply the CSS rules to elements.  Type the CSS rules at the top of the web page's or in an external file.  Describe CSS properties to change appearances of the elements.  Introduce CSS properties for color, font, line height, borders, padding, and margins.</p>
     <p>CSS rules apply to elements in a web page.  There are differente types of selectors.  The chapter introduces type selectors and the universal selector.  The type selector uses an element type such as <kbd>hr</kbd> to match all instances of the <kbd>hr</kbd> element type.  Type selector example <code>hr {width: 50%}</code> applies a 50% width to all <kbd>hr</kbd> elements.  Universal selector example <code>* {text-align: center}</code> centers text for all text-oriented element.  The asterisk <kbd>*</kbd> is a wildcard which matches every element in a web page.</p>
+    <p>If you want to apply the same formatting feature(s) to more than one type of element, separate each element with a comma for which the elements appear as part of a comma separated list.  For instance,</p>
+    <pre>
+        * {
+            text-align: center;
+        }
+        h2, p {
+            font-style: italic;
+            color: blue;
+        }</pre>
+    <p>aligns every text centered.  The &lt;h2&gt;, &lt;p&gt; italics and blue all text.</p>
+    <p>Coding convention suggest &lt;style&gt; positioned at the bottom of the &lt;head&gt; or above the &lt;/head&gt;.  CSS style format is <code>selector(s) {property1: value1; property2; value2; property3: value3; property#: value#;}</code> for which each property on its own line or block formatting.</p>
+    <p class="redparagraph">The class selector is a dot or period.  Class selector selects elements wich a particular value for their class attribute.  The paragraph class attribute is redparagraph.  You can have many comma separated selectors sharing the same property-value pairs.    Also, no spaces naming the class selector.  Use hyphens.</p>
+    <p>The class selector with element type prefixes is a dot or period with the html element to the left of the dot or period.  CSS style format is <code>elementtype.classvalue {property1: value1; property2; value2; property3: value3; property#: value#;}</code> for which each property on its own line or block formatting.  The &lt;q&gt; below is an example.</p>
+    <q class="redquotes">Quote text element surrounds text with smart quotes.</q>
+    <q class="whitequotes">Quote text element white color background.</q>
+    <q class="bluequotes">Quote text element blue color background.</q>
+    <p>A class selector can use the universal selector * instead of indicating the element.  The universal selector matches all elements.  <code>*.classvalue {property1: value1; property2; value2; property3: value3; property#: value#;}</code>.  For example, *.bigwarning {font-size: x-large; color: red;} matches all elements with the class attribute value bigwarning.</p>
 </body>
 </html>
