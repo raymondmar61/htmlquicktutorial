@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web Programming With HTML5, CSS, And JavaScript by John Dean Chapter 3 Cascading Style Sheets (CSS)</title>
+    <link rel="stylesheet" href="fromanexternalcssfilechapter03.css">
     <style type="text/css">
         body {
             background-color: grey;
@@ -19,6 +20,21 @@
         }
         q.bluequotes {
             background-color: blue;
+        }
+        #useidonce {
+            color: green;
+        }
+        .divclassorange {
+            color: darkorange;
+        }
+        .spanclasswhite {
+            color: white;
+        }
+        .spanclassblack {
+            color: black;
+        }
+        .multipleattribute {
+            background-color: orange;
         }
     </style>
 </head>
@@ -41,6 +57,39 @@
     <q class="redquotes">Quote text element surrounds text with smart quotes.</q>
     <q class="whitequotes">Quote text element white color background.</q>
     <q class="bluequotes">Quote text element blue color background.</q>
-    <p>A class selector can use the universal selector * instead of indicating the element.  The universal selector matches all elements.  <code>*.classvalue {property1: value1; property2; value2; property3: value3; property#: value#;}</code>.  For example, *.bigwarning {font-size: x-large; color: red;} matches all elements with the class attribute value bigwarning.</p>
+    <p>A class selector can use the universal selector * instead of indicating the element.  The universal selector matches all elements.  <code>*.classvalue {property1: value1; property2; value2; property3: value3; property#: value#;}</code>.  For example, <code>*.bigwarning {font-size: x-large; color: red;}</code> matches all elements with the class attribute value bigwarning.</p>
+    <p>An ID selector is similar to the class selector.  The ID selector is used once.  The ID selector is unique.  The ID selector matches one element only.</p>
+    <p id="useidonce">The sentence with <code>id="useidonce"</code> the id is used one time denoted with pound sign # at the CSS on a web page.</p>
+    <p>If you want to apply CSS to text not using HTML5 elements, use <kbd>span</kbd> or <kbd>div</kbd>.  <kdb>span</kdb> is a phrasing element; for example, use to affect text embedded with surround text.  <kbd>div</kbd> is a block element; for example, use to expand text to the width of its enclosing container.  Think of <kbd>div</kbd> and <kdb>span</kdb> as vanilla ice cream and CSS as the various toppings you can add to the ice cream.
+    <div class="divclassorange">
+        Text inside <code>&lt;div class="divclassorange"&gt;</code>  Dark orange font for all font inside the &lt;div&gt;.  <span class="spanclasswhite multipleattribute">Two CSS attributes in a span white color font and orange color background.  Attributes separated by a space.</span>
+        <br><span class="spanclassblack multipleattribute">Two CSS attributes in a span black color font and orange color background.  Attributes separated by a space.</span>
+        <br>Jumping ahead.  Inheritance.  The <code>&lt;div class="divclassorange"&gt;</code>  Dark orange font could color the white color font and the black color font dark orange font due to inheritance.  The &lt;span&gt; tags override to white color  fontand black color font.
+    </div>
+    <p>Different priorities are given to different places to handle conflicting rules at different places.  The priority from highest to lowest are 1 the element's &lt;style&gt; attribute.  2 the &lt;style&gt; element in the head section <code>&lt;style type="text/css"&gt;</code>.  3 external file.  4 browser's settings.  5 browser's default settings.</p>
+    <h3 style="text-decoration: underline;">An example of the &lt;style&gt; attribute inside an element which is &lt;h3&gt; text-decoration: underline;  The &lt;style&gt; attribute used to be referred as inline styles for which W3C says is no longer a used term.</h3>
+    <p class="fromanexternalcssfile">The paragraph CSS style is from an external CSS file.  <code>&lt;link rel="stylesheet" href="nameofexternalfile.css"&gt;</code>  I typed <code>&lt;link rel="stylesheet" href="fromanexternalcssfilechapter03.css"&gt;</code> in the &lt;head&gt; section.  The font color is yellow.  The css file,</p>
+    <pre>
+        /* CSS comment */
+
+        .fromanexternalcssfile {
+            color: yellow;
+        }</pre>
+    <p>Common CSS properties.  A CSS property specifies one aspect of an element appearance.  There are more than a hundred CSS properties.  Remembering all the properties is daunting.  Need a CSS reference.  The Mozilla Developer Network more user-friendly CSS reference https://developer.mozilla.org/en-US/docs/Web/CSS/Reference.  The chapter discusses five properties:  color, font, text, border, and margin/padding.</p>
+    <p>Color properties:  color, background-color.  Use color for font color or text color.  Examples:  <code>.classfontcolor {color: red;} .classrgbvalues {background-color: rgb(52%,20%,45%);</code>  The Red, Green, and Blue RGB(red number, green number, blue number) use percentage 0%-100%, integer 0 to 255, or hexadecimal 00 to ff.  black is rgb(0%,0%,0%).  white is rgb(100%,100%,100%).  blue is background-color: #0f42ba; using hexadecimal.  rgba is red, green, blue, and opacity.  Opacity determines how opaque the color or the inability to see through.  Two formats rgba(red-integer,green-integer,blue-integer,opacity-number-between-0-and-1) and rgba(red-percent,green-percent,blue-percent,opacity-number-between-0-and-1).  For example, <code>.yellow-bg2 {background-color: rgba(255,255,0,.4);} .yellow-bg3 {background-color: rgb(255,255,0); opacity: .4;}</code></p>
+    <p>Font properties:  font-style, font-variant, font-weight, font-size, font-family.</p>
+    <ul>
+        <li>font-style displays text normally or slanted.  font-style values normal, oblique, and italic.
+        <li> font-variant displays how lowercase letters are displayed.  font-variant values normal and small-caps.
+        <li>font-weight displays the text characters boldness.  font-weight values normal, bold, bolder, lighter, and numbers 100 to 900 from thinnest 100 to thickest bold for which 400 is the same as normal and 700 is the same as bold.
+        <li>font-size displays the size of the text characters.  font-size values xx-small, x-small, small, medium, large, x-large, xx-large, smaller, larger, and number of em units for which one em is the height of the element's normal font size.  For example, <code>.hugefont {font-size: xx-large;} .emexampletriplenormalfontsize {font-size: 3em}</code>.
+        <li>font-family displays the font type.  font-familiy values monospace, serif, sans-serif, cursive, fantasy.  For example, <code>.usethesefonts {font-familiy: "New Century Schoolbook", Times, serif;}</code>
+        <li>The font shorthand property is font: [font-style value] [font-variant value] [font-weight value] font-size value[/line-height value] font-family value;.  font-size value and font-family value are required.  For example, <code>.largeitalic {font: italic large "Arial Black", Helvetica, sans-serif;}</code> for which commas separate the font-family values.  The commas are delimiters for a sublist.  The font-family property is a sublist.
+        <ul>
+            <li>line-height displays vertical separation between each line of text in an element.  <code>line-height: 2em;</code> display its lines with a vertical separation equal to twice the height of a normal character.  An em is the height of a normal character.  For example, <code>.doublespace {line-height: 2em;} .fontsizelineheighttogehter {font: 1em/2em;}</code> for which the font 1em is normal size and the line spacing 2em is double spaced.
+            <li>Use a percentage value. <code>.proof-reading {line-height: 300%;}</code>  The percentage value display line height three times the height of a normal character the same as 3em.
+        </ul>
+    </ul>
+
 </body>
 </html>
