@@ -90,6 +90,30 @@
             <li>Use a percentage value. <code>.proof-reading {line-height: 300%;}</code>  The percentage value display line height three times the height of a normal character the same as 3em.
         </ul>
     </ul>
+    <p>Text properties:  text-align, text-decoration, text-transform, text-indent.</p>
+    <ul>
+        <li>text-align specifies the horizontal alignment.  text-align values left, right, center, and justify.
+        <li>text-decoration specifies decorative.  text-decoration values none, underline, overline, line-through RM:  which is strike through, and blink.
+        <li>text-transform specifies the capitalization.  text-transform values are none, capitalize, uppercase, and lowercase.  capitalize transform the first character of each word to uppercase or titlecase.
+        <li>text-indent specifies the size of indentation of the first line in a block of text.  If you want to adjust all the lines in a block of text, use the margin property.  The best way to specify a value is em units.  For example, <code>p {text-indent: 4em;}</code>
+    </ul>
+    <p>Border properties:  border-style, border-width, border-color, shorthand.</p>
+    <ul>
+        <li>border-style specifies the border type.  border-style values none, solid, dashed, dotted, and double.
+        <li>border-width specifies the width.  border-width values thin, medium, thick; or number of <code>px</code> units.  A CSS pixel unit is the size of a single projected dot on a computer monitor at 100% zoom on the monitor.  border-width must be used with border-style.  Different widths for different border sides can be done.  For example, <code>.differentsolidborders {border-style: solid; border-width 4px 2px 0px 2px;}</code> The border's four sides in clockwise order starting from the top.  Top sie 4px value, right 2px, bottom no border, left 2 px.  <code>.leftright2pxsizeborders {border-style: solid; border-width 4px 2px 0px;}</code>  <code>.topbottom4pxleftright2pxsizeborders {border-style: solid; border-width 4px 2px;}</code>
+        <li>border-color specifies the color border.  border-color must be used with border-style.
+        <li>border as shorthand or compact.  Specify the border's width, style, and color in order.  <code>.thindottedblueborder{border: thin dotted blue;} .solid10pxborder{border: 10px solid;}</code>
+        <li>border-radius specifices the curvature at the four corners.
+    </ul>
+    <p>Element box.  Padding property and margin property.  Create gaps around elements.  Every web page element has an element box.  An element box has a border, padding inside the border, and a margin outside the border.  Most elements the default border, padding, and margin widths are zero.  Adjust the widths with the border-width, padding, and margin properties.  Think of a delivered mail package.  You put the padding on the inside of the border package; therefore, the margin is the outside of the border package.  Usually use <code>px</code> values for padding and margin.  <code>.solidborder20pxinsideoutside {border: solid; padding: 20px; margin: 20px;}</code>  Can specifiy different padding widths for the four sides.  Can use separate padding side properties padding-top, padding-right, padding-bottom, and padding-left.  Likewise for margin side properties margin-top, margin-right, margin-bottom, and margin-left.  Negative numbers for margin and padding cause an overlap.</p>
+    <p><code>display: inline-block;</code> is a must for vertical margins.  The CSS creates a blockish.</p>
+    <p>Different length units.  Length numbers.</p>
+    <ul>
+        <li>Use <code>em</code> for font-related properties such as <code>font-size</code>.
+        <li>Use <code>px</code> for fixed properties such as border properties and layout.
+        <li>Use percentages % for growing and shrinking properties such as margin properties.
+        <li>Use absolute sparingly for fixed sizes.
+    </ul>
 
 </body>
 </html>
