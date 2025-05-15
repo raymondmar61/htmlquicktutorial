@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Programming With HTML5, CSS, And JavaScript by John Dean Chapter 4 Organizing a Page's Content with Lists, Figures, and Various Organizational Elements</title>
+    <style type="text/css">
+        body {
+            background-color: grey;
+        }
+        #specifybulletsymbols {
+            ul {list-style-type: circle;}
+            ul ul {list-style-type: square;}
+            ul ul ul {list-style-type: none;}
+        }
+        #orderedlistdifferentnumbers {
+            ol {list-style-type: upper-roman;}
+            ol ol {list-style-type: upper-alpha;}
+            ol ol ol {list-style-type: decimal;}
+        }
+        #figureredborder {
+            border: solid crimson;
+            padding: 6px;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>Unordered lists</li>
+        <li>List items have bullets and circles</li>
+        <li>Legal to omit the &lt;/li&gt; end tag
+        <li>Author says don't omit &lt;/li&gt; end tag.  Keep for readability and maintenance.</li>
+        <ul>
+            <li>Nested lists.
+            <li>A list inside a list.
+            <li>HTML5 standard doesn't allow a &lt;ul&gt; immediately inside another &lt;ul&gt;.
+        </ul>
+        <li>No more end tags.
+    </ul>
+    <p>Use CSS <code>list-style-type</code> property to specify the symbol for web page lists.  W3C default symbol is a bullet.  Author says browsers use bullet, circle, and square symbols for different levels in a nested list.   The most popular values are none, disc, circle, and square.  Circle is a hollow circle.  Square is a filled-in square.  Example below.</p>
+    <span id="specifybulletsymbols">
+    <ul>
+        <li>Unordered lists</li>
+        <li>List items have bullets and circles</li>
+        <li>Legal to omit the &lt;/li&gt; end tag
+        <li>Author says don't omit &lt;/li&gt; end tag.  Keep for readability and maintenance.</li>
+        <ul>
+            <li>Nested lists.
+            <li>A list inside a list.
+            <li>HTML5 standard doesn't allow a &lt;ul&gt; immediately inside another &lt;ul&gt;.
+            <ul>
+                <li>No bullet point first sentence.
+                <li>No bullet point second sentence.
+            </ul>
+        </ul>
+        <li>No more end tags.
+    </ul></span>
+    <ol>
+        <li>Ordered lists
+        <li>Individual list items
+        <ol>
+            <li>Subordered lists same technique for unordered lists.
+            <li>Typical browsers display Arabic numbers 1, 2, 3 by default.
+        </ol>
+    </ol>
+    <span id="orderedlistdifferentnumbers">
+    <ol>
+        <li>Ordered lists upper-roman
+        <li>Individual list items
+        <ol>
+            <li>Subordered lists same technique for unordered lists.  upper-alpha
+            <li>Typical browsers display Arabic numbers 1, 2, 3 by default.
+            <ol>
+                <li>Decimal number for a second subordered list.  decimal
+                <li>Decimal number for a second subordered list.
+            </ol>
+            <li>Last entry for the first subordered list.
+        </ol>
+        <li>Last entry for the primary ordered list.
+        <li>Popular values are decimal, upper-alpha, loweralpha,upper-roman, and lower-roman.
+    </ol></span>
+    <p>The ordered lists <code>reversed</code> and <code>start</code> self-explanatory.</p>
+    <ol reversed>
+        <li>Jack Frost Loses the Feeling in His Extremities</li>
+        <li>I Saw Rudolph Kissing Santa Claus</li>
+        <li>The Teddy Bear Who Came to Life and Mauled a Retail Clerk</li>
+    </ol>
+    <ol class="roman-list" start="52">
+        <li>Atlanta, Georgia</li>
+        <li>Miami, Florida</li>
+        <li>Wakeeny, Kansas</li>
+    </ol>
+    <p>The <code>figure</code> element.  A figure holds text, programming code, an illustration, a picture, or a data table.  The red border shows the <code>figure</code> expansive equal size margins at the left and the right.  The browser generates the left margin and right margin by default.</p>
+    <figure id="figureredborder">
+        <figcaption>If you include a &lt;figcaption&gt;, then it must be inside the &lt;figure&gt; element.  It displays a caption for the figure.</figcaption>
+        <p>The first figure example is text.</p>
+        <p>Another sentence with text.</p>
+    </figure>
+    <figure>
+        <img src="imageshowninplaceofvideo.jpg" alt="image caption alt alternative attribute use.">
+        <figcaption>Figure with an image.   &lt;figcaption&gt; must be inside the &lt;figure&gt; element.</figcaption>
+    </figure>
+</body>
+</html>
