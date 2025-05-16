@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Programming With HTML5, CSS, And JavaScript by John Dean Chapter 4 Organizing a Page's Content with Lists, Figures, and Various Organizational Elements Mangie's List</title>
+    <style type="text/css">
+        body {
+            background-color: grey;
+        }
+        header {
+            background-color: powderblue;
+        }
+        section > h2 {
+            background-color: palegreen;
+        }
+        aside > h3 {
+            margin: 0;
+        }
+        aside {
+            border: thin dashed red;
+            color: red;
+            background-color: white;
+            float: right;
+            width: 200px;
+            margin: 5px;
+            padding: 10px;
+        }
+        address { /* <address> element */
+            display: inline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Mangie's List</h1>
+        <h2><q>Simply the best reviews anywhere!</q></h2>
+    </header>
+    <nav>
+        <a href="#dining">Dining</a> | <a href="#clothing">Clothing</a>
+    </nav>
+    <p>The section element is a container to group together a section of a web page.  The section element is a thematic grouping of content.  The content is related with a common theme.</p>
+    <p>The article element group together one or more sections for which the group of sections form an independent part of a web page.  The webpage example is one &lt;article&gt; and two &lt;section&gt;s.  The two &lt;section&gt;s are related.  An online magazine with multiple magazine articles per page.  Each article should be its own &lt;article&gt; container.</p>    
+    <p>The aside element groups together content which does something with the rest of the web page and not part of the main flow.  You should be an aside element at the right or left.  The red box is the aside element which is advertising text.  The advertising text is not part of the web page's main content.</p>
+    <p>The nav element contains links to other web pages or other parts of the current web page.</p>
+    <p>The header element groups one or more header elements <code>h1</code>-<code>h6</code> for which the group of heading elements form a unified header for nearby content.</p>
+    <p>The footer elment groups information to form a footer.  The information includes copyright data, author information, or related links.</p>
+    <p><code>section > h2 </code> and <code>aside > h3 </code> are child selectors.  <code>float: right</code> positions element at the right edge of its surrounding container.  <code>address {display: inline;}</code> display &lt;address&gt; on the same line with Questions?  Email.</p>
+    <article>
+        <section>
+            <aside>
+            <h3>Casey's Special</h3>
+            Half-price hot dogs when rotisseried more than 24 hours!  RM:  no &lt;p&gt; tag on the paragraph.  It's an &lt;aside&gt; element.  A box floating on the right after Dining.
+            </aside>
+            <h2 id="dining">Dining</h2>
+            <ol>
+                <li>China Star
+                <li>Casey's General Store
+            </ol>
+        </section>
+        <section>
+            <h2 id="clothing">Clothing</h2>
+            <ol>
+                <li>Eddie Bauer
+                <li>Kansas Speedway Boutique
+                <li>Casey's General Store
+            </ol>
+        </section>
+    </article>
+    <footer>
+        Questions? Email <address>mangie@gmail.com</address>.
+    </footer>
+</body>
+</html>
