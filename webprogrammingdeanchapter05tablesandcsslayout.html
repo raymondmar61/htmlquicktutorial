@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Programming With HTML5, CSS, And JavaScript by John Dean Chapter 5 Tables And CSS Layout</title>
+    <style type="text/css">
+        body {
+            background-color: grey;
+        }
+        table, th, td {
+            border: thin solid;
+            border-collapse: collapse;}
+        th {
+            border-bottom-width: thick;
+        }
+        th, td {
+            text-align: left;
+            padding: 10px;
+        }
+        #tablepseudoclass table {
+            border-collapse: collapse;
+        }
+        #tablepseudoclass th, td {border: thin solid;
+            padding: 2px 5px;
+        }
+        #tablepseudoclass td:nth-of-type(3), td:nth-of-type(4) {
+            text-align: right;
+        }
+        #tablepseudoclass tr:first-of-type {
+            background-color: palegreen;
+        }
+        #tablepseudoclass tr:nth-of-type(2n+3) {
+            background-color: palegoldenrod;
+        }
+        #tablenoborder {
+            border: none;
+            padding: 10px;
+        }        
+        #columnheader {
+            background-color: midnightblue;
+            color: white;
+            vertical-align: bottom;
+        }
+        #rowheader {
+            background-color: mediumvioletred;
+            color: white;
+            padding: 10px;
+        }
+        #cellinput {
+            background-color: mistyrose;
+            text-align: center;
+            border-color: white;
+            border-bottom-width: thick; /*needed because of border-bottom-width: thick; at the th { border-bottom-width: thick;} approximatley line 14*/
+            padding: 10px;
+        }
+        .csstable {
+            display: table;
+            border-style: solid;
+            border-spacing: 20px;
+        }
+        .csscaption {
+            display: table-caption;
+            font-size: large;
+            text-align: center;
+        }
+        .cssrow {
+            display: table-row;
+        }
+        .cssrow > * {
+            display: table-cell;
+            text-align: center;
+        }
+        .cssabsolutepositionmarginpadding > *{
+            margin: 0px;
+            padding: 0px;
+        }
+        .cssabsolutepositiontitle {
+            position: absolute;
+            left: 10px;
+            top: 2550px;
+            width: 640px;
+            height: 30px;
+            text-align: center;
+            font-size: 20pt;
+        }
+        .cssabsolutepositionarticleleft {
+            position: absolute;
+            top: 2600px;
+            width: 300px;
+            height: 180px;
+            text-align: justify;
+            font-size: 12pt;
+            left: 10px;
+        }
+        .cssabsolutepositionarticleright {
+            position: absolute;
+            top: 2600px;
+            width: 300px;
+            height: 180px;
+            text-align: justify;
+            font-size: 12pt;
+            left: 330px;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <caption>The &lt;caption&gt; element
+        <tr>
+            <th>Header1 &lt;th&gt;.</th>
+            <th>Header2 &lt;th&gt;.</th>
+        </tr>
+        <tr>
+            <td>Each row is a &lt;tr&gt; element.</td>
+            <td>Each data cell is a &lt;td&gt; element.</td>
+        </tr>
+        <tr>
+            <td>The &lt;caption&gt; element must be the first element below &lt;table&gt;.</td>
+            <td>If you want the caption on the bottom, use CSS caption {caption-side: bottom;}.</td>
+        </tr>
+    </table>
+    <p>HTML5 made formatting tables such as borders, cell alignment, and cell padding obsolete.  Use CSS.  For example, a thin border, use the border property.  <code>table, th, td {border: thin solid;}.  border-collapse: collapse;</code> removes gaps between the borders.  The default value for border-collapse is separate which causes spaces between broders.</p>
+    <p>Table header cells &lt;th&gt; default alignment center, default weight bold, and padding none.  Table data cells &lt;td&gt; default algnment left and padding none.  Use text-align with value left, right, or center to align horizontally.  Use padding with a pixel value px to adjust padding around the text in a data cell.  <code>td, td {text-align: left; padding: 10px;}</code></p>
+    <p>I want a thicker border on the bottom for the &lt;th&gt;  Type <code>th {border-bottom-width: thick;}</code></p>
+    <p>Use pseudo-class selectors to select elements to be different.  There are 12 pseudo-classes from W3C.  Author discusses the three most popular.  The <code>:first-of-type</code> selects the first elements.  The <code>:last-of-type</code> selects the last elements.  The <code>:nth-of-type()</code> selects the elements or group of elements for which the value is inside the parenthesis.</p>
+    <pre>
+        tr:first-of-type {background-color: palegreen;} The first row background color is pale green.
+        ul > li:last-of-type {background-color: palegreen;} The last bullets list background color is pale green.
+        td:nth-of-type(3) {text-align: right;} The third data cell in each row is right aligned.
+        td:nth-of-type(even) {background-color: lightblue;} Every even numbered row background color is lightblue.
+        tr:nth-of-type(5n+2) {background-color: red;}.  Every fifth tr element starting at the second row and every fifth row thereafter background color is red.
+        an+b for which a and b are constant integers and n is a variable named n.  n=0, it's row 2.  n=1, it's row 7.  n=2, it's row 12.
+        n=3 it's row 17, n=4 it's row 22.  Start count at index number 0.
+    </pre>
+    <table id="tablepseudoclass">
+        <caption>
+            <h3>Noon Power Generation And Consumption</h3>
+        </caption>
+        <tr>
+            <th>Component Description</th>
+            <th>Overall Size</th>
+            <th>Noon Power</th>
+            <th>Installed Cost</th>
+        </tr>
+        <tr>
+            <td>PV Solar Collectors</td>
+            <td>137 m<sup>2</sup> panel area</td>
+            <td>+18 kW</td>
+            <td>$45,000</td>
+        </tr>
+        <tr>
+            <td>Immediate Consumption</td>
+            <td>274 m<sup>2</sup> floor area</td>
+            <td>-5 kW</td><td> </td>
+        </tr>
+            <tr>
+            <td>Chilled Water Storage</td>
+            <td>2.3 m diameter x 2.1 m high</td>
+            <td>-2 kW</td>
+            <td>$1000</td>
+        </tr>
+        <tr>
+            <td>Battery Storage</td>
+            <td>1.3 m x 1.0 m x 1.1 m high, 1250kg</td>
+            <td>+18 kW</td>
+            <td>$6000</td>
+        </tr>        
+    </table>
+    <p>Row headers or left header cells use &lt;thead&gt; for the row header using &lt;tr&gt; and &lt;th&gt; and &lt;tbody&gt; using &lt;tr&gt; and &lt;td&gt;.  RM:  somewhat counterintuitive because need &lt;th&gt; for the row header first column.</p>
+    <table id="tablenoborder">
+        <caption>Average Annual Global Temperatures with row headers &lt;thead&gt; and its column of data &lt;tbody&gt;</caption>
+        <thead>
+            <tr>
+                <th id="columnheader">Year</th>
+                <th id="columnheader">Temp Rank</th>
+                <th id="columnheader">Avg Temp &deg;F</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th id="rowheader">2016</th>
+                <td id="cellinput">1</td>
+                <td id="cellinput">59.98</td>
+            </tr>
+            <tr>
+                <th id="rowheader">2015</th>
+                <td id="cellinput">2</td>
+                <td id="cellinput">58.77</td>
+            </tr>
+            <tr>
+                <th id="rowheader">2014</th>
+                <td id="cellinput">3</td>
+                <td id="cellinput">58.53</td>
+            </tr>
+            <tr>
+                <th id="rowheader">2013</th>
+                <td id="cellinput">5</td>
+                <td id="cellinput">58.37</td>
+            </tr>
+            <tr>
+                <th id="rowheader">2012</th>
+                <td id="cellinput">9</td>
+                <td id="cellinput">58.33</td>
+            </tr>
+        </tbody>
+    </table>
+    <p>RM:  needed to use id's because of the Noon Power Generation And Consumption table using the descendant selectors.  The child selectors didn't work.</p>
+    <p>Merge cells or combine cells in multiple columns use &lt;colspan&gt; or multiple rows use &lt;rowspan&gt;.</p>
+    <table>
+        <caption>My Favorite Eras</caption>
+        <thead>
+            <tr>
+                <th>Eras</th>
+                <th colspan="2">Events one row span two columns</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th rowspan="2">Mesozoic one column span two rows</th>
+                <td>Evolutionary split between reptiles and dinosaurs</td>
+                <td>235 mya</td>
+            </tr>
+            <tr>
+                <td>South America breaks away from Africa</td>
+                <td>105 mya</td>
+            </tr>
+            <tr>
+                <th rowspan="3">Cenozoic
+                    <br>65.5 mya to today
+                    <br>one column span three rows
+                    <br>&lt;br&gt; added for readability</th>
+                <td>Modern mammals appear</td>
+                <td>40 mya</td>
+            </tr>
+            <tr>
+                <td>Tool-making humanoids appear</td>
+                <td>2 mya</td>
+            </tr>
+            <tr>
+                <td>First Rolling Stones reunion tour</td>
+                <td>11,000 years ago</td>
+            </tr>
+        </tbody>
+    </table>
+    <p>If you use &lt;table&gt; for layout tables, use <code>role="presentation"</code>.  Use CSS instead of &lt;table&gt; for layout tables.  If you want the layout boundaries to grow and to shrink, use the CSS <code>display</code> property; for example, <code>display:  inline</code>.  If you want the layout boundaries to be fixed, then use CSS position properties.  Use &lt;table&gt; to display data.</p>
+    <p>Here are the values for the <code>display</code> property which enable elements to behave like parts of a table.  There are no mimic for <code>rowspan</code> or <code>colspan</code>; must use &lt;rowspan&gt; or &lt;colspan&gt;.  Browsers don't care if you use &lt;table&gt; for &lt;rowspan&gt; or &lt;colspan&gt; for table layout.  Add <code>role="presentation"</code> to the &lt;table&gt; element's start tag.</p>
+    <ul>
+        <li>table:  mimic a <code>table</code> element
+        <li>table-caption:  mimic a <code>caption</code> element
+        <li>table-row:  mimic a <code>tr</code> element
+        <li>table-cell:  mimic a <code>td</code> or <code>th</code> element
+        <li>table-header-group:  mimic a <code>thread</code> element
+        <li>table-row-group:  mimic a <code>tbody</code> element
+    </ul>
+    <p>A table cell is a container for content.  The <code>img</code> is a void element.  The <code>img</code> is not a container.  Don't use CSS to convert <code>img</code> to a table cell.  The solution is surround the <code>img</code> elements with &lt;span&gt; for the <code>tabel-cell</code>  The straightforward code is <code>span {display: table-cell;}</code>.  However . . .</p>
+    <p> . . . it's easier to use the child selector rules to match every element which is a child element of a row element because there are multiple images and possible added more images.  The relevant rule is <code>.cssrow > * {display: table-cell;}</code>  The > symbol is a combinator which combines two selectors into one.  The selector at the left <code>.cssrow</code> matches all the elements in the Ancient Wonders web page with <code>class="cssrow"</code>.  The universal selector at the right * matches any element.  When the two selectors are combined with >, the resulting child selector matches every element which is a child of a row element.</p>
+    <div class="csstable">
+        <div class="csscaption">Ancient Wonders Of The World added <code>border-style: solid;</code> for easy read</div>
+        <div class="cssrow">
+            <span><img src="pyramid.jpg"></span>
+            <span><img src="hangingGardens.jpg"></span>
+            <span><img src="colossus.jpg"></span>
+        </div>
+
+        <div class="cssrow">
+            <span>Great Pyramid Of Giza</span>
+            <span>Hanging Gardens Of Babylon</span>
+            <span>Colossus Of Parkville</span>
+        </div>
+    </div>
+    <p>You can apply differrent horizontal spacing and vertical spacing.  An example is <code>border-spacing: 15px; 25px;</code> for 15px horizontal spacing and 25px for vertical spacing.  Horizontal spacing refers to the width of the gap between adjacent cells in the same row. Vertical spacing refers to the height of the gap between adjacent cells in the same column.  The padding property adds space inside each cell's border.</p>
+    <p>The <code>margin</code> has no effect to specify space outside an element's border.  Use the <code>border-spacing</code> property to specify consistent horizontal and vertical gaps between table cells</p>
+    <p>If you want the table layout where content controls the table's cells, use the CSS <code>display</code> property.  Use CSS position properties for fixed table cell sizes.</p>
+    <p>Browsers use a default layout scheme known as normal flow.  Normal flow is block elements are laid out top to bottom, one block element per row, and phrasing elements are laid out from left to right.  Use CSS position properties to remove an element from the normal flow.  Use the <code>position</code> property with the value <code>absolute</code> to change the layout scheme from the default normal flow to absolute positioning.  Use <code>top</code> and <code>left</code> to specify the target's top left corner is position relative to the element's <i>containing block</i>.
+    <p>The <code>width</code> and <code>height</code> properties.  If you don't specify the element's <code>width</code>, then the element's width is determined by the natural width of the element's content.  The <code>height</code> property is like the <code>width</code> property you may want to omit such as images.  If you want absolute positioned boxes to be aligned vertically at their bottoms, then for each box include the <code>top</code> and <code>height</code>.</p>
+    <p>Here are the CSS position properties.</p>
+    <ul>
+        <li>position: absolute.  Tells the browser to postion the element relative to the containing block.  Normally, the containing block is the web page's html element.
+        <li>left: value in px or percentage.  Specifies the distance between the containing block's left edge and the element's left edge.  The left edge is the left of any padding, border, or margin.
+        <li>top: value in px or percentage.  Specifies the distance between the containing block's top edge and the element's top edge.  The top edge is the above any pading, border, or margin.
+        <li>width: value in px or percentage.  Specifies the width of the invisible box which constrains the element's contents.  The width doesn't include padding, border, or margin.
+        <li>height: value in px or percentage.  Specifies the height of the invisible box which constrains the element's text.  The height doesn't include padding, border, or margin.
+    </ul>
+    <div class="cssabsolutepositionmarginpadding">
+        <h1 class="cssabsolutepositiontitle">Imprint Express News From Park University</h1>
+        <p>The quick brown fox</p>
+        <article class="cssabsolutepositionarticleleft"> It's Snack Attack Friday. Students and staff are welcome to enjoy corn dogs, buffalo wings, and other deep-fat-fried favorites at the Thompson Center, October 22 from 10 pm to midnight.
+        </article>
+        <article class="cssabsolutepositionarticleright"> On Saturday, September 16, Park's ACM Club sponsored a Habitat for Humanity service project in Kansas City, Kansas. Said ACM President, Niren Shakya, "Me, Josh, and Aiba poured the foundation and put up the walls. We plan to finish the house next Saturday."
+        </article>
+    </div>
+
+
+
+
+</body>
+</html>
