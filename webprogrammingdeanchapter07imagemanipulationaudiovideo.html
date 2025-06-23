@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Programming With HTML5, CSS, And JavaScript by John Dean Chapter 7 Image Manipulations, Audio, And Video</title>
+    <link rel="icon" href="tree.png">
+    <style type="text/css">
+        body {
+            background-color: grey;
+        }
+        .imagefloatleft {
+            float: left;
+            margin: 8px;
+        }
+        .imagefloatright {
+            float: right;
+            margin: 8px;
+        }
+        .tableimage {
+            display: table;
+            display: flex; /* align table cells at thier tops.  Flexible box layout.  Flexbox. */
+            align-items: flex-start; /* align table cells at thier tops.  Flexible box layout.  Flexbox. */
+        }
+        .cell { /* create table cells */
+            display: table-cell;
+        }
+        nav > * { /* format everything within the nav container */
+            display: block; /* block formatting for the a href elements.  RM:  display each thumbnail from top to bottom */
+            margin: 18px 25px 18px 0;
+        }
+        a > img { /* set width and height for the thumbnails */
+            width: 120px;
+            height: 80px;
+        }
+        .iframeseamlessintegration {
+            border: none;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <p>Images are displayed inline by default which is the normal left to right and top to bottom or top down flow.  Can display images differently.  Can display images at the left or the right of the web page.  Icon image appear in the tab at the top of the browser window.  Display an image within a frame within the browser window RM:  I don't understand.</p>
+    <p>The <code>img</code> element is an inline element or phrasing element formally speaking.  Images are displayed within the normal flow of its surrounding text.  Display an image on a line by itself by surrounding it with a block element to avoid wasted space around medium images or large images.  The technique is float an image or floating an image to the left or to the right of the text.  Use the CSS <code>float</code> property.</p>
+    <p>No CSS.  Images inline default.</p>
+    <p><img src="coconut.jpg" width="100" height="150" alt="coconut tree"> Coconut trees are indigenous to the Phillipines. They do best in climates with moderate temperatures and lots of sunshine. They prefer well-drained, boggy soil. Using the world's first intercontinental railroad, Marco Polo introduced coconut trees to Europe and America in the early 20th century.</p>
+    <p>The nuytsia tree is indigenous to Western Australia. <img src="nuytsia.jpg" width="150" height="100" alt="nuytsia tree">  With its bright orange flowers that bloom during the Christmas season, it's sometimes referred to as the Christmas tree. It's considered a root parasite because it attaches itself to the roots of other plants and harvests nutrients from the host species. The nuytsia tree is home to the rare Keiblur wood elf, famous for baking cookies and starting forest fires.</p>
+    <p>Yes CSS.  Images float left or float right. <code>.imagefloatleft {float: left; margin 8px;} .imagefloatright {float: right; margin 8px;}</code>  The margin property is not required for floating.  Margin adds space betweenimage and text.</p>
+    <p><img class="imagefloatleft" src="coconut.jpg" width="100" height="150" alt="coconut tree"> Coconut trees are indigenous to the Phillipines. They do best in climates with moderate temperatures and lots of sunshine. They prefer well-drained, boggy soil. Using the world's first intercontinental railroad, Marco Polo introduced coconut trees to Europe and America in the early 20th century.</p>
+    <p>The nuytsia tree is indigenous to Western Australia. <img class="imagefloatright" src="nuytsia.jpg" width="150" height="100" alt="nuytsia tree">  With its bright orange flowers that bloom during the Christmas season, it's sometimes referred to as the Christmas tree. It's considered a root parasite because it attaches itself to the roots of other plants and harvests nutrients from the host species. The nuytsia tree is home to the rare Keiblur wood elf, famous for baking cookies and starting forest fires.</p>
+    <p>The icon on the browser tab.  Type the code in the <code>&lt;head&gt;</code> section.  <code>&lt;link rel="icon" href="*url image url*"&gt;.</code>  The code for the webpage is <code>&lt;link rel="icon" href="tree.png"&gt;</code>.  The <code>rel</code> attribute specifies the relationship between the current web page and the linked-to entity.  The <code>rel</code> attributes specifies <code>icon</code>.  The W3C recommends using a GIF or PNG with dimensions 16x16 pixels or 32x32 pixels.  These icons are called shortcut icons, website icons, and favicons.</p>
+    <p>An <code>iframe</code> element is used to dislay in image in a frame embedded within the browser window.  An <code>iframe</code> is short for inline frame.  RM:  in plain English, the <code>iframe</code> is like a subwebbrowser or a browser inside a browser with it's own horizontal and vertical scroll bars.  The <code>href</code> attribute indicates the image to load.  The <code>target</code> attribute tells the browser to open the image in the <code>specifytargettonameattributeiframe</code> browsing context.  Click kitchen, living, or stairway small images to view their bigger size.</p>
+    <iframe src="kitchen.jpg" name="name no width no height">Need scrollbars</iframe>
+    <iframe src="kitchen.jpg" name="name fullsize" width="480" height="320"></iframe>
+    <a href="kitchen.jpg" target="specifytargettonameattributeiframe"><img src="kitchenThumb.jpg" alt="kitchen"></a>
+    <a href="living.jpg" target="specifytargettonameattributeiframe"><img src="livingThumb.jpg" alt="living space"></a>
+    <a href="stairway.jpg" target="specifytargettonameattributeiframe"><img src="stairwayThumb.jpg" alt="stairway"></a>
+    <iframe name="specifytargettonameattributeiframe"src="kitchen.jpg" width="480" height="360"></iframe>
+    <p>Here are the kitchen, living, and stairway images in a CSS table format.</p>
+    <div class="tableimage">
+        <nav class="cell">
+            <a href="kitchen.jpg" target="specifytargettonameattributeiframe2"><img src="kitchenThumb.jpg" alt="kitchen"></a>
+            <a href="living.jpg" target="specifytargettonameattributeiframe2"><img src="livingThumb.jpg" alt="living space"></a>
+            <a href="stairway.jpg" target="specifytargettonameattributeiframe2"><img src="stairwayThumb.jpg" alt="stairway"></a>
+        </nav>
+        <iframe class="iframeseamlessintegration" name="specifytargettonameattributeiframe2"src="kitchen.jpg" width="480" height="360"></iframe>
+    </div>
+    <p>The <code>&lt;div class="tableimage"&gt;</code> converts a <code>div</code> to a table; in other words, create a table using <code>div</code>.</p>
+    <p>The CSS code <code>a > img</code> is a quick way to set the width and height for images as long as their the same size.</p>
+    <pre>
+    a > img { /* set width and height for the thumbnails */
+        width: 120px;
+        height: 80px;
+    }
+    </pre>
+    <p>Browsers display a faint border around the <code>iframe</code> browsing context to distinguish from the rest of the webpage content.  Want to remove the border.  And don't display scrollbars.  <code>.iframeseamlessintegration {border: none; overlfow: hidden;}</code></p>
+    <p>Audio.  <audio src="priceisrightdoubleshowcasewinnersiren.mp3" preload="auto" controls></audio>  The <code>controls</code> attribute tells the browser to display an audio control bar to start, pause, and adjust the volume.  The <code>preload</code> attribute indicates whether browser download audio information when the webpage first loads or wait to download when the user starts playing the audio.  <code>preload="auto" or preload=""</code> downloads the audio file when the page loads initially.  <code>preload="meta"</code> browser downloads the meteadata when the page loads initially.  <code>preload="none"</code> browser downloads no audio information when the page loads initially.  <code>autoplay</code> attribute tells the browser to starting playing the audio file when the page loads initially.  Simply type <code>autoplay</code> as a standalone attribute and remove <code>preload</code>  RM:  autoplay doesn't work.  <code>loop</code> attribute tells the browser to play the audio file repeatedly.  Simply type <code>loop</code> as a standalone attribute.</p>
+    <audio src="werewolf.mp3" loop preload="auto" controls></audio>
+    <audio src="witchesCackle.mp3" preload="auto" controls></audio>
+    <audio src="rainStorm.mp3" autoplay controls loop></audio>
+    <p>Background images.  Type the CSS code <code>body {background-image: url(*image url*)</code>.  Can move or manipulate the image.  Examples:  1 <code>background-size: cover; background-repeat: no-repeat;</code>.  2 <code>background-size: cover; background-attachment: fixed;</code>. 3 <code>background-size: cover; background-attachment: fixed; background-position: center;</code></p>
+    <p>Web fonts.  Type the CSS code <code>font-family</code>.</p>
+    <p>Video.  The <code>video</code> element is similar to the <code>audio</code> element.  The old web developers typed code to install a plug-in to play video from a webpage.  Not anymore with HTML5 <code>video</code> element.  The <code>poster</code> attribute specifies an image to display when the video is not playing overriding the default behavior displaying the first frame of the paused video display.</p>
+    <video src="bartsimpsonsbankrun.mp4" width="350" height="260" preload="metadata" controls poster="imageshowninplaceofvideo.jpg"></video>
+    <p>Unfortunately, different browsers support different video file formats.  Can omit the <code>video</code> element <code>src</code> attribute.  Include multiple <code>src</code> elements between the <code>video</code> start and end tags.  Likewise for <code>audio</code>.</p>
+    <pre>
+        <video width="397" height="225" preload="metadata" controls
+        poster="imageshowninplaceofvideo.jpg">
+        <source src="../video/bartsimpsonsbankrun.mp4" type="video/mp4">
+        <source src="../video/bartsimpsonsbankrun.webm" type="video/webm"></video>
+    </pre>
+</body>
+</html>
