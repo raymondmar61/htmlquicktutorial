@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Programming With HTML5, CSS, And JavaScript by John Dean Chapter 6 Links And Images</title>
+    <style type="text/css">
+        body {
+            background-color: grey;
+        }
+    </style>
+</head>
+<body>
+    <p>Standard <code>a</code> element link.  <a href="https://innovateinfinitely.com">a href="https://innovateinfinitely.com"</a>.  Download <code>a</code> include the <code>download</code> attribute.  <a download="specify filename" href="downloads/100greatestmovies.txt">a download="specify filename" href="downloads/100greatestmovies.txt".  The browser displays the text between the start and end tag</a>.  The browser may override the <code>download</code> attributes and use the <code>href</code> attributes filename instead.</p>
+    <p>The <code>href</code> attribute in the <code>a</code> element specifires the resource to be loaded. There are three types of <code>href</code> attributes.</p>
+    <ul>
+        <li>Absolute URL.  Find the resource on a different web server instead of the current web page.
+        <li>Relative URL.  Find the resource on the same web server.  Specify the locaiton of the resource by providing the path from the current web page to the destination web page.
+        <li>Jump within current web page.  Find the resource within the currente web page.  Provide an <code>id</code> value for an element in the current web page.
+    </ul>
+    <p>Syntax for iternal link or jump within current web page.  Link for user to click <code>&lt;a href="#jumplink"&gt;Start Here&lt;/a&gt;</code>.  Link for destination <code>&lt;h3 id="jumplink"&gt;End Here&lt;h3&gt;</code>.</p>
+    <p>Browsers use blue text for unvisited links or unclicked links and purple text for visited links or for clicked links.  Use CSS to override the links colors specified by the browser.  <code>a:link {color: colorvalue;}</code> for unvisited links.  <code>a:visited {color: colorvalue;}</code> for visited links.  <code>a {text-decoration: none;}</code> for no underlinke links.  <code>a:hover {text-decoration: underline;}</code> for underlinke links when mouse hovers over link.  <code>a {cursor: not-allowed;}</code> for hover mouse over the links cause mouse pointer to change to a blocked icon indicating the link is inactive.</p>
+    <p>Link a specific location at a different webpage.  <code>&lt;a href="webpagename.html#jumplink"&gt;</code>  For example, <code>&lt;a href="https://innovateinfinitely.com/blog/202501blog.html#shelter-in-place-covid-19-blog-december"&gt;Shelter In-Place COVID-19 Blog December 2024&lt;/a&gt;</code>.  Add a <code>target</code> attribute which specifies where to open the linked-to web page.</p>
+    <ul>
+        <li>_self.  Default vale.  The webpage loads within the current browser and overlays the previous page.  In other words, the user replaces the current webpage with the clicked new webpage.  <code>target="_self"</code>
+        <li>_blank.  The webpage loads in a new browser window or new tab within the current browser.  <code>target="_blank"</code>
+        <li>_parent.  The webpage loads in the current web page's parent document which is typically the browser window which caused the current webpage to open.  Open another webpage in the original window or tab.  <code>target="_parent"</code>
+    </ul>
+    <p>Three most common image foramts are gif, jpeg, and png.  gif good for limited color images such as line drawings, icons, and cartoon illustration.  jpeg for high quality photographs.  png for limited color images and high quality photographs.  jpg refers to jpeg.</p>
+    <p><code>img</code> element.  Standard html is <code>&lt;img src="imagenamesometimesneedfilepath.jpg" alt="Alternative the description for the image" width="50" height="200"&gt;</code>.  HTML5 standard states <code>alt</code> alternative attribute is required.  <code>alt</code> describes the image if the image can't be downloaded.  Also use for screen readers to describe image for some visually impaired.  The <code>width</code> and <code>height</code> can improve download speed for which image dimensions specified the other elements are loaded faster and positioned more accurately.  Also can decrease the image size to display smaller.</p>
+    <p>Users view webpages on different platforms.  The platforms are desktops, laptops, tablets, and smart phones.  Learn responsive web design for the HTML code to be responsive for dynamic layouts and dynamic images for the different platforms.  Responsive web design or RWD is write dynamic web page code for different screen sizes and viewing orientation portrait or landscape.  RM:  author provide a small sample overview of RWD because RWD is a large subject.</p>
+    <p>Resolution switching is a list of images for different versions of the same picture.  Different aspect ratios.  Aspect ratios is a ratio image's width to height.  The code below is a webpage different resolution.  The <code>srcset</code> attribute provides a common separated list of image filenames with an image width next to each filename.  The <code>sizes</code> attributes help the browser choose the most appropriate file among the <code>srcset</code> attribute's list of image files.  The <code>sizes</code> attribute provides a comma separated list of values.  Each value has two parts which are the condition to check the width of the browser window's viewport and the width of the slow in which the image displays.  RM:  no pigeon image.</p>
+    <pre>
+        <img srcset="pigeons-320w.jpg 320w,pigeons-480w.jpg 480w, pigeons-800w.jpg 800w"        sizes="(max-width: 340px) 90vw, (max-width: 500px) 90vw, 800px" src="pigeons-800w.jpg" alt="feeding pigeons in St. Mark's Square">
+    </pre>
+    <p>Art direction is another responsive image implementation technique.  Art direction the different images can have different aspect ratios when the image is cropped.  Wrap the images in a <code>picture</code> container.  The <code>picture</code> container holds a group of <code>source</code> elements.</p>
+</body>
+</html>
