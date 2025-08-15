@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style type="text/css">
+        .hide {
+            display: none;
+        }
+        .mydiv:hover+.hide {
+            display: block;
+            color: red;
+        }
+        .csstexthover a p {
+            display: none;
+        }
+        .csstexthover a:hover p {
+            display: block;
+        }
+        .csstexthoverstayvisible a p {
+            display: none;
+        }
+        .csstexthoverstayvisible a:hover p {
+            display: block;
+        }
+        .csstexthoverstayvisible a:hover {
+            display: block;
+        }
+        .detailedcsstooltip {
+            position: relative;
+            display: inline-block;
+            border-bottom: 1px dotted black; /* Dots under hovered text */
+        }
+        .detailedcsstooltip .tooltiptext {
+            visibility: hidden;
+            width: 120px;
+            background-color: black;
+            color: #fff;
+            text-align: center;
+            padding: 5px 0;
+            border-radius: 6px;
+            position: absolute;
+            z-index: 1;
+        }
+        .detailedcsstooltip:hover .tooltiptext {
+            visibility: visible;
+        .detailedcsstooltipright {
+            position: relative;
+            display: inline-block;
+            border-bottom: 1px dotted red; /* Dots under hovered text */
+        }
+        .detailedcsstooltipright .tooltiptextright {
+            visibility: hidden;
+            width: 120px;
+            background-color: black;
+            color: #fff;
+            text-align: center;
+            padding: 5px 0;
+            border-radius: 6px;
+            position: absolute;
+            z-index: 1;
+            top: -5px;
+            left: 105%;
+        }
+        .detailedcsstooltipright:hover .tooltiptextright {
+            visibility: visible;
+        }
+    </style>
+    <title>Text Appear Hover Text Mouse Over</title>
+</head>
+<body>
+    <h3>Hover to display text below</h3>
+    <div class="mydiv">
+        <p>Hover over me.</p>
+    </div>
+    <div class="hide">
+        <p>I display when someone hovers over the div class="mydiv" above.</p>
+    </div>
+    <p>The div class="mydiv" and div class="hide" text is display below Hover over me when the mouse arrow hovers Hover over me.</p>
+    <p>Explanation.  The plus sign is the adjacent sibling selector which selects all elements adjacent siblings of a specified element.  Adjacment means immediately following.  .mydiv selects all elements with class .hide immediately after .mydiv on hover.</p>
+
+    <h3>Text appear hover over link</h3>
+    <a href="" title="Title attribute in a tag display text">Login</a>
+    <p>Use title attribute title="".  Type title="Text appears when mouse hovers over link" above attribute.</p>
+    <div class="csstexthover">
+        <a href="">Login
+        <p>CSS code text appear on hover over link above.</p>
+        </a>
+    </div>
+    <div class="csstexthoverstayvisible">
+        <a href="">Login
+        <p>CSS code text appear on hover over link above and the code text remains visible when mouse hovers over the code text hover.</p>
+        </a>
+    </div>
+    <p>The quick brown fox jumps over the lazy dog.</p>
+
+    <h3>CSS Tooltips More Control</h3>
+    <div class="detailedcsstooltip">Hover over me.  CSS includes a dotted black underline which is a bottom border.  Tooltip appears on my right side.
+        <span class="tooltiptext">Tooltip text</span>
+    </div>
+    <p>Use the &lt;div&gt; container.  Create the .detailedcsstooltip class.  The actual tooltip is inside an element element using &lt;span&gt; with .tooltiptext class.  .detailedcsstooltip position: relative; is needed to position the .detailedcsstooltip .tooltiptext position: absolute;.  .tooltiptext holds the actual tooltip text hidden by default and shown on hover :hover.  The :hover selector shows the tooltip text when the user moves the mouse over the class="detailedcsstooltip".</p>
+    <div class="detailedcsstooltipright">Hover over me.  CSS includes a dotted black underline which is a bottom border.  Tooltip appears on my right side.
+        <span class="tooltiptextright">Tooltip text right</span>
+    </div>
+    <p>Can't get the tooltip text to appear on the right.</p>
+
+</body>
+</html>
